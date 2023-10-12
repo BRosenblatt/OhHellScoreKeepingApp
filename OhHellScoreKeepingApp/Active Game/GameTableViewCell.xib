@@ -51,7 +51,7 @@
                                         <imageReference key="image" image="checkmark" catalog="system" symbolScale="medium"/>
                                     </segment>
                                 </segments>
-                                <color key="selectedSegmentTintColor" red="0.34321493149999999" green="0.53019409449999999" blue="0.68214794830000003" alpha="0.58795813740000002" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="selectedSegmentTintColor" red="0.29107316088243995" green="0.67393311793904298" blue="0.34461188653122715" alpha="0.76802195561701903" colorSpace="custom" customColorSpace="displayP3"/>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxJ-jn-XX7" userLabel="Score Label">
                                 <rect key="frame" x="282" y="0.0" width="80" height="43"/>

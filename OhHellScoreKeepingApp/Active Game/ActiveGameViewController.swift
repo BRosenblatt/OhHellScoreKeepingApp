@@ -17,8 +17,12 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
         let cellNib = UINib(nibName: "GameTableViewCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "GameTableViewCell")
+        
+        let headerNib = UINib(nibName: "GameTableViewHeaderCell", bundle: nil)
+        tableView.register(headerNib, forCellReuseIdentifier: "GameTableViewHeaderCell")
         
         title = "Round 1"
     }
@@ -46,9 +50,21 @@ extension ActiveGameViewController {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        // determine if this is needed
-//    }
+
     
     // MARK: - Set up table header
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let tableHeader = UIView()
+        let tableHeaderCell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewHeaderCell") as! GameTableViewHeaderCell
+        
+        tableHeader.addSubview(tableHeaderCell)
+        
+        return tableHeader
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return 46
+    }
 }
