@@ -104,9 +104,11 @@ class NewGameViewController: UIViewController, UITextFieldDelegate {
     @IBAction func startGameButtonWasTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "ActiveGame", bundle: nil)
         let activeGameViewController = storyboard.instantiateViewController(withIdentifier: "ActiveGameViewController") as! ActiveGameViewController
+        
         let navigationController = UINavigationController(rootViewController: activeGameViewController)
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.navigationBar.prefersLargeTitles = true
+        
         present(navigationController, animated: true)
     }
     
