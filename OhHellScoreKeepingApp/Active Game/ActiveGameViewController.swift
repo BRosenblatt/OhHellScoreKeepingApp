@@ -26,6 +26,15 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         
         title = "Round 1"
     }
+    
+    // Disable segmented control until bids are entered for all players
+    
+// MARK: More Options Menu
+    
+    // Restart Round clears bids, segmented control, and resets score
+        
+    // End Game ends the entire game. Shows winner! Adds to game history. Cannot restart or edit game.
+    
 }
 
 // MARK: - Set up table view
@@ -50,21 +59,15 @@ extension ActiveGameViewController {
         return cell
     }
     
-
-    
     // MARK: - Set up table header
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let tableHeader = UIView()
         let tableHeaderCell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewHeaderCell") as! GameTableViewHeaderCell
         
-        tableHeader.addSubview(tableHeaderCell)
-        
-        return tableHeader
+        return tableHeaderCell
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
         return 46
     }
 }
