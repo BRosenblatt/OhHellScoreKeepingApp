@@ -18,20 +18,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6Fb-rm-t4G">
-                        <rect key="frame" x="16" y="8" width="545" height="32"/>
+                        <rect key="frame" x="8" y="8" width="561" height="32"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="253" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Fr4-tA-HkP">
                                 <rect key="frame" x="0.0" y="1.9999999999999982" width="18" height="28.666666666666664"/>
                                 <imageReference key="image" image="person.fill" catalog="system" symbolScale="medium"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Player Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5c-xm-XRq" userLabel="Player Name Label">
-                                <rect key="frame" x="26" y="0.0" width="295" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5c-xm-XRq" userLabel="Player Name Label">
+                                <rect key="frame" x="26" y="0.0" width="283" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1lE-q3-wSe" userLabel="Bid Text Field">
-                                <rect key="frame" x="329" y="0.0" width="40" height="32"/>
+                                <rect key="frame" x="317" y="0.0" width="40" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Wa5-FZ-zA6"/>
                                 </constraints>
@@ -39,7 +39,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B5J-I7-ocv" userLabel="Bid Segmented Control">
-                                <rect key="frame" x="377" y="0.0" width="80" height="33"/>
+                                <rect key="frame" x="365" y="0.0" width="80" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="JsW-fi-2Mv"/>
                                 </constraints>
@@ -49,10 +49,19 @@
                                 </segments>
                                 <color key="selectedSegmentTintColor" red="0.29107316088243995" green="0.67393311793904298" blue="0.34461188653122715" alpha="0.76802195561701903" colorSpace="custom" customColorSpace="displayP3"/>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxJ-jn-XX7" userLabel="Score Label">
-                                <rect key="frame" x="465" y="0.0" width="80" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="do4-kq-IAz" userLabel="Points Label">
+                                <rect key="frame" x="453" y="0.0" width="40" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="8ie-6K-IH2"/>
+                                    <constraint firstAttribute="width" constant="40" id="Cdw-HZ-jnW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxJ-jn-XX7" userLabel="Score Label">
+                                <rect key="frame" x="501" y="0.0" width="60" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="8ie-6K-IH2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -63,9 +72,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="6Fb-rm-t4G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="0fQ-wE-8gr"/>
-                    <constraint firstAttribute="trailing" secondItem="6Fb-rm-t4G" secondAttribute="trailing" constant="16" id="OGs-d5-uNE"/>
+                    <constraint firstAttribute="trailing" secondItem="6Fb-rm-t4G" secondAttribute="trailing" constant="8" id="OGs-d5-uNE"/>
                     <constraint firstAttribute="bottom" secondItem="6Fb-rm-t4G" secondAttribute="bottom" constant="8" id="YLG-Fz-dI1"/>
-                    <constraint firstItem="6Fb-rm-t4G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="xQS-Zu-o2y"/>
+                    <constraint firstItem="6Fb-rm-t4G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="xQS-Zu-o2y"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -74,6 +83,7 @@
                 <outlet property="bidSegmentedControl" destination="B5J-I7-ocv" id="qle-hc-FhE"/>
                 <outlet property="bidTextField" destination="1lE-q3-wSe" id="xhL-fp-7dL"/>
                 <outlet property="playerNameLabel" destination="G5c-xm-XRq" id="kHY-ve-8Ql"/>
+                <outlet property="pointsLabel" destination="do4-kq-IAz" id="gtX-mb-GcS"/>
                 <outlet property="scoreLabel" destination="YxJ-jn-XX7" id="yxx-Hk-dm5"/>
             </connections>
             <point key="canvasLocation" x="322.90076335877859" y="26.056338028169016"/>

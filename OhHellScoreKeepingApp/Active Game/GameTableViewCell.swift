@@ -13,6 +13,7 @@ class GameTableViewCell: UITableViewCell {
     @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var bidTextField: UITextField!
     @IBOutlet weak var bidSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
     override func awakeFromNib() {
