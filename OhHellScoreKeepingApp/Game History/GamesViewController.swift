@@ -20,5 +20,7 @@ class GamesViewController: UITableViewController {
         present(viewController, animated: true)
     }
     
+    // Configure tableview: Show date of game, winnerName, winner image, winner score, and victory quote.
+    
 }
 

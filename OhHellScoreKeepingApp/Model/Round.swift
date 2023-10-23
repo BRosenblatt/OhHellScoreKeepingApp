@@ -9,7 +9,7 @@ import Foundation
 
 class Round {
     let handSize: Int
-    let roundNumber: Int
+    var roundNumber: Int
     var playerBids: [String: Int] = [:]
     var didWinBid: [String: Bool] = [:]
     var points: [String: Int] = [:]

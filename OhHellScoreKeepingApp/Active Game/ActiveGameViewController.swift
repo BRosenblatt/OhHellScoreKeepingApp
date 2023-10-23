@@ -13,6 +13,8 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var moreOptionsBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
+    let gameManager: GameManager = .shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -40,21 +42,19 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
 // MARK: - Set up table view
 
 extension ActiveGameViewController {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        gameManager.players.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewCell", for: indexPath) as! GameTableViewCell
 
-        cell.playerNameLabel.text = "Matthew"
+        cell.playerNameLabel.text = gameManager.players[indexPath.row]
+        
         cell.playerNameLabel.numberOfLines = .zero
-
         cell.bidTextField.delegate = self
-        cell.bidTextField.text = "0"
-
         cell.bidSegmentedControl.isEnabled = true
-        cell.scoreLabel.text = "000"
         
         return cell
     }

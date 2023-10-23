@@ -19,7 +19,9 @@
 		329FF10F2AD8626A00A23EB0 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 329FF10D2AD8626A00A23EB0 /* GameTableViewCell.xib */; };
 		329FF1142AD87CB900A23EB0 /* GameTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329FF1122AD87CB900A23EB0 /* GameTableViewHeaderCell.swift */; };
 		329FF1152AD87CB900A23EB0 /* GameTableViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 329FF1132AD87CB900A23EB0 /* GameTableViewHeaderCell.xib */; };
-		32B1B54B2AD09F4E009CE803 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1B54A2AD09F4E009CE803 /* GameLogic.swift */; };
+		329FF1192AD9ACE400A23EB0 /* OhHellScoreKeepingApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 329FF1172AD9ACE400A23EB0 /* OhHellScoreKeepingApp.xcdatamodeld */; };
+		329FF11B2ADDBACC00A23EB0 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329FF11A2ADDBACC00A23EB0 /* Round.swift */; };
+		32B1B54B2AD09F4E009CE803 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1B54A2AD09F4E009CE803 /* GameManager.swift */; };
 		32B1B54D2AD459AF009CE803 /* ActiveGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B1B54C2AD459AF009CE803 /* ActiveGame.storyboard */; };
 		32B1B54F2AD459D1009CE803 /* ActiveGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1B54E2AD459D1009CE803 /* ActiveGameViewController.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +41,9 @@
 		329FF10D2AD8626A00A23EB0 /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
 		329FF1122AD87CB900A23EB0 /* GameTableViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewHeaderCell.swift; sourceTree = "<group>"; };
 		329FF1132AD87CB900A23EB0 /* GameTableViewHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewHeaderCell.xib; sourceTree = "<group>"; };
-		32B1B54A2AD09F4E009CE803 /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
+		329FF1182AD9ACE400A23EB0 /* OhHellScoreKeeping.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OhHellScoreKeeping.xcdatamodel; sourceTree = "<group>"; };
+		329FF11A2ADDBACC00A23EB0 /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
+		32B1B54A2AD09F4E009CE803 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		32B1B54C2AD459AF009CE803 /* ActiveGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActiveGame.storyboard; sourceTree = "<group>"; };
 		32B1B54E2AD459D1009CE803 /* ActiveGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +78,7 @@
 		3230A59D2A522ABB000B1DAE /* OhHellScoreKeepingApp */ = {
 			isa = PBXGroup;
 			children = (
+				329FF1162AD9ACCB00A23EB0 /* Model */,
 				32B1B5482AD09EDE009CE803 /* Game History */,
 				327A71382A522E50000F246A /* New Game */,
 				32B1B5492AD09F07009CE803 /* Active Game */,
@@ -95,6 +100,15 @@
 			path = "New Game";
 			sourceTree = "<group>";
 		};
+		329FF1162AD9ACCB00A23EB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				329FF1172AD9ACE400A23EB0 /* OhHellScoreKeepingApp.xcdatamodeld */,
+				329FF11A2ADDBACC00A23EB0 /* Round.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		32B1B5482AD09EDE009CE803 /* Game History */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,7 +121,7 @@
 		32B1B5492AD09F07009CE803 /* Active Game */ = {
 			isa = PBXGroup;
 			children = (
-				32B1B54A2AD09F4E009CE803 /* GameLogic.swift */,
+				32B1B54A2AD09F4E009CE803 /* GameManager.swift */,
 				32B1B54C2AD459AF009CE803 /* ActiveGame.storyboard */,
 				32B1B54E2AD459D1009CE803 /* ActiveGameViewController.swift */,
 				329FF10C2AD8626A00A23EB0 /* GameTableViewCell.swift */,
@@ -196,10 +210,12 @@
 				329FF10E2AD8626A00A23EB0 /* GameTableViewCell.swift in Sources */,
 				32B1B54F2AD459D1009CE803 /* ActiveGameViewController.swift in Sources */,
 				3230A5A32A522ABB000B1DAE /* GamesViewController.swift in Sources */,
+				329FF1192AD9ACE400A23EB0 /* OhHellScoreKeepingApp.xcdatamodeld in Sources */,
 				327A71352A522E0E000F246A /* NewGameViewController.swift in Sources */,
 				3230A59F2A522ABB000B1DAE /* AppDelegate.swift in Sources */,
-				32B1B54B2AD09F4E009CE803 /* GameLogic.swift in Sources */,
+				32B1B54B2AD09F4E009CE803 /* GameManager.swift in Sources */,
 				329FF1142AD87CB900A23EB0 /* GameTableViewHeaderCell.swift in Sources */,
+				329FF11B2ADDBACC00A23EB0 /* Round.swift in Sources */,
 				3230A5A12A522ABB000B1DAE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +432,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		329FF1172AD9ACE400A23EB0 /* OhHellScoreKeepingApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				329FF1182AD9ACE400A23EB0 /* OhHellScoreKeeping.xcdatamodel */,
+			);
+			currentVersion = 329FF1182AD9ACE400A23EB0 /* OhHellScoreKeeping.xcdatamodel */;
+			path = OhHellScoreKeepingApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3230A5932A522ABB000B1DAE /* Project object */;
 }
