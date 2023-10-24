@@ -64,23 +64,33 @@ class NewGameViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func addPlayerButtonWasTapped(_ sender: Any) {
         playerCount += 1
-        updateUI()
         addNewTextField()
+        updateUI()
     }
     
     @IBAction func removeButtonWasTapped(_ sender: Any) {
         playerCount -= 1
-        updateUI()
         removeTextField()
+        updateUI()
+
     }
     
     func updateUI() {
         addPlayerButton.isEnabled = playerCount < 8
         removePlayerButton.isEnabled = playerCount > 3
         numberofPlayersLabel.text = "\(playerCount)"
-        
-        increaseCardCountButton.isEnabled = cardCount < 17
+        calculateMaxCardCount()
+    }
+    
+    func calculateMaxCardCount() {
+        let maxCardCount = gameManager.maximumCardCount(numberOfPlayers: playerCount)
+        increaseCardCountButton.isEnabled = cardCount < maxCardCount
         decreaseCardCountButton.isEnabled = cardCount > 1
+        
+        if cardCount > maxCardCount {
+            cardCount = maxCardCount
+        }
+        
         numberOfCardsLabel.text = "\(cardCount)"
     }
     

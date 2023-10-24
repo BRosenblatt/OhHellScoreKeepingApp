@@ -12,6 +12,8 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var moreOptionsBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var handSizeLabel: UILabel! //tracks card count
+    
     
     let gameManager: GameManager = .shared
     
@@ -25,6 +27,8 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let headerNib = UINib(nibName: "GameTableViewHeaderCell", bundle: nil)
         tableView.register(headerNib, forCellReuseIdentifier: "GameTableViewHeaderCell")
+        
+        handSizeLabel.text = "Hand size: xx"
         
         title = "Round 1"
     }

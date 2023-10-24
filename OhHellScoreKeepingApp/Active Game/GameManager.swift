@@ -15,15 +15,19 @@ import UIKit
 
 class GameManager {
     
-    // properties for players, rounds, currentRound, scores, or whatever
-    var players: [String] = []
-    var rounds: [Round] = []
-    var scores: [String: Int] = [:]
-    var handSize: Int = 1
+    // properties for players, rounds, currentRound, scores
+    private(set) var players: [String] = []
+    private(set) var rounds: [Round] = []
+    private(set) var scores: [String: Int] = [:]
+    private(set) var handSize: Int = 1
     
     var currentRound: Round? {
         rounds.last
     }
+    
+    static let shared: GameManager = GameManager()
+    
+    private init() {}
         
 // functions to...
     
@@ -40,7 +44,6 @@ class GameManager {
     }
     
     // enter bids
-    
     func addBidForPlayer(bid: Int, playerName: String) {
         currentRound?.playerBids[playerName] = bid
     }
@@ -50,7 +53,7 @@ class GameManager {
       // if player bids 0: 5 + handSize
       // if player doesnt get bid: 0
     func calculatePointsForPlayer(bid: Int, playerName: String, didWinBid: Bool) {
-        var wonPoints = bid + 10
+        let wonPoints = bid + 10
         let noPoints = 0
         
         if didWinBid {
@@ -63,22 +66,16 @@ class GameManager {
     }
     
     // calculate total scores
-    
-    // finish round
-    
-    
-    
-    
-    
-    // Take number + name of players to determine table row count and player names (in correct order?)
-    
-    // Number of players determines maximum number of cards dealt
-    // (add label that tracks dealer number of cards?)
+       // prior round score + current round points
+
+    // calculate handSize
+       // 3 players -> 17 cards; 4 players -> 12 cards; 5 players -> 10 cards; 6 players -> 8 cards; 7 players -> 7 cards; 8 players -> 6 cards
+    func maximumCardCount(numberOfPlayers: Int) -> Int {
+        51 / numberOfPlayers
+    }
     
     // Calculate bids to make sure the round is over or under bid
-    
-    // Calculate score based on whether players got their bid
-    
+        
     // Ending Game determines winner. The winner is the player with the highest score
     
 }

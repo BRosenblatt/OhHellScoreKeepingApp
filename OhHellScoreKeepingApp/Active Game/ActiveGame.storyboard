@@ -26,10 +26,10 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uA5-IO-hqS">
-                                <rect key="frame" x="0.0" y="67" width="393" height="675"/>
+                                <rect key="frame" x="0.0" y="181" width="393" height="561"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bod-BI-aCE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bod-BI-aCE" userLabel="Next Round Button">
                                 <rect key="frame" x="8" y="750" width="377" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="QGS-XU-bd9"/>
@@ -39,21 +39,31 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
                                 </buttonConfiguration>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HY-5c-r9X" userLabel="Hand Size Label">
+                                <rect key="frame" x="20" y="173" width="101" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="egH-fI-0Tw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="bod-BI-aCE" firstAttribute="top" secondItem="uA5-IO-hqS" secondAttribute="bottom" constant="8" id="3Af-hf-EYw"/>
+                            <constraint firstItem="uA5-IO-hqS" firstAttribute="top" secondItem="0HY-5c-r9X" secondAttribute="bottom" constant="8" id="3Rf-Hs-VAZ"/>
+                            <constraint firstItem="egH-fI-0Tw" firstAttribute="trailing" secondItem="0HY-5c-r9X" secondAttribute="trailing" constant="272" id="59U-Tg-wQn"/>
+                            <constraint firstItem="0HY-5c-r9X" firstAttribute="top" secondItem="6dj-em-ZOe" secondAttribute="bottom" constant="70" id="8Gu-T7-lyC"/>
                             <constraint firstItem="egH-fI-0Tw" firstAttribute="bottom" secondItem="bod-BI-aCE" secondAttribute="bottom" constant="8" id="N19-05-GTl"/>
                             <constraint firstItem="bod-BI-aCE" firstAttribute="leading" secondItem="egH-fI-0Tw" secondAttribute="leading" constant="8" id="XzS-fP-4cK"/>
                             <constraint firstItem="egH-fI-0Tw" firstAttribute="trailing" secondItem="bod-BI-aCE" secondAttribute="trailing" constant="8" id="ZA3-ES-kyH"/>
                             <constraint firstItem="egH-fI-0Tw" firstAttribute="trailing" secondItem="uA5-IO-hqS" secondAttribute="trailing" id="hQo-8s-vjy"/>
                             <constraint firstItem="uA5-IO-hqS" firstAttribute="leading" secondItem="egH-fI-0Tw" secondAttribute="leading" id="l57-xz-2m6"/>
-                            <constraint firstItem="uA5-IO-hqS" firstAttribute="top" secondItem="egH-fI-0Tw" secondAttribute="top" constant="8" id="on5-dP-Apo"/>
+                            <constraint firstItem="0HY-5c-r9X" firstAttribute="leading" secondItem="egH-fI-0Tw" secondAttribute="leading" constant="20" id="oag-29-UiP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hai-3b-57Q"/>
                     <connections>
+                        <outlet property="handSizeLabel" destination="0HY-5c-r9X" id="uX8-bg-ZcF"/>
                         <outlet property="moreOptionsBarButtonItem" destination="Z7G-6b-g58" id="ec6-yB-f2o"/>
                         <outlet property="navigationBar" destination="6dj-em-ZOe" id="QrI-ab-ZyT"/>
                         <outlet property="tableView" destination="uA5-IO-hqS" id="pHQ-0o-PtG"/>
