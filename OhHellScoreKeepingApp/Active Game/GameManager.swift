@@ -8,10 +8,11 @@
 import Foundation
 import UIKit
 
-//enum StartingHandType {
-//    case one
-//    case maximum
-//}
+
+enum GameOrder {
+    case descending
+    case ascending
+}
 
 class GameManager {
     
@@ -19,7 +20,9 @@ class GameManager {
     private(set) var players: [String] = []
     private(set) var rounds: [Round] = []
     private(set) var scores: [String: Int] = [:]
-    private(set) var handSize: Int = 1
+    private(set) var startingHandSize = 0
+    private(set) var maxHandSize = 0
+    private(set) var gameOrder: GameOrder = .descending
     
     var currentRound: Round? {
         rounds.last
@@ -32,15 +35,45 @@ class GameManager {
 // functions to...
     
     // start a game with these players
-    func createGame(playerNames: [String], startingHandSize: Int) {
-        handSize = startingHandSize
+    func createGame(playerNames: [String], gameOrder: GameOrder, maxCardCount: Int) {
+        if gameOrder == .descending {
+            startingHandSize = maxCardCount
+        } else {
+            startingHandSize = 1
+        }
+        
+        self.gameOrder = gameOrder
         players = playerNames
     }
     
     // start new round; players can play as many rounds as they want
     func startNewRound() {
-        let newRound = Round(roundNumber: rounds.count + 1, handSize: handSize )
+        var handSize: Int = startingHandSize
+
+        if let round = rounds.last {
+            handSize = nextRoundHandSize(previousRound: round, maxHandSize: maxHandSize)
+        }
+               
+        let newRound = Round(roundNumber: rounds.count + 1, handSize: handSize)
         rounds.append(newRound)
+    }
+    
+    func nextRoundHandSize(previousRound: Round, maxHandSize: Int) -> Int {
+        var newHandSize: Int
+        
+        if previousRound.handSize == maxHandSize {
+            newHandSize = maxHandSize - 1
+            gameOrder = .descending
+        } else if previousRound.handSize == 1 {
+            newHandSize = previousRound.handSize + 1
+            gameOrder = .ascending
+        } else if gameOrder == .descending {
+            newHandSize = previousRound.handSize - 1
+        } else {
+            newHandSize = previousRound.handSize + 1
+        }
+        
+        return newHandSize
     }
     
     // enter bids
@@ -54,21 +87,31 @@ class GameManager {
       // if player doesnt get bid: 0
     func calculatePointsForPlayer(bid: Int, playerName: String, didWinBid: Bool) {
         let wonPoints = bid + 10
-        let noPoints = 0
         
         if didWinBid {
             currentRound?.didWinBid[playerName] = true
             currentRound?.points[playerName] = wonPoints
-        } else {
+        }
+        
+        guard didWinBid else {
+            currentRound?.points[playerName] = 0
             currentRound?.didWinBid[playerName] = false
-            currentRound?.points[playerName] = noPoints
+            return
         }
     }
     
     // calculate total scores
        // prior round score + current round points
-
-    // calculate handSize
+    func calculateScoreForPlayer(playerPoints: Int, playerName: String) {
+        guard let priorRoundScore = scores[playerName] else {
+            return  }
+        let updatedScore = playerPoints + priorRoundScore
+        
+        //add player scores to dictionary
+        scores[playerName] = updatedScore
+    }
+    
+    // calculate maximum handSize
        // 3 players -> 17 cards; 4 players -> 12 cards; 5 players -> 10 cards; 6 players -> 8 cards; 7 players -> 7 cards; 8 players -> 6 cards
     func maximumCardCount(numberOfPlayers: Int) -> Int {
         51 / numberOfPlayers

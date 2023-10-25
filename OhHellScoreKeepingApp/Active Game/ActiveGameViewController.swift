@@ -14,13 +14,13 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var handSizeLabel: UILabel! //tracks card count
     
-    
     let gameManager: GameManager = .shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        gameManager.startNewRound()
         
         let cellNib = UINib(nibName: "GameTableViewCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "GameTableViewCell")
@@ -28,9 +28,11 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         let headerNib = UINib(nibName: "GameTableViewHeaderCell", bundle: nil)
         tableView.register(headerNib, forCellReuseIdentifier: "GameTableViewHeaderCell")
         
-        handSizeLabel.text = "Hand size: xx"
+        let handSize = gameManager.currentRound?.handSize ?? 0
+        handSizeLabel.text = "Hand size: \(handSize)"
         
-        title = "Round 1"
+        let roundNumber = gameManager.currentRound?.roundNumber ?? 0
+        title = "Round: \(roundNumber)"
     }
     
     // Disable segmented control until bids are entered for all players

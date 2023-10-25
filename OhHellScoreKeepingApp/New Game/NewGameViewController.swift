@@ -21,6 +21,7 @@ class NewGameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var numberOfCardsLabel: UILabel!
     @IBOutlet weak var decreaseCardCountButton: UIButton!
     @IBOutlet weak var increaseCardCountButton: UIButton!
+    @IBOutlet weak var gameOrderSegmentedControl: UISegmentedControl!
     @IBOutlet weak var startGameButton: UIButton!
     
     var playerCount = 3
@@ -72,7 +73,6 @@ class NewGameViewController: UIViewController, UITextFieldDelegate {
         playerCount -= 1
         removeTextField()
         updateUI()
-
     }
     
     func updateUI() {
@@ -126,7 +126,9 @@ class NewGameViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func startGameButtonWasTapped(_ sender: Any) {
         let playerNames = getPlayerNames()
-        gameManager.createGame(playerNames: playerNames, startingHandSize: 1)
+        let gameOrder: GameOrder = gameOrderSegmentedControl.selectedSegmentIndex == .zero ? .descending : .ascending
+        
+        gameManager.createGame(playerNames: playerNames, gameOrder: gameOrder, maxCardCount: cardCount)
         
         let storyboard = UIStoryboard(name: "ActiveGame", bundle: nil)
         let activeGameViewController = storyboard.instantiateViewController(withIdentifier: "ActiveGameViewController") as! ActiveGameViewController
