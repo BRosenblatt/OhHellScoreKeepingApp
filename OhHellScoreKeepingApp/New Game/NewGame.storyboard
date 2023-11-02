@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O8H-cy-ZrY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O8H-cy-ZrY">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apx-OT-koQ">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apx-OT-koQ">
+                                <rect key="frame" x="9" y="103" width="393" height="715"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Uol-Z7-Lfg">
                                         <rect key="frame" x="16" y="0.0" width="361" height="647"/>
@@ -213,7 +214,7 @@
                     <connections>
                         <outlet property="addPlayerButton" destination="jVq-mF-A1a" id="aIo-n1-3qv"/>
                         <outlet property="decreaseCardCountButton" destination="A0G-9q-Rah" id="DcW-04-8W9"/>
-                        <outlet property="gameOrderSegmentedControl" destination="u51-MM-hzB" id="wEH-FG-ojf"/>
+                        <outlet property="gameOrderSegmentedControl" destination="u51-MM-hzB" id="bYa-vh-s66"/>
                         <outlet property="increaseCardCountButton" destination="ebx-em-m2n" id="Vov-8g-8Fj"/>
                         <outlet property="numberOfCardsLabel" destination="AVv-GB-P5t" id="8r9-Uh-Fg7"/>
                         <outlet property="numberofPlayersLabel" destination="fdp-2O-YjE" id="04c-LM-be1"/>

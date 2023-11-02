@@ -36,7 +36,7 @@
                                     <constraint firstAttribute="width" constant="40" id="Wa5-FZ-zA6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B5J-I7-ocv" userLabel="Bid Segmented Control">
                                 <rect key="frame" x="365" y="0.0" width="80" height="33"/>
@@ -48,6 +48,9 @@
                                     <segment title="" image="checkmark" catalog="system"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" red="0.29107316088243995" green="0.67393311793904298" blue="0.34461188653122715" alpha="0.76802195561701903" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="bidSegmentedControlWasTapped:" destination="KGk-i7-Jjw" eventType="valueChanged" id="D09-5g-DC1"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="do4-kq-IAz" userLabel="Points Label">
                                 <rect key="frame" x="453" y="0.0" width="40" height="32"/>

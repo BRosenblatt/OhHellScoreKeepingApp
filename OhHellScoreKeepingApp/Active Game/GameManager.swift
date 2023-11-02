@@ -49,7 +49,7 @@ class GameManager {
     // start new round; players can play as many rounds as they want
     func startNewRound() {
         var handSize: Int = startingHandSize
-
+        
         if let round = rounds.last {
             handSize = nextRoundHandSize(previousRound: round, maxHandSize: maxHandSize)
         }
@@ -85,34 +85,39 @@ class GameManager {
       // if player bids >= 1: 10 + bidNumber
       // if player bids 0: 5 + handSize
       // if player doesnt get bid: 0
-    func calculatePointsForPlayer(bid: Int, playerName: String, didWinBid: Bool) {
-        let wonPoints = bid + 10
-        
-        if didWinBid {
-            currentRound?.didWinBid[playerName] = true
-            currentRound?.points[playerName] = wonPoints
-        }
-        
+    func calculatePointsForPlayer(playerName: String, didWinBid: Bool) -> Int {
+        currentRound?.didWinBid[playerName] = didWinBid
+
         guard didWinBid else {
             currentRound?.points[playerName] = 0
-            currentRound?.didWinBid[playerName] = false
-            return
+            return 0
         }
+        
+        guard let currentRound, let bid = currentRound.playerBids[playerName] else {
+            fatalError()
+        }
+        
+        let pointsWon = bid == 0 ? 5 + currentRound.handSize : 10 + currentRound.handSize
+        currentRound.points[playerName] = pointsWon
+        
+        return pointsWon
     }
     
-    // calculate total scores
-       // prior round score + current round points
-    func calculateScoreForPlayer(playerPoints: Int, playerName: String) {
+    // calculate total scores: prior round score + current round points
+    func calculateScoreForPlayer(points: Int, playerName: String) -> Int {
         guard let priorRoundScore = scores[playerName] else {
-            return  }
-        let updatedScore = playerPoints + priorRoundScore
+            return 0
+        }
+        
+        let score = points + priorRoundScore
         
         //add player scores to dictionary
-        scores[playerName] = updatedScore
+        scores[playerName] = score
+        
+        return score
     }
     
-    // calculate maximum handSize
-       // 3 players -> 17 cards; 4 players -> 12 cards; 5 players -> 10 cards; 6 players -> 8 cards; 7 players -> 7 cards; 8 players -> 6 cards
+    // calculate maximum handSize: 3 players -> 17 cards; 4 players -> 12 cards; 5 players -> 10 cards; 6 players -> 8 cards; 7 players -> 7 cards; 8 players -> 6 cards
     func maximumCardCount(numberOfPlayers: Int) -> Int {
         51 / numberOfPlayers
     }

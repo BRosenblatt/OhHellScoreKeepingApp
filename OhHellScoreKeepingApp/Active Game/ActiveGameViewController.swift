@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
-     
+class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var moreOptionsBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
@@ -35,8 +35,6 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         title = "Round: \(roundNumber)"
     }
     
-    // Disable segmented control until bids are entered for all players
-    
 // MARK: More Options Menu
     
     // Restart Round clears bids, segmented control, and resets score
@@ -45,24 +43,29 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
     
 }
 
-// MARK: - Set up table view
+// MARK: - Table view
 
 extension ActiveGameViewController {
     
+    // MARK: - Set up table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         gameManager.players.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewCell", for: indexPath) as! GameTableViewCell
-
+        
         cell.playerNameLabel.text = gameManager.players[indexPath.row]
-        
         cell.playerNameLabel.numberOfLines = .zero
-        cell.bidTextField.delegate = self
-        cell.bidSegmentedControl.isEnabled = true
-        
+
         return cell
+    }
+    
+    func showReCalculateBidsAlert() {
+        let alertViewController = UIAlertController(title: nil, message: "The total bid entries cannot equal the number of cards in the hand. Please adjust the last bid to be over or under the card count.", preferredStyle: .alert)
+        alertViewController.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        present(alertViewController, animated: true)
     }
     
     // MARK: - Set up table header
