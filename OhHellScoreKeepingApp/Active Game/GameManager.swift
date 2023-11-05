@@ -71,7 +71,7 @@ class GameManager {
         // start by copying the previous round
         var nextRoundOrderedPlayers = previousRound
         
-        // make the first player the dealer
+        // make the last player the dealer
         let newDealer = nextRoundOrderedPlayers.remove(at: 0)
         nextRoundOrderedPlayers.append(newDealer)
 

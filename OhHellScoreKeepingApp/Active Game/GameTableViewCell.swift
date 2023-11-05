@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol InvalidBidAlertDelegate: UIViewController {
+    func showInvalidBidAlert()
+}
+
 class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var avatarUIImageView: UIImageView!
@@ -17,6 +21,7 @@ class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var scoreLabel: UILabel!
     
     let gameManager: GameManager = .shared
+    weak var delegate: InvalidBidAlertDelegate?
     
     var playerName: String {
         playerNameLabel.text ?? ""
@@ -62,7 +67,9 @@ class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
         
         gameManager.addBidForPlayer(bid: bid, playerName: playerName)
         
-        // if last bid entered causes the total bid entries to equal the number of cards in the hand, then show alert
+        if gameManager.currentRound?.hasInvalidBids == true {
+            delegate?.showInvalidBidAlert()
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

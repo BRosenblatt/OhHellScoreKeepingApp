@@ -27,8 +27,11 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uA5-IO-hqS">
-                                <rect key="frame" x="0.0" y="181" width="393" height="561"/>
+                                <rect key="frame" x="0.0" y="205.66666666666669" width="393" height="536.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="536.33333333333326" id="scl-dc-7HV"/>
+                                </constraints>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bod-BI-aCE" userLabel="Next Round Button">
                                 <rect key="frame" x="8" y="750" width="377" height="60"/>
@@ -43,30 +46,42 @@
                                     <action selector="nextRoundButtonWasTapped:" destination="M3l-Hr-7gz" eventType="touchUpInside" id="VA1-2f-zAw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HY-5c-r9X" userLabel="Hand Size Label">
-                                <rect key="frame" x="20" y="173" width="101" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JB9-kN-kKn">
+                                <rect key="frame" x="20" y="151" width="173" height="46.666666666666657"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dealer Name Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tP2-zq-Y6w" userLabel="Dealer Name Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hand Size Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HY-5c-r9X" userLabel="Hand Size Label">
+                                        <rect key="frame" x="0.0" y="27.333333333333343" width="173" height="19.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="egH-fI-0Tw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="bod-BI-aCE" firstAttribute="top" secondItem="uA5-IO-hqS" secondAttribute="bottom" constant="8" id="3Af-hf-EYw"/>
-                            <constraint firstItem="uA5-IO-hqS" firstAttribute="top" secondItem="0HY-5c-r9X" secondAttribute="bottom" constant="8" id="3Rf-Hs-VAZ"/>
-                            <constraint firstItem="egH-fI-0Tw" firstAttribute="trailing" secondItem="0HY-5c-r9X" secondAttribute="trailing" constant="272" id="59U-Tg-wQn"/>
-                            <constraint firstItem="0HY-5c-r9X" firstAttribute="top" secondItem="6dj-em-ZOe" secondAttribute="bottom" constant="70" id="8Gu-T7-lyC"/>
+                            <constraint firstItem="JB9-kN-kKn" firstAttribute="leading" secondItem="egH-fI-0Tw" secondAttribute="leading" constant="20" id="CrS-Nq-8JX"/>
                             <constraint firstItem="egH-fI-0Tw" firstAttribute="bottom" secondItem="bod-BI-aCE" secondAttribute="bottom" constant="8" id="N19-05-GTl"/>
+                            <constraint firstItem="egH-fI-0Tw" firstAttribute="trailing" secondItem="JB9-kN-kKn" secondAttribute="trailing" constant="200" id="Wif-j0-dP2"/>
                             <constraint firstItem="bod-BI-aCE" firstAttribute="leading" secondItem="egH-fI-0Tw" secondAttribute="leading" constant="8" id="XzS-fP-4cK"/>
                             <constraint firstItem="egH-fI-0Tw" firstAttribute="trailing" secondItem="bod-BI-aCE" secondAttribute="trailing" constant="8" id="ZA3-ES-kyH"/>
+                            <constraint firstItem="uA5-IO-hqS" firstAttribute="top" secondItem="JB9-kN-kKn" secondAttribute="bottom" constant="8.0000000000000284" id="fIQ-94-FOi"/>
                             <constraint firstItem="egH-fI-0Tw" firstAttribute="trailing" secondItem="uA5-IO-hqS" secondAttribute="trailing" id="hQo-8s-vjy"/>
                             <constraint firstItem="uA5-IO-hqS" firstAttribute="leading" secondItem="egH-fI-0Tw" secondAttribute="leading" id="l57-xz-2m6"/>
-                            <constraint firstItem="0HY-5c-r9X" firstAttribute="leading" secondItem="egH-fI-0Tw" secondAttribute="leading" constant="20" id="oag-29-UiP"/>
+                            <constraint firstItem="JB9-kN-kKn" firstAttribute="top" secondItem="6dj-em-ZOe" secondAttribute="bottom" constant="48" id="rvN-cI-0DM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hai-3b-57Q"/>
                     <connections>
+                        <outlet property="dealerNameLabel" destination="tP2-zq-Y6w" id="Hou-RX-QaA"/>
                         <outlet property="handSizeLabel" destination="0HY-5c-r9X" id="uX8-bg-ZcF"/>
                         <outlet property="moreOptionsBarButtonItem" destination="Z7G-6b-g58" id="ec6-yB-f2o"/>
                         <outlet property="navigationBar" destination="6dj-em-ZOe" id="QrI-ab-ZyT"/>

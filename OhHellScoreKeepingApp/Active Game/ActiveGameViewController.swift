@@ -7,12 +7,13 @@
 
 import UIKit
 
-class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, InvalidBidAlertDelegate {
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var moreOptionsBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var handSizeLabel: UILabel! //tracks card count
+    @IBOutlet weak var dealerNameLabel: UILabel!
     
     let gameManager: GameManager = .shared
     
@@ -21,19 +22,13 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         dismissKeyboard()
-        gameManager.startNewRound()
+        updateUI()
         
         let cellNib = UINib(nibName: "GameTableViewCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "GameTableViewCell")
         
         let headerNib = UINib(nibName: "GameTableViewHeaderCell", bundle: nil)
         tableView.register(headerNib, forCellReuseIdentifier: "GameTableViewHeaderCell")
-        
-        let handSize = gameManager.currentRound?.handSize ?? 0
-        handSizeLabel.text = "Hand size: \(handSize)"
-        
-        let roundNumber = gameManager.currentRound?.roundNumber ?? 0
-        title = "Round: \(roundNumber)"
     }
     
 // MARK: More Options Menu
@@ -44,13 +39,19 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBAction func nextRoundButtonWasTapped(_ sender: Any) {
         gameManager.updateScore()
-        gameManager.startNewRound()
-        let handSize = gameManager.currentRound?.handSize ?? 0
-        handSizeLabel.text = "Hand size: \(handSize)"
-        let roundNumber = gameManager.currentRound?.roundNumber ?? 0
-        title = "Round: \(roundNumber)"
+        updateUI()
         tableView.reloadData()
         // clear textFields and reset segmented control, points
+    }
+    
+    func updateUI() {
+        gameManager.startNewRound()
+        let roundNumber = gameManager.currentRound?.roundNumber ?? 0
+        title = "Round: \(roundNumber)"
+        let handSize = gameManager.currentRound?.handSize ?? 0
+        handSizeLabel.text = "Hand size: \(handSize)"
+        let dealerName = gameManager.currentRound?.orderedPlayerList.last ?? ""
+        dealerNameLabel.text = "Dealer: \(dealerName)"
     }
     
     // Source credit for the following code: https://medium.com/@vvishwakarma/dismiss-hide-keyboard-when-touching-outside-of-uitextfield-swift-166d9d1efb68
@@ -77,6 +78,7 @@ extension ActiveGameViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewCell", for: indexPath) as! GameTableViewCell
+        cell.delegate = self
         let playerName = gameManager.currentRound?.orderedPlayerList[indexPath.row] ?? ""
         cell.playerNameLabel.text = playerName
         
@@ -87,13 +89,13 @@ extension ActiveGameViewController {
         return cell
     }
     
-    func showReCalculateBidsAlert() {
-        let alertViewController = UIAlertController(title: nil, 
-                                                    message: "The total bid entries cannot equal the number of cards in the hand. Please adjust the last bid to be over or under the card count.",
-                                                    preferredStyle: .alert)
-        alertViewController.addAction(UIAlertAction(title: "OK", style: .default))
+    func showInvalidBidAlert() {
+        let alertController = UIAlertController(title: nil,
+                                                message: "The total bid entries cannot equal the number of cards in the hand. Please adjust the last bid to be over or under the card count.",
+                                                preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
         
-        present(alertViewController, animated: true)
+        present(alertController, animated: true)
     }
     
     // MARK: - Set up table header
