@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol EndEditingDelegate: UIViewController {
-    func endEditing()
-}
-
 class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var avatarUIImageView: UIImageView!
@@ -20,7 +16,6 @@ class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    weak var endEditingDelegate: EndEditingDelegate?
     let gameManager: GameManager = .shared
     
     var playerName: String {
@@ -76,7 +71,6 @@ class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     @IBAction func bidSegmentedControlWasTapped(_ sender: Any) {
-        endEditingDelegate?.endEditing()
         let didWin = bidSegmentedControl.selectedSegmentIndex == 1
         
         let currentScore = gameManager.scores[playerName] ?? 0

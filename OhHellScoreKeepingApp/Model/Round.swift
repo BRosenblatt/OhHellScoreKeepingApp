@@ -14,7 +14,7 @@ class Round {
     var playerBids: [String: Int] = [:]
     var didWinBid: [String: Bool] = [:]
     var points: [String: Int] = [:]
-    
+        
     init(roundNumber: Int, handSize: Int, orderedPlayerList: [String]) {
         self.roundNumber = roundNumber
         self.handSize = handSize

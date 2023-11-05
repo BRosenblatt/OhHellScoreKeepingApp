@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EndEditingDelegate {
+class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var moreOptionsBarButtonItem: UIBarButtonItem!
@@ -20,6 +20,7 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        dismissKeyboard()
         gameManager.startNewRound()
         
         let cellNib = UINib(nibName: "GameTableViewCell", bundle: nil)
@@ -52,7 +53,15 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         // clear textFields and reset segmented control, points
     }
     
-    func endEditing() {
+    // Source credit for the following code: https://medium.com/@vvishwakarma/dismiss-hide-keyboard-when-touching-outside-of-uitextfield-swift-166d9d1efb68
+    func dismissKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(keyboardWasDismissedOnTap))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    // Source credit for the following code: https://medium.com/@vvishwakarma/dismiss-hide-keyboard-when-touching-outside-of-uitextfield-swift-166d9d1efb68
+    @objc private func keyboardWasDismissedOnTap() {
         view.endEditing(true)
     }
 }
@@ -69,7 +78,6 @@ extension ActiveGameViewController {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewCell", for: indexPath) as! GameTableViewCell
         let playerName = gameManager.currentRound?.orderedPlayerList[indexPath.row] ?? ""
-        cell.endEditingDelegate = self
         cell.playerNameLabel.text = playerName
         
         let score = gameManager.scores[playerName] ?? 0

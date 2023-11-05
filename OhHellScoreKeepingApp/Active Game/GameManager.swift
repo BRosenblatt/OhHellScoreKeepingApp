@@ -141,7 +141,7 @@ class GameManager {
     }
     
     // Calculate bids to make sure the round is over or under bid
-        
+    
     // Ending Game determines winner. The winner is the player with the highest score
     
 }
