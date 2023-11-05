@@ -35,14 +35,16 @@ class GameManager {
 // functions to...
     
     // start a game with these players
-    func createGame(playerNames: [String], gameOrder: GameOrder, maxCardCount: Int) {
+    func createGame(playerNames: [String], gameOrder: GameOrder, maxHandSize: Int) {
         if gameOrder == .descending {
-            startingHandSize = maxCardCount
+            startingHandSize = maxHandSize
         } else {
             startingHandSize = 1
         }
         
         self.gameOrder = gameOrder
+        self.maxHandSize = maxHandSize
+        
         players = playerNames // also sets starting order of the players
         playerNames.forEach({ playerName in
             scores[playerName] = 0
@@ -54,7 +56,7 @@ class GameManager {
         var handSize: Int = startingHandSize
         
         if let round = rounds.last {
-            handSize = nextRoundHandSize(previousRound: round, maxHandSize: maxHandSize)
+            handSize = nextRoundHandSize(previousRound: round)
         }
                
         let newRoundOrderedPlayers = orderedPlayers(for: currentRound?.orderedPlayerList)
@@ -78,7 +80,7 @@ class GameManager {
         return nextRoundOrderedPlayers
     }
     
-    func nextRoundHandSize(previousRound: Round, maxHandSize: Int) -> Int {
+    func nextRoundHandSize(previousRound: Round) -> Int {
         var newHandSize: Int
         
         if previousRound.handSize == maxHandSize {
@@ -87,10 +89,8 @@ class GameManager {
         } else if previousRound.handSize == 1 {
             newHandSize = previousRound.handSize + 1
             gameOrder = .ascending
-        } else if gameOrder == .descending {
-            newHandSize = previousRound.handSize - 1
         } else {
-            newHandSize = previousRound.handSize + 1
+            newHandSize = gameOrder == .ascending ? previousRound.handSize + 1 : previousRound.handSize - 1
         }
         
         return newHandSize

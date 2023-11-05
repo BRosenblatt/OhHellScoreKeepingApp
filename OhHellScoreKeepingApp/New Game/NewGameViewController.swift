@@ -79,16 +79,16 @@ class NewGameViewController: UIViewController, UITextFieldDelegate {
         addPlayerButton.isEnabled = playerCount < 8
         removePlayerButton.isEnabled = playerCount > 3
         numberofPlayersLabel.text = "\(playerCount)"
-        calculateMaxCardCount()
+        calculatemaxHandSize()
     }
     
-    func calculateMaxCardCount() {
-        let maxCardCount = gameManager.maximumCardCount(numberOfPlayers: playerCount)
-        increaseCardCountButton.isEnabled = cardCount < maxCardCount
+    func calculatemaxHandSize() {
+        let maxHandSize = gameManager.maximumCardCount(numberOfPlayers: playerCount)
+        increaseCardCountButton.isEnabled = cardCount < maxHandSize
         decreaseCardCountButton.isEnabled = cardCount > 1
         
-        if cardCount > maxCardCount {
-            cardCount = maxCardCount
+        if cardCount > maxHandSize {
+            cardCount = maxHandSize
         }
         
         numberOfCardsLabel.text = "\(cardCount)"
@@ -128,7 +128,7 @@ class NewGameViewController: UIViewController, UITextFieldDelegate {
         let playerNames = getPlayerNames()
         let gameOrder: GameOrder = gameOrderSegmentedControl.selectedSegmentIndex == .zero ? .descending : .ascending
         
-        gameManager.createGame(playerNames: playerNames, gameOrder: gameOrder, maxCardCount: cardCount)
+        gameManager.createGame(playerNames: playerNames, gameOrder: gameOrder, maxHandSize: cardCount)
         
         let storyboard = UIStoryboard(name: "ActiveGame", bundle: nil)
         let activeGameViewController = storyboard.instantiateViewController(withIdentifier: "ActiveGameViewController") as! ActiveGameViewController
