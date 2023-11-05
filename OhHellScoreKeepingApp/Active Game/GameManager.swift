@@ -17,7 +17,7 @@ enum GameOrder {
 class GameManager {
     
     // properties for players, rounds, currentRound, scores
-    private(set) var players: [String] = []
+    private(set) var players: [String] = [] // also keeps track of the player order per round
     private(set) var rounds: [Round] = []
     private(set) var scores: [String: Int] = [:]
     private(set) var startingHandSize = 0
@@ -43,7 +43,10 @@ class GameManager {
         }
         
         self.gameOrder = gameOrder
-        players = playerNames
+        players = playerNames // also sets starting order of the players
+        playerNames.forEach({ playerName in
+            scores[playerName] = 0
+        })
     }
     
     // start new round; players can play as many rounds as they want
@@ -54,8 +57,25 @@ class GameManager {
             handSize = nextRoundHandSize(previousRound: round, maxHandSize: maxHandSize)
         }
                
-        let newRound = Round(roundNumber: rounds.count + 1, handSize: handSize)
+        let newRoundOrderedPlayers = orderedPlayers(for: currentRound?.orderedPlayerList)
+        let newRound = Round(roundNumber: rounds.count + 1, handSize: handSize, orderedPlayerList: newRoundOrderedPlayers)
+        
         rounds.append(newRound)
+    }
+    
+    private func orderedPlayers(for previousRound: [String]?) -> [String] {
+        guard let previousRound else {
+            return players
+        }
+        
+        // start by copying the previous round
+        var nextRoundOrderedPlayers = previousRound
+        
+        // make the first player the dealer
+        let newDealer = nextRoundOrderedPlayers.remove(at: 0)
+        nextRoundOrderedPlayers.append(newDealer)
+
+        return nextRoundOrderedPlayers
     }
     
     func nextRoundHandSize(previousRound: Round, maxHandSize: Int) -> Int {
@@ -85,7 +105,7 @@ class GameManager {
       // if player bids >= 1: 10 + bidNumber
       // if player bids 0: 5 + handSize
       // if player doesnt get bid: 0
-    func calculatePointsForPlayer(playerName: String, didWinBid: Bool) -> Int {
+    func updateRoundPoints(for playerName: String, didWinBid: Bool) -> Int {
         currentRound?.didWinBid[playerName] = didWinBid
 
         guard didWinBid else {
@@ -97,26 +117,24 @@ class GameManager {
             fatalError()
         }
         
-        let pointsWon = bid == 0 ? 5 + currentRound.handSize : 10 + currentRound.handSize
+        let pointsWon = bid == 0 ? 5 + currentRound.handSize : 10 + bid
         currentRound.points[playerName] = pointsWon
         
         return pointsWon
     }
     
-    // calculate total scores: prior round score + current round points
-    func calculateScoreForPlayer(points: Int, playerName: String) -> Int {
-        guard let priorRoundScore = scores[playerName] else {
-            return 0
+    func updateScore() {
+        guard let currentRound else {
+            return
         }
         
-        let score = points + priorRoundScore
-        
-        //add player scores to dictionary
-        scores[playerName] = score
-        
-        return score
+        for player in players {
+            let points = currentRound.points[player] ?? 0
+            let newScore = scores[player] ?? 0
+            scores[player] = points + newScore
+        }
     }
-    
+        
     // calculate maximum handSize: 3 players -> 17 cards; 4 players -> 12 cards; 5 players -> 10 cards; 6 players -> 8 cards; 7 players -> 7 cards; 8 players -> 6 cards
     func maximumCardCount(numberOfPlayers: Int) -> Int {
         51 / numberOfPlayers

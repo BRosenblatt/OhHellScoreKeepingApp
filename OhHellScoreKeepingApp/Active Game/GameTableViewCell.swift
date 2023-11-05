@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol EndEditingDelegate: UIViewController {
+    func endEditing()
+}
+
 class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var avatarUIImageView: UIImageView!
@@ -15,7 +19,8 @@ class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var bidSegmentedControl: UISegmentedControl!
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
-        
+    
+    weak var endEditingDelegate: EndEditingDelegate?
     let gameManager: GameManager = .shared
     
     var playerName: String {
@@ -29,12 +34,16 @@ class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         bidTextField.delegate = self
-        bidSegmentedControl.isEnabled = false
     }
-
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         avatarUIImageView.image = UIImage(systemName: "person.fill")
+        playerNameLabel.numberOfLines = .zero
+        bidTextField.text = ""
+        bidSegmentedControl.selectedSegmentIndex = 0
+        pointsLabel.text = "0"
+        scoreLabel.text = ""
     }
     
     // MARK: - Set up text field
@@ -42,6 +51,10 @@ class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         var newText = textField.text! as NSString
         newText = newText.replacingCharacters(in: range, with: string) as NSString
+        
+        //        bidSegmentedControl.isEnabled = newText.length > 0
+        
+        print("LENGTH: \(newText.length) isEnabled: \(bidSegmentedControl.isEnabled)")
         
         return newText.length <= 2
     }
@@ -51,13 +64,10 @@ class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
             print("something went wrong")
             return
         }
-
+        
         gameManager.addBidForPlayer(bid: bid, playerName: playerName)
         
         // if last bid entered causes the total bid entries to equal the number of cards in the hand, then show alert
-        
-        // else if bids are over or under the number of cards in the hand, enable segmented control
-        bidSegmentedControl.isEnabled = true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -66,18 +76,12 @@ class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     @IBAction func bidSegmentedControlWasTapped(_ sender: Any) {
+        endEditingDelegate?.endEditing()
         let didWin = bidSegmentedControl.selectedSegmentIndex == 1
         
-        // update pointsLabel
-        let points = gameManager.calculatePointsForPlayer(playerName: playerName, didWinBid: didWin)
+        let currentScore = gameManager.scores[playerName] ?? 0
+        let points = gameManager.updateRoundPoints(for: playerName, didWinBid: didWin)
         pointsLabel.text = "\(points)"
-        
-        // update scoreLabel
-        if gameManager.currentRound?.roundNumber == 1 {
-            scoreLabel.text = "\(points)"
-        } else {
-            let score = gameManager.calculateScoreForPlayer(points: points, playerName: playerName)
-            scoreLabel.text = "\(score)"
-        }
-     }
+        scoreLabel.text = "\(currentScore + points)"
+    }
 }
