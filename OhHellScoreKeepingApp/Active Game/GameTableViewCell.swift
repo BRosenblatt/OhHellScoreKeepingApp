@@ -2,7 +2,7 @@
 //  GameTableViewCell.swift
 //  OhHellScoreKeepingApp
 //
-//  Created by Matt Kauper on 10/12/23.
+//  Created by Becca Kauper on 10/12/23.
 //
 
 import UIKit
@@ -51,11 +51,7 @@ class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         var newText = textField.text! as NSString
         newText = newText.replacingCharacters(in: range, with: string) as NSString
-        
-        //        bidSegmentedControl.isEnabled = newText.length > 0
-        
-        print("LENGTH: \(newText.length) isEnabled: \(bidSegmentedControl.isEnabled)")
-        
+                    
         return newText.length <= 2
     }
     

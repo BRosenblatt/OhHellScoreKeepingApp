@@ -9,9 +9,8 @@ import UIKit
 
 class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, InvalidBidAlertDelegate {
     
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var moreOptionsBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var moreOptionsButton: UIButton!
     @IBOutlet weak var handSizeLabel: UILabel! //tracks card count
     @IBOutlet weak var dealerNameLabel: UILabel!
     
@@ -21,6 +20,7 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        setUpButtonMenu()
         dismissKeyboard()
         updateUI()
         
@@ -32,16 +32,25 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
 // MARK: More Options Menu
-    
-    // Restart Round clears bids, segmented control, and resets score
+    func setUpButtonMenu() {
+        let restartRoundAction = UIAction(title: "Restart Round") { action in
+            // Restart Round clears bids, segmented control, and resets score
+            self.gameManager.restartRound()
+            self.tableView.reloadData()
+        }
         
-    // End Game ends the entire game. Shows winner! Adds to game history. Cannot restart or edit game.
-    
+        let endGameAction = UIAction(title: "End Game") { action in
+            // End Game ends the entire game. Shows winner! Adds to game history. Cannot restart or edit game.
+        }
+        
+        moreOptionsButton.showsMenuAsPrimaryAction = true
+        moreOptionsButton.menu = UIMenu(title: "", children: [restartRoundAction, endGameAction])
+    }
+            
     @IBAction func nextRoundButtonWasTapped(_ sender: Any) {
         gameManager.updateScore()
         updateUI()
         tableView.reloadData()
-        // clear textFields and reset segmented control, points
     }
     
     func updateUI() {

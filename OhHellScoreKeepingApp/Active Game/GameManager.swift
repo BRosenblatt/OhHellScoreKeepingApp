@@ -140,7 +140,17 @@ class GameManager {
         51 / numberOfPlayers
     }
     
-    // Calculate bids to make sure the round is over or under bid
+    func restartRound() {
+        guard let currentRound else {
+            return
+        }
+        // revert bid entries
+        currentRound.playerBids = [:]
+        // revert didWinBid
+        currentRound.didWinBid = [:]
+        // revert points
+        currentRound.points = [:]
+    }
     
     // Ending Game determines winner. The winner is the player with the highest score
     
