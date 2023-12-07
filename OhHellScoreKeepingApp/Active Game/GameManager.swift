@@ -31,8 +31,8 @@ class GameManager {
     static let shared: GameManager = GameManager()
     
     private init() {}
-        
-// functions to...
+    
+    // functions to...
     
     // start a game with these players
     func createGame(playerNames: [String], gameOrder: GameOrder, maxHandSize: Int) {
@@ -58,7 +58,7 @@ class GameManager {
         if let round = rounds.last {
             handSize = nextRoundHandSize(previousRound: round)
         }
-               
+        
         let newRoundOrderedPlayers = orderedPlayers(for: currentRound?.orderedPlayerList)
         let newRound = Round(roundNumber: rounds.count + 1, handSize: handSize, orderedPlayerList: newRoundOrderedPlayers)
         
@@ -76,7 +76,7 @@ class GameManager {
         // make the last player the dealer
         let newDealer = nextRoundOrderedPlayers.remove(at: 0)
         nextRoundOrderedPlayers.append(newDealer)
-
+        
         return nextRoundOrderedPlayers
     }
     
@@ -102,12 +102,12 @@ class GameManager {
     }
     
     // calculate points.
-      // if player bids >= 1: 10 + bidNumber
-      // if player bids 0: 5 + handSize
-      // if player doesnt get bid: 0
+    // if player bids >= 1: 10 + bidNumber
+    // if player bids 0: 5 + handSize
+    // if player doesnt get bid: 0
     func updateRoundPoints(for playerName: String, didWinBid: Bool) -> Int {
         currentRound?.didWinBid[playerName] = didWinBid
-
+        
         guard didWinBid else {
             currentRound?.points[playerName] = 0
             return 0
@@ -134,7 +134,7 @@ class GameManager {
             scores[player] = points + newScore
         }
     }
-        
+    
     // calculate maximum handSize: 3 players -> 17 cards; 4 players -> 12 cards; 5 players -> 10 cards; 6 players -> 8 cards; 7 players -> 7 cards; 8 players -> 6 cards
     func maximumCardCount(numberOfPlayers: Int) -> Int {
         51 / numberOfPlayers
@@ -152,6 +152,12 @@ class GameManager {
         currentRound.points = [:]
     }
     
-    // Ending Game determines winner. The winner is the player with the highest score
+    // Ending Game determines winner. The winner is the player with the highest score. What happens with a tie?
     
+    func determineWinner() -> String {
+        let winnerScore = scores.values.max()
+        let winnerName = scores.first(where: { $0.value == winnerScore})?.key ?? ""
+        
+        return winnerName
+    }
 }

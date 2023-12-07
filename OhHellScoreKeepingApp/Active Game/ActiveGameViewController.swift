@@ -41,6 +41,7 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let endGameAction = UIAction(title: "End Game") { action in
             // End Game ends the entire game. Shows winner! Adds to game history. Cannot restart or edit game.
+            self.showEndGameAlertI()
         }
         
         moreOptionsButton.showsMenuAsPrimaryAction = true
@@ -104,6 +105,25 @@ extension ActiveGameViewController {
                                                 preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
         
+        present(alertController, animated: true)
+    }
+    
+    func showEndGameAlertI() {
+        let alertController = UIAlertController(title: "Are you ready to end this game?", message: "The winner with the highest score will be announced and the game results will be saved to your game history.", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        alertController.addAction(UIAlertAction(title: "End Game", style: .default, handler: { action in
+            self.gameManager.updateScore()
+            
+            let storyboard = UIStoryboard(name: "Winner", bundle: nil)
+            let winnerViewController = storyboard.instantiateViewController(withIdentifier: "WinnerViewController") as! WinnerViewController
+            let navigationController = UINavigationController(rootViewController: winnerViewController)
+            navigationController.modalPresentationStyle = .fullScreen
+            
+            self.present(navigationController, animated: true)
+            }))
+                            
         present(alertController, animated: true)
     }
     

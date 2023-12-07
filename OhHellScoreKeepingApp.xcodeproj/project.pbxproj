@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32083E032B1FB4D600AC3C17 /* Winner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32083E022B1FB4D600AC3C17 /* Winner.storyboard */; };
+		32083E052B1FB4EA00AC3C17 /* WinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32083E042B1FB4EA00AC3C17 /* WinnerViewController.swift */; };
 		3230A59F2A522ABB000B1DAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3230A59E2A522ABB000B1DAE /* AppDelegate.swift */; };
 		3230A5A12A522ABB000B1DAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3230A5A02A522ABB000B1DAE /* SceneDelegate.swift */; };
 		3230A5A32A522ABB000B1DAE /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3230A5A22A522ABB000B1DAE /* GamesViewController.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32083E022B1FB4D600AC3C17 /* Winner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Winner.storyboard; sourceTree = "<group>"; };
+		32083E042B1FB4EA00AC3C17 /* WinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerViewController.swift; sourceTree = "<group>"; };
 		3230A59B2A522ABB000B1DAE /* OhHellScoreKeepingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OhHellScoreKeepingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3230A59E2A522ABB000B1DAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3230A5A02A522ABB000B1DAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32083E012B1FB47F00AC3C17 /* Winner */ = {
+			isa = PBXGroup;
+			children = (
+				32083E022B1FB4D600AC3C17 /* Winner.storyboard */,
+				32083E042B1FB4EA00AC3C17 /* WinnerViewController.swift */,
+			);
+			path = Winner;
+			sourceTree = "<group>";
+		};
 		3230A5922A522ABB000B1DAE = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +95,7 @@
 				32B1B5482AD09EDE009CE803 /* Game History */,
 				327A71382A522E50000F246A /* New Game */,
 				32B1B5492AD09F07009CE803 /* Active Game */,
+				32083E012B1FB47F00AC3C17 /* Winner */,
 				3230A59E2A522ABB000B1DAE /* AppDelegate.swift */,
 				3230A5A02A522ABB000B1DAE /* SceneDelegate.swift */,
 				3230A5A72A522ABE000B1DAE /* Assets.xcassets */,
@@ -126,8 +140,8 @@
 				32B1B54E2AD459D1009CE803 /* ActiveGameViewController.swift */,
 				329FF10C2AD8626A00A23EB0 /* GameTableViewCell.swift */,
 				329FF10D2AD8626A00A23EB0 /* GameTableViewCell.xib */,
-				329FF1122AD87CB900A23EB0 /* GameTableViewHeaderCell.swift */,
 				329FF1132AD87CB900A23EB0 /* GameTableViewHeaderCell.xib */,
+				329FF1122AD87CB900A23EB0 /* GameTableViewHeaderCell.swift */,
 			);
 			path = "Active Game";
 			sourceTree = "<group>";
@@ -193,6 +207,7 @@
 				329FF1152AD87CB900A23EB0 /* GameTableViewHeaderCell.xib in Resources */,
 				32B1B54D2AD459AF009CE803 /* ActiveGame.storyboard in Resources */,
 				3230A5AB2A522ABE000B1DAE /* LaunchScreen.storyboard in Resources */,
+				32083E032B1FB4D600AC3C17 /* Winner.storyboard in Resources */,
 				327A71372A522E38000F246A /* NewGame.storyboard in Resources */,
 				3230A5A82A522ABE000B1DAE /* Assets.xcassets in Resources */,
 				3230A5A62A522ABB000B1DAE /* Main.storyboard in Resources */,
@@ -210,6 +225,7 @@
 				329FF10E2AD8626A00A23EB0 /* GameTableViewCell.swift in Sources */,
 				32B1B54F2AD459D1009CE803 /* ActiveGameViewController.swift in Sources */,
 				3230A5A32A522ABB000B1DAE /* GamesViewController.swift in Sources */,
+				32083E052B1FB4EA00AC3C17 /* WinnerViewController.swift in Sources */,
 				329FF1192AD9ACE400A23EB0 /* OhHellScoreKeepingApp.xcdatamodeld in Sources */,
 				327A71352A522E0E000F246A /* NewGameViewController.swift in Sources */,
 				3230A59F2A522ABB000B1DAE /* AppDelegate.swift in Sources */,
