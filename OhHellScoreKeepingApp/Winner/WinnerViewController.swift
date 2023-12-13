@@ -28,10 +28,6 @@ class WinnerViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-//        guard textField.hasText else {
-//            submitButton.isEnabled = false
-//            return
-//        }
         submitButton.isEnabled = true
     }
     

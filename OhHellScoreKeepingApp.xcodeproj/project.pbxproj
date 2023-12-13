@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		32083E032B1FB4D600AC3C17 /* Winner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32083E022B1FB4D600AC3C17 /* Winner.storyboard */; };
 		32083E052B1FB4EA00AC3C17 /* WinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32083E042B1FB4EA00AC3C17 /* WinnerViewController.swift */; };
+		32083E072B2A559A00AC3C17 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32083E062B2A559A00AC3C17 /* DataController.swift */; };
 		3230A59F2A522ABB000B1DAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3230A59E2A522ABB000B1DAE /* AppDelegate.swift */; };
 		3230A5A12A522ABB000B1DAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3230A5A02A522ABB000B1DAE /* SceneDelegate.swift */; };
 		3230A5A32A522ABB000B1DAE /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3230A5A22A522ABB000B1DAE /* GamesViewController.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		32083E022B1FB4D600AC3C17 /* Winner.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Winner.storyboard; sourceTree = "<group>"; };
 		32083E042B1FB4EA00AC3C17 /* WinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerViewController.swift; sourceTree = "<group>"; };
+		32083E062B2A559A00AC3C17 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		3230A59B2A522ABB000B1DAE /* OhHellScoreKeepingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OhHellScoreKeepingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3230A59E2A522ABB000B1DAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3230A5A02A522ABB000B1DAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				329FF1172AD9ACE400A23EB0 /* OhHellScoreKeepingApp.xcdatamodeld */,
 				329FF11A2ADDBACC00A23EB0 /* Round.swift */,
+				32083E062B2A559A00AC3C17 /* DataController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				329FF10E2AD8626A00A23EB0 /* GameTableViewCell.swift in Sources */,
+				32083E072B2A559A00AC3C17 /* DataController.swift in Sources */,
 				32B1B54F2AD459D1009CE803 /* ActiveGameViewController.swift in Sources */,
 				3230A5A32A522ABB000B1DAE /* GamesViewController.swift in Sources */,
 				32083E052B1FB4EA00AC3C17 /* WinnerViewController.swift in Sources */,
