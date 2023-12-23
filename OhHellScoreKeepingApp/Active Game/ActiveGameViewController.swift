@@ -15,6 +15,7 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var dealerNameLabel: UILabel!
     
     let gameManager: GameManager = .shared
+    var dataController: DataController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.register(headerNib, forCellReuseIdentifier: "GameTableViewHeaderCell")
     }
     
-// MARK: More Options Menu
+    // MARK: More Options Menu
     func setUpButtonMenu() {
         let restartRoundAction = UIAction(title: "Restart Round") { action in
             // Restart Round clears bids, segmented control, and resets score
@@ -41,13 +42,13 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let endGameAction = UIAction(title: "End Game") { action in
             // End Game ends the entire game. Shows winner! Adds to game history. Cannot restart or edit game.
-            self.showEndGameAlertI()
+            self.showEndGameAlert()
         }
         
         moreOptionsButton.showsMenuAsPrimaryAction = true
         moreOptionsButton.menu = UIMenu(title: "", children: [restartRoundAction, endGameAction])
     }
-            
+    
     @IBAction func nextRoundButtonWasTapped(_ sender: Any) {
         gameManager.updateScore()
         updateUI()
@@ -75,67 +76,84 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
     @objc private func keyboardWasDismissedOnTap() {
         view.endEditing(true)
     }
-}
-
-// MARK: - Table view
-
-extension ActiveGameViewController {
     
-    // MARK: - Set up table view
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        gameManager.players.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewCell", for: indexPath) as! GameTableViewCell
-        cell.delegate = self
-        let playerName = gameManager.currentRound?.orderedPlayerList[indexPath.row] ?? ""
-        cell.playerNameLabel.text = playerName
-        
-        let score = gameManager.scores[playerName] ?? 0
-        let points = gameManager.currentRound?.points[playerName] ?? 0
-        cell.scoreLabel.text = "\(score + points)"
-        
-        return cell
-    }
-    
-    func showInvalidBidAlert() {
-        let alertController = UIAlertController(title: nil,
-                                                message: "The total bid entries cannot equal the number of cards in the hand. Please adjust the last bid to be over or under the card count.",
-                                                preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default))
-        
-        present(alertController, animated: true)
-    }
-    
-    func showEndGameAlertI() {
+    func showEndGameAlert() {
         let alertController = UIAlertController(title: "Are you ready to end this game?", message: "The winner with the highest score will be announced and the game results will be saved to your game history.", preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         alertController.addAction(UIAlertAction(title: "End Game", style: .default, handler: { action in
             self.gameManager.updateScore()
+            self.saveWinnerData()
             
             let storyboard = UIStoryboard(name: "Winner", bundle: nil)
             let winnerViewController = storyboard.instantiateViewController(withIdentifier: "WinnerViewController") as! WinnerViewController
-            let navigationController = UINavigationController(rootViewController: winnerViewController)
-            navigationController.modalPresentationStyle = .fullScreen
             
-            self.present(navigationController, animated: true)
-            }))
-                            
+            let navigationController = UINavigationController(rootViewController: winnerViewController)
+            self.navigationController?.modalPresentationStyle = .fullScreen
+            winnerViewController.dataController = self.dataController
+            let presentingViewController = self.presentingViewController
+            
+            self.dismiss(animated: true) {
+                presentingViewController?.present(navigationController, animated: true)
+            }
+        }))
+        
         present(alertController, animated: true)
     }
     
-    // MARK: - Set up table header
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let tableHeaderCell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewHeaderCell") as! GameTableViewHeaderCell
-        
-        return tableHeaderCell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 46
+    func saveWinnerData() {
+        let endGame = CompletedGame(context: self.dataController.viewContext)
+        endGame.date = gameManager.getGameResult().gameDate
+        endGame.winnerImageName = gameManager.getGameResult().winnerImageName
+        endGame.winnerName = gameManager.getGameResult().winnerName
+        endGame.winnerScore = gameManager.getGameResult().winnerScore
+        // save winnerName, score, image, date
+        try? dataController.viewContext.save()
+        print("saving game data")
     }
 }
+    
+    // MARK: - Table view
+    
+    extension ActiveGameViewController {
+        
+        // MARK: - Set up table view
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            gameManager.players.count
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewCell", for: indexPath) as! GameTableViewCell
+            cell.delegate = self
+            let playerName = gameManager.currentRound?.orderedPlayerList[indexPath.row] ?? ""
+            cell.playerNameLabel.text = playerName
+            
+            let score = gameManager.scores[playerName] ?? 0
+            let points = gameManager.currentRound?.points[playerName] ?? 0
+            cell.scoreLabel.text = "\(score + points)"
+            
+            return cell
+        }
+        
+        func showInvalidBidAlert() {
+            let alertController = UIAlertController(title: nil,
+                                                    message: "The total bid entries cannot equal the number of cards in the hand. Please adjust the last bid to be over or under the card count.",
+                                                    preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default))
+            
+            present(alertController, animated: true)
+        }
+        
+        // MARK: - Set up table header
+        
+        func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+            let tableHeaderCell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewHeaderCell") as! GameTableViewHeaderCell
+            
+            return tableHeaderCell
+        }
+        
+        func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            return 46
+        }
+    }

@@ -27,6 +27,7 @@ class NewGameViewController: UIViewController, UITextFieldDelegate {
     var playerCount = 3
     var cardCount = 1
     let gameManager: GameManager = .shared
+    var dataController: DataController!
     
     var allTextfields: [UITextField] {
         textFieldStackView.arrangedSubviews.compactMap { $0 as? UITextField }
@@ -136,8 +137,12 @@ class NewGameViewController: UIViewController, UITextFieldDelegate {
         let navigationController = UINavigationController(rootViewController: activeGameViewController)
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.navigationBar.prefersLargeTitles = true
-                
-        present(navigationController, animated: true)
+        activeGameViewController.dataController = dataController
+        let presentingController = presentingViewController
+        
+        dismiss(animated: true) {
+            presentingController?.present(navigationController, animated: true)
+        }
     }
     
     func getPlayerNames() -> [String] {

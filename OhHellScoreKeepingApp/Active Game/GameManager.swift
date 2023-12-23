@@ -154,10 +154,28 @@ class GameManager {
     
     // Ending Game determines winner. The winner is the player with the highest score. What happens with a tie?
     
-    func determineWinner() -> String {
+    func determineWinnerName() -> String {
         let winnerScore = scores.values.max()
         let winnerName = scores.first(where: { $0.value == winnerScore})?.key ?? ""
         
         return winnerName
+    }
+    
+    func determineWinnerScore() -> String {
+        let score: String = "\(scores.values.max() ?? 0)"
+        return score
+    }
+    
+    func determineWinnerImageName() -> String {
+        return ""
+    }
+    
+    func determineGameDate() -> Date {
+       return Date()
+    }
+    
+    
+    func getGameResult() -> GameResult {
+        return GameResult(winnerName: determineWinnerName(), winnerScore: determineWinnerScore(), winnerImageName: determineWinnerImageName(), gameDate: determineGameDate())
     }
 }

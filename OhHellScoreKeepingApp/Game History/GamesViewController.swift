@@ -18,7 +18,9 @@ class GamesViewController: UITableViewController {
 
     @IBAction func addButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "NewGame", bundle: nil)
-        let viewController = storyboard.instantiateInitialViewController()!
+        let viewController = storyboard.instantiateInitialViewController()! as! UINavigationController
+        let newGameViewController = viewController.viewControllers.first as! NewGameViewController
+        newGameViewController.dataController = dataController
         present(viewController, animated: true)
     }
     
