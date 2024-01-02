@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GamesViewController: UITableViewController {
+class GamesHistoryViewController: UITableViewController {
     
     var dataController: DataController!
 

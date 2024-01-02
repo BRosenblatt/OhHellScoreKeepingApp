@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="107.63358778625954" y="-7.042253521126761"/>
         </scene>
-        <!--Games-->
+        <!--GamesHistoryViewController-->
         <scene sceneID="Auz-V7-Jht">
             <objects>
-                <tableViewController id="rle-Vk-ZaG" customClass="GamesViewController" customModule="OhHellScoreKeepingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="GamesHistoryViewController" id="rle-Vk-ZaG" customClass="GamesHistoryViewController" customModule="OhHellScoreKeepingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="POO-iG-gtP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,7 +83,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Dod-7k-miZ" userLabel="Victory Quote Stack View">
-                                            <rect key="frame" x="159.33333333333337" y="47.333333333333336" width="204" height="14.333333333333336"/>
+                                            <rect key="frame" x="149.33333333333334" y="47.333333333333336" width="204.00000000000003" height="14.333333333333336"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Victory Quote:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWP-PA-vdx" userLabel="Victory Quote Label">
                                                     <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="14.333333333333334"/>
@@ -101,9 +101,6 @@
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="January 2, 2024" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpI-52-BEk" userLabel="Date Label">
                                             <rect key="frame" x="286.66666666666669" y="23" width="78.333333333333314" height="12"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="78.333333333333314" id="KP9-u6-FmZ"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -116,7 +113,7 @@
                                         <constraint firstItem="SBR-zg-NRT" firstAttribute="leading" secondItem="dZR-BT-iX3" secondAttribute="leadingMargin" constant="8" id="V12-al-GPA"/>
                                         <constraint firstItem="Dod-7k-miZ" firstAttribute="top" secondItem="SBR-zg-NRT" secondAttribute="bottom" constant="8" id="hxr-Gv-DgE"/>
                                         <constraint firstItem="CQV-Ri-btr" firstAttribute="top" secondItem="SBR-zg-NRT" secondAttribute="bottom" constant="8" id="smN-Ac-VbS"/>
-                                        <constraint firstItem="Dod-7k-miZ" firstAttribute="leading" secondItem="CQV-Ri-btr" secondAttribute="trailing" constant="20" id="tO1-xA-DWD"/>
+                                        <constraint firstItem="Dod-7k-miZ" firstAttribute="leading" secondItem="CQV-Ri-btr" secondAttribute="trailing" constant="10" id="tO1-xA-DWD"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="tpI-52-BEk" secondAttribute="trailing" constant="8" id="uFx-OP-ovY"/>
                                         <constraint firstItem="tpI-52-BEk" firstAttribute="top" secondItem="dZR-BT-iX3" secondAttribute="topMargin" constant="12" id="zFV-0z-U3p"/>
                                     </constraints>
