@@ -2,7 +2,7 @@
 //  WinnerViewController.swift
 //  OhHellScoreKeepingApp
 //
-//  Created by Matt Kauper on 12/5/23.
+//  Created by Becca Kauper on 12/5/23.
 //
 
 import Foundation

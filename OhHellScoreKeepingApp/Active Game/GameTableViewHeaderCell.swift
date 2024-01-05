@@ -2,7 +2,7 @@
 //  GameTableViewHeaderCell.swift
 //  OhHellScoreKeepingApp
 //
-//  Created by Matt Kauper on 10/12/23.
+//  Created by Becca Kauper on 10/12/23.
 //
 
 import UIKit

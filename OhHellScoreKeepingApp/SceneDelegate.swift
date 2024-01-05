@@ -21,8 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         dataController.load()
         let navigationController = window?.rootViewController as? UINavigationController
-        let gamesViewController = navigationController?.topViewController as? GamesViewController
-        gamesViewController?.dataController = dataController
+        let gameHistoryViewController = navigationController?.topViewController as? GameHistoryViewController
+        navigationController?.navigationBar.prefersLargeTitles = true
+        gameHistoryViewController?.dataController = dataController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

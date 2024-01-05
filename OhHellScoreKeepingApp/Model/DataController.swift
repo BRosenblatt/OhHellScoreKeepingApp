@@ -2,7 +2,7 @@
 //  DataController.swift
 //  OhHellScoreKeepingApp
 //
-//  Created by Matt Kauper on 12/13/23.
+//  Created by Becca Kauper on 12/13/23.
 //
 
 import Foundation
