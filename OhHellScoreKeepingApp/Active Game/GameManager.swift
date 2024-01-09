@@ -23,6 +23,7 @@ class GameManager {
     private(set) var startingHandSize = 0
     private(set) var maxHandSize = 0
     private(set) var gameOrder: GameOrder = .descending
+    private(set) var currentGameIdentifierString: String = ""
     
     var currentRound: Round? {
         rounds.last
@@ -36,6 +37,7 @@ class GameManager {
     
     // start a game with these players
     func createGame(playerNames: [String], gameOrder: GameOrder, maxHandSize: Int) {
+        currentGameIdentifierString = UUID().uuidString
         if gameOrder == .descending {
             startingHandSize = maxHandSize
         } else {
@@ -170,12 +172,7 @@ class GameManager {
         return ""
     }
     
-    func determineGameDate() -> Date {
-       return Date()
-    }
-    
-    
     func getGameResult() -> GameResult {
-        return GameResult(winnerName: determineWinnerName(), winnerScore: determineWinnerScore(), winnerImageName: determineWinnerImageName(), gameDate: determineGameDate())
+        return GameResult(winnerName: determineWinnerName(), winnerScore: determineWinnerScore(), winnerImageName: determineWinnerImageName(), gameDate: Date(), gameIdentifier: currentGameIdentifierString)
     }
 }

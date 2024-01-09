@@ -103,14 +103,16 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func saveWinnerData() {
+        let gameResult = gameManager.getGameResult()
         let endGame = CompletedGame(context: self.dataController.viewContext)
-        endGame.date = gameManager.getGameResult().gameDate
-        endGame.winnerImageName = gameManager.getGameResult().winnerImageName
-        endGame.winnerName = gameManager.getGameResult().winnerName
-        endGame.winnerScore = gameManager.getGameResult().winnerScore
+        endGame.date = gameResult.gameDate
+        endGame.winnerImageName = gameResult.winnerImageName
+        endGame.winnerName = gameResult.winnerName
+        endGame.winnerScore = gameResult.winnerScore
+        endGame.identifier = gameResult.gameIdentifier
         // save winnerName, score, image, date
         try? dataController.viewContext.save()
-        print("saving game data")
+        print("saved game data")
     }
 }
     

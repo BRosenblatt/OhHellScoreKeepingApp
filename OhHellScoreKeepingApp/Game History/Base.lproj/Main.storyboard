@@ -21,13 +21,30 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="707"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultTableViewCell" id="i4C-ey-1Rm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultTableViewCell" id="i4C-ey-1Rm" customClass="DefaultTableViewCell" customModule="OhHellScoreKeepingApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i4C-ey-1Rm" id="Fjs-Om-pYj">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIf-Zj-HpA" userLabel="Default Label">
+                                                    <rect key="frame" x="175" y="11.000000000000002" width="42" height="21.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lIf-Zj-HpA" firstAttribute="top" secondItem="Fjs-Om-pYj" secondAttribute="topMargin" id="7Rm-0L-C4J"/>
+                                                <constraint firstItem="lIf-Zj-HpA" firstAttribute="centerY" secondItem="Fjs-Om-pYj" secondAttribute="centerY" id="CGu-bw-dMH"/>
+                                                <constraint firstItem="lIf-Zj-HpA" firstAttribute="leading" secondItem="Fjs-Om-pYj" secondAttribute="leadingMargin" constant="155" id="NlP-YC-rum"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lIf-Zj-HpA" secondAttribute="trailing" constant="20" symbolic="YES" id="Nq3-vc-Uvh"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="defaultLabel" destination="lIf-Zj-HpA" id="Gz0-Ao-AYs"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

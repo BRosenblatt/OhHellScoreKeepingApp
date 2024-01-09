@@ -12,4 +12,5 @@ struct GameResult {
     let winnerScore: String
     let winnerImageName: String
     let gameDate: Date
+    let gameIdentifier: String
 }

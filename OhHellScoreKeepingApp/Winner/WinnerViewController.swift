@@ -47,11 +47,20 @@ class WinnerViewController: UIViewController, UITextFieldDelegate {
         guard victoryQuoteTextField.text != nil else {
             return print("User did not enter a victory quote")
         }
+
+        let currentGameResult = gameManager.getGameResult()
         
-        let winnerVictory = CompletedGame(context: self.dataController.viewContext)
-        winnerVictory.winnerVictoryQuote = victoryQuoteTextField.text
+        // fetch the completed game that you want (i.e. whose identifier matches currentGameResult)
+        let fetchRequest = CompletedGame.fetchRequest()
+        let predicate = NSPredicate(format: "identifier == %@", currentGameResult.gameIdentifier)
+        fetchRequest.predicate = predicate
         
-        try? dataController.viewContext.save()
-        print("saving victory quote")
+        do {
+            let currentGame = try dataController.viewContext.fetch(fetchRequest).first
+            currentGame?.winnerVictoryQuote = victoryQuoteTextField.text
+            try? dataController.viewContext.save()
+        } catch {
+            print("Couldn't fetch current game; error: \(error)")
+        }
     }
 }
