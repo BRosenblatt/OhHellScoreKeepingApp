@@ -22,24 +22,24 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultTableViewCell" id="i4C-ey-1Rm" customClass="DefaultTableViewCell" customModule="OhHellScoreKeepingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="37.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i4C-ey-1Rm" id="Fjs-Om-pYj">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="37.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="57"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIf-Zj-HpA" userLabel="Default Label">
-                                                    <rect key="frame" x="8" y="7.9999999999999982" width="41.333333333333336" height="21.333333333333329"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIf-Zj-HpA" userLabel="Default Label">
+                                                    <rect key="frame" x="20" y="8" width="353" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lIf-Zj-HpA" secondAttribute="trailing" constant="8" id="CkG-kT-EQ9"/>
+                                                <constraint firstAttribute="trailing" secondItem="lIf-Zj-HpA" secondAttribute="trailing" constant="20" id="CkG-kT-EQ9"/>
                                                 <constraint firstItem="lIf-Zj-HpA" firstAttribute="top" secondItem="Fjs-Om-pYj" secondAttribute="top" constant="8" id="KCC-cV-iGp"/>
-                                                <constraint firstItem="lIf-Zj-HpA" firstAttribute="leading" secondItem="Fjs-Om-pYj" secondAttribute="leading" constant="8" id="Vkv-E1-jeW"/>
-                                                <constraint firstAttribute="bottom" secondItem="lIf-Zj-HpA" secondAttribute="bottom" constant="8" id="iKg-YC-FEx"/>
+                                                <constraint firstItem="lIf-Zj-HpA" firstAttribute="leading" secondItem="Fjs-Om-pYj" secondAttribute="leading" constant="20" id="Vkv-E1-jeW"/>
+                                                <constraint firstAttribute="bottom" secondItem="lIf-Zj-HpA" secondAttribute="bottom" constant="20" id="iKg-YC-FEx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
