@@ -25,7 +25,7 @@ class NewGameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var startGameButton: UIButton!
     
     var playerCount = 3
-    var cardCount = 1
+    var cardCount = 2
     let gameManager: GameManager = .shared
     var dataController: DataController!
     
@@ -86,7 +86,7 @@ class NewGameViewController: UIViewController, UITextFieldDelegate {
     func calculatemaxHandSize() {
         let maxHandSize = gameManager.maximumCardCount(numberOfPlayers: playerCount)
         increaseCardCountButton.isEnabled = cardCount < maxHandSize
-        decreaseCardCountButton.isEnabled = cardCount > 1
+        decreaseCardCountButton.isEnabled = cardCount > 2
         
         if cardCount > maxHandSize {
             cardCount = maxHandSize
