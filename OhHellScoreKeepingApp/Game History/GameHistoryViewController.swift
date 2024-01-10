@@ -49,23 +49,28 @@ extension GameHistoryViewController {
     // Configure tableview: Show date of game, winnerName, winner image, winner score, and victory quote.
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return completedGames.count
+        if completedGames.isEmpty == false {
+            return completedGames.count
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let defaultCell = tableView.dequeueReusableCell(withIdentifier: "DefaultTableViewCell", for: indexPath) as! DefaultTableViewCell
         let completedGameCell = tableView.dequeueReusableCell(withIdentifier: "GameHistoryTableViewCell", for: indexPath) as! GameHistoryTableViewCell
         
-        if completedGames.count >= indexPath.item {
+        if completedGames.isEmpty == false {
             let completedGame = completedGames[indexPath.item]
             completedGameCell.winnerNameLabel.text = completedGame.winnerName
-            completedGameCell.dateLabel.text = "\(String(describing: completedGame.date))"
+            completedGameCell.dateLabel.text = completedGame.date
             completedGameCell.winnerScoreLabel.text = completedGame.winnerScore
             completedGameCell.victoryQuoteLabel.text = completedGame.winnerVictoryQuote
             
             return completedGameCell
         } else {
-            defaultCell.defaultLabel.text = "You have 0 completed games. Tap the "+" button to start your first game!"
+            defaultCell.defaultLabel.text = #"You have 0 completed games. Tap the "+" button to start your first game!"#
+            defaultCell.defaultLabel.numberOfLines = 0
             
             return defaultCell
         }
@@ -77,7 +82,7 @@ extension GameHistoryViewController {
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         do {
-                    let completedGames = try dataController.viewContext.fetch(fetchRequest)
+            let completedGames = try dataController.viewContext.fetch(fetchRequest)
             return completedGames
         } catch {
             print("Couldn't fetch completed games; error: \(error)")

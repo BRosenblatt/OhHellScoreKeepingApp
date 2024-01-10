@@ -92,11 +92,12 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
             let navigationController = UINavigationController(rootViewController: winnerViewController)
             self.navigationController?.modalPresentationStyle = .fullScreen
             winnerViewController.dataController = self.dataController
-            let presentingViewController = self.presentingViewController
-            
-            self.dismiss(animated: true) {
-                presentingViewController?.present(navigationController, animated: true)
-            }
+            self.present(navigationController, animated: true)
+//            let presentingViewController = self.presentingViewController
+//            
+//            self.dismiss(animated: true) {
+//                presentingViewController?.present(navigationController, animated: true)
+//            }
         }))
         
         present(alertController, animated: true)

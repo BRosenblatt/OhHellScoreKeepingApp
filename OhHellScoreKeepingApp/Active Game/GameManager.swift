@@ -24,6 +24,8 @@ class GameManager {
     private(set) var maxHandSize = 0
     private(set) var gameOrder: GameOrder = .descending
     private(set) var currentGameIdentifierString: String = ""
+
+    let dateFormatter: DateFormatter
     
     var currentRound: Round? {
         rounds.last
@@ -31,13 +33,15 @@ class GameManager {
     
     static let shared: GameManager = GameManager()
     
-    private init() {}
-    
-    // functions to...
-    
+    private init() {
+        self.dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+    }
+
     // start a game with these players
     func createGame(playerNames: [String], gameOrder: GameOrder, maxHandSize: Int) {
         currentGameIdentifierString = UUID().uuidString
+        
         if gameOrder == .descending {
             startingHandSize = maxHandSize
         } else {
@@ -72,10 +76,10 @@ class GameManager {
             return players
         }
         
-        // start by copying the previous round
+        // get the previous round
         var nextRoundOrderedPlayers = previousRound
         
-        // make the last player the dealer
+        // make the last player the new dealer
         let newDealer = nextRoundOrderedPlayers.remove(at: 0)
         nextRoundOrderedPlayers.append(newDealer)
         
@@ -155,7 +159,7 @@ class GameManager {
     }
     
     // Ending Game determines winner. The winner is the player with the highest score. What happens with a tie?
-    
+
     func determineWinnerName() -> String {
         let winnerScore = scores.values.max()
         let winnerName = scores.first(where: { $0.value == winnerScore})?.key ?? ""
@@ -173,6 +177,11 @@ class GameManager {
     }
     
     func getGameResult() -> GameResult {
-        return GameResult(winnerName: determineWinnerName(), winnerScore: determineWinnerScore(), winnerImageName: determineWinnerImageName(), gameDate: Date(), gameIdentifier: currentGameIdentifierString)
+        let gameDate = dateFormatter.string(from: Date())
+        return GameResult(winnerName: determineWinnerName(),
+                          winnerScore: determineWinnerScore(),
+                          winnerImageName: determineWinnerImageName(),
+                          gameDate: gameDate,
+                          gameIdentifier: currentGameIdentifierString)
     }
 }

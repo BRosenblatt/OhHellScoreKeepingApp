@@ -40,7 +40,10 @@ class WinnerViewController: UIViewController, UITextFieldDelegate {
     @IBAction func submitButtonWasTapped(_ sender: Any) {
         // save victory quote
         saveVictoryQuote()
-        dismiss(animated: true)
+        let presenter = presentingViewController
+        dismiss(animated: true) {
+            presenter?.dismiss(animated: true)
+        }
     }
     
     func saveVictoryQuote() {
