@@ -7,12 +7,13 @@
 
 import UIKit
 
-class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, InvalidBidAlertDelegate {
+class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, InvalidBidAlertDelegate, EnableNextRoundButton {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var moreOptionsButton: UIButton!
     @IBOutlet weak var handSizeLabel: UILabel! //tracks card count
     @IBOutlet weak var dealerNameLabel: UILabel!
+    @IBOutlet weak var nextRoundButton: UIButton!
     
     let gameManager: GameManager = .shared
     var dataController: DataController!
@@ -31,6 +32,7 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         let headerNib = UINib(nibName: "GameTableViewHeaderCell", bundle: nil)
         tableView.register(headerNib, forCellReuseIdentifier: "GameTableViewHeaderCell")
     }
+    
     
     // MARK: More Options Menu
     func setUpButtonMenu() {
@@ -63,6 +65,8 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         handSizeLabel.text = "Hand size: \(handSize)"
         let dealerName = gameManager.currentRound?.orderedPlayerList.last ?? ""
         dealerNameLabel.text = "Dealer: \(dealerName)"
+        nextRoundButton.isEnabled = false
+
     }
     
     // Source credit for the following code: https://medium.com/@vvishwakarma/dismiss-hide-keyboard-when-touching-outside-of-uitextfield-swift-166d9d1efb68
@@ -93,11 +97,6 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
             self.navigationController?.modalPresentationStyle = .fullScreen
             winnerViewController.dataController = self.dataController
             self.present(navigationController, animated: true)
-//            let presentingViewController = self.presentingViewController
-//            
-//            self.dismiss(animated: true) {
-//                presentingViewController?.present(navigationController, animated: true)
-//            }
         }))
         
         present(alertController, animated: true)
@@ -117,7 +116,7 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 }
     
-    // MARK: - Table view
+// MARK: - Table view
     
     extension ActiveGameViewController {
         
@@ -128,15 +127,32 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewCell", for: indexPath) as! GameTableViewCell
-            cell.delegate = self
+            cell.invalidBidAlertDelegate = self
+            cell.enableNextRoundButtonDelegate = self
+            
             let playerName = gameManager.currentRound?.orderedPlayerList[indexPath.row] ?? ""
             cell.playerNameLabel.text = playerName
             
             let score = gameManager.scores[playerName] ?? 0
             let points = gameManager.currentRound?.points[playerName] ?? 0
             cell.scoreLabel.text = "\(score + points)"
-            
+            cell.bidSegmentedControl.isEnabled = false
+                        
             return cell
+        }
+        
+        func enableNextRoundButtonIfNeeded() {
+            let playersCount = gameManager.players.count
+            // If all bids are entered, enable the button
+            if gameManager.currentRound?.playerBids.count == playersCount {
+                nextRoundButton.isEnabled = true
+            } else {
+                nextRoundButton.isEnabled = false
+            }
+        }
+        
+        func disableNextRoundButton() {
+            nextRoundButton.isEnabled = false
         }
         
         func showInvalidBidAlert() {
@@ -148,7 +164,7 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
             present(alertController, animated: true)
         }
         
-        // MARK: - Set up table header
+// MARK: - Set up table header
         
         func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
             let tableHeaderCell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewHeaderCell") as! GameTableViewHeaderCell

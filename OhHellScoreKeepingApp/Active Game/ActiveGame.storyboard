@@ -79,6 +79,7 @@
                         <outlet property="dealerNameLabel" destination="tP2-zq-Y6w" id="Hou-RX-QaA"/>
                         <outlet property="handSizeLabel" destination="0HY-5c-r9X" id="uX8-bg-ZcF"/>
                         <outlet property="moreOptionsButton" destination="Vw5-f0-eYw" id="txv-oJ-fgZ"/>
+                        <outlet property="nextRoundButton" destination="bod-BI-aCE" id="fdu-06-RLJ"/>
                         <outlet property="tableView" destination="uA5-IO-hqS" id="pHQ-0o-PtG"/>
                     </connections>
                 </viewController>

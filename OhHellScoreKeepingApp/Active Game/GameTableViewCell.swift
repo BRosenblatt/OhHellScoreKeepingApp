@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol EnableNextRoundButton: UIViewController {
+    func enableNextRoundButtonIfNeeded()
+    func disableNextRoundButton()
+}
+
 protocol InvalidBidAlertDelegate: UIViewController {
     func showInvalidBidAlert()
 }
@@ -21,7 +26,8 @@ class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var scoreLabel: UILabel!
     
     let gameManager: GameManager = .shared
-    weak var delegate: InvalidBidAlertDelegate?
+    weak var invalidBidAlertDelegate: InvalidBidAlertDelegate?
+    weak var enableNextRoundButtonDelegate: EnableNextRoundButton?
     
     var playerName: String {
         playerNameLabel.text ?? ""
@@ -55,24 +61,32 @@ class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
         return newText.length <= 2
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        bidSegmentedControl.isEnabled = false
+        enableNextRoundButtonDelegate?.disableNextRoundButton()
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let bid = Int(bidText) else {
             print("something went wrong")
             return
         }
-        
+     
         gameManager.addBidForPlayer(bid: bid, playerName: playerName)
         
         if gameManager.currentRound?.hasInvalidBids == true {
-            delegate?.showInvalidBidAlert()
+            invalidBidAlertDelegate?.showInvalidBidAlert()
+        } else {
+            bidSegmentedControl.isEnabled = true
+            enableNextRoundButtonDelegate?.enableNextRoundButtonIfNeeded()
         }
     }
-    
+        
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    
+        
     @IBAction func bidSegmentedControlWasTapped(_ sender: Any) {
         let didWin = bidSegmentedControl.selectedSegmentIndex == 1
         
