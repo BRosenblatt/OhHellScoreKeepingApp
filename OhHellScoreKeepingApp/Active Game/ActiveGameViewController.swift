@@ -66,7 +66,6 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         let dealerName = gameManager.currentRound?.orderedPlayerList.last ?? ""
         dealerNameLabel.text = "Dealer: \(dealerName)"
         nextRoundButton.isEnabled = false
-
     }
     
     // Source credit for the following code: https://medium.com/@vvishwakarma/dismiss-hide-keyboard-when-touching-outside-of-uitextfield-swift-166d9d1efb68
@@ -89,6 +88,8 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         alertController.addAction(UIAlertAction(title: "End Game", style: .default, handler: { action in
             self.gameManager.updateScore()
             self.saveWinnerData()
+            self.gameManager.resetGameData()
+            self.gameManager.restartRound()
             
             let storyboard = UIStoryboard(name: "Winner", bundle: nil)
             let winnerViewController = storyboard.instantiateViewController(withIdentifier: "WinnerViewController") as! WinnerViewController

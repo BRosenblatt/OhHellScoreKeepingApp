@@ -184,4 +184,22 @@ class GameManager {
                           gameDate: gameDate,
                           gameIdentifier: currentGameIdentifierString)
     }
+    
+    func resetGameData() {
+        players = []
+        scores = [:]
+        rounds = []
+        startingHandSize = 0
+        maxHandSize = 0
+        gameOrder = .descending
+    }
+    
+    func resetRoundData() {
+        startingHandSize = currentRound?.handSize ?? 0
+        currentRound?.points = [:]
+        players = currentRound?.orderedPlayerList ?? []
+        currentRound?.playerBids = [:]
+        currentRound?.didWinBid = [:]
+        currentRound?.roundNumber = 0
+    }
 }
