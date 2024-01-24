@@ -38,22 +38,6 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="n8g-15-xu8" userLabel="Victory Quote Stack View">
-                                <rect key="frame" x="96.333333333333329" y="555" width="198.66666666666669" height="83"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Victory Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvz-yN-9tb">
-                                        <rect key="frame" x="0.0" y="0.0" width="198.66666666666666" height="41"/>
-                                        <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your victory quote!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jkw-Lf-UAI">
-                                        <rect key="frame" x="5.6666666666666714" y="49" width="187.66666666666663" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRI-fw-gg7">
                                 <rect key="frame" x="18" y="752.33333333333337" width="357" height="35.666666666666629"/>
                                 <state key="normal" title="Button"/>
@@ -64,6 +48,22 @@
                                     <action selector="submitButtonWasTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ccT-h1-TFK"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="n8g-15-xu8" userLabel="Victory Quote Stack View">
+                                <rect key="frame" x="96.333333333333329" y="533" width="198.66666666666669" height="83"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Victory Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvz-yN-9tb">
+                                        <rect key="frame" x="0.0" y="0.0" width="198.66666666666666" height="41"/>
+                                        <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your victory quote!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jkw-Lf-UAI">
+                                        <rect key="frame" x="15.333333333333343" y="49" width="168" height="34"/>
+                                        <nil key="textColor"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -74,7 +74,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="NRI-fw-gg7" secondAttribute="trailing" constant="18" id="PEG-xm-lGj"/>
                             <constraint firstItem="NRI-fw-gg7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="18" id="Pmu-mM-AJk"/>
                             <constraint firstItem="tjN-Cq-EcC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="125" id="W4o-Go-jfN"/>
-                            <constraint firstItem="n8g-15-xu8" firstAttribute="top" secondItem="kGa-EV-50j" secondAttribute="bottom" constant="54" id="W6k-yQ-38T"/>
+                            <constraint firstItem="n8g-15-xu8" firstAttribute="top" secondItem="kGa-EV-50j" secondAttribute="bottom" constant="32" id="W6k-yQ-38T"/>
                             <constraint firstItem="kGa-EV-50j" firstAttribute="centerX" secondItem="n8g-15-xu8" secondAttribute="centerX" id="YPC-UF-lZw"/>
                             <constraint firstItem="tjN-Cq-EcC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="75" id="YWK-ar-NeD"/>
                             <constraint firstItem="kGa-EV-50j" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="95" id="cWL-IY-EZa"/>

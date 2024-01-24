@@ -66,6 +66,7 @@ extension GameHistoryViewController {
             completedGameCell.dateLabel.text = completedGame.date
             completedGameCell.winnerScoreLabel.text = completedGame.winnerScore
             completedGameCell.victoryQuoteLabel.text = completedGame.winnerVictoryQuote
+            completedGameCell.victoryQuoteLabel.numberOfLines = 0
             
             return completedGameCell
         } else {
