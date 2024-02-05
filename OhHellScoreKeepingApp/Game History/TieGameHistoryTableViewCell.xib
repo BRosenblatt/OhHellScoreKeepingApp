@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameHistoryTableViewCell" rowHeight="90" id="e6K-sb-rc1" userLabel="TieGameTableViewCell" customClass="GameHistoryTableViewCell" customModule="OhHellScoreKeepingApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="618" height="67"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e6K-sb-rc1" id="4Na-8M-lWe">
+                <rect key="frame" x="0.0" y="0.0" width="618" height="67"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.3.sequence.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dFx-J4-CyY">
+                        <rect key="frame" x="8" y="7.3333333333333357" width="56" height="54.000000000000014"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="56" id="BQ8-oY-3CJ"/>
+                            <constraint firstAttribute="height" constant="56" id="ZjA-ux-U1T"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="f3n-Ph-h3F" userLabel="Name Stack View">
+                        <rect key="frame" x="71.999999999999986" y="8.0000000000000018" width="178.66666666666663" height="21.666666666666671"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winners:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2d-tc-Oq1" userLabel="Winner Prefix Label">
+                                <rect key="frame" x="0.0" y="0.0" width="77" height="21.666666666666668"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igv-dU-bBk" userLabel="Winner Name Label">
+                                <rect key="frame" x="83" y="0.0" width="95.666666666666686" height="21.666666666666668"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="January 2, 2024" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDi-EQ-N1V" userLabel="Date Label">
+                        <rect key="frame" x="529.33333333333337" y="8" width="80.666666666666629" height="12"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ZHS-Lq-ypp" userLabel="Score Stack View">
+                        <rect key="frame" x="72" y="37.666666666666664" width="538" height="21.333333333333336"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Score:" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNb-37-zjA" userLabel="Score Prefix Label">
+                                <rect key="frame" x="0.0" y="0.0" width="39.333333333333336" height="21.333333333333332"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Score Label" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvb-G3-yjH" userLabel="Winner Score Label">
+                                <rect key="frame" x="45.333333333333329" y="0.0" width="67" height="21.333333333333332"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbL-1s-Sjs">
+                                <rect key="frame" x="118.33333333333334" y="0.0" width="20" height="21.333333333333332"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="8w5-8n-Joa"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Victory Quote:" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKO-lh-wC8" userLabel="Victory Quote Prefix Label">
+                                <rect key="frame" x="144.33333333333334" y="0.0" width="88" height="21.333333333333332"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's a tie!" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpQ-lm-DD0">
+                                <rect key="frame" x="238.33333333333331" y="0.0" width="49" height="21.333333333333332"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eD9-9F-P0c">
+                                <rect key="frame" x="293.33333333333331" y="0.0" width="244.66666666666669" height="21.333333333333332"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZHS-Lq-ypp" firstAttribute="top" secondItem="f3n-Ph-h3F" secondAttribute="bottom" constant="8" id="8a0-WU-zuF"/>
+                    <constraint firstAttribute="bottom" secondItem="ZHS-Lq-ypp" secondAttribute="bottom" constant="8" id="9J0-vy-Hke"/>
+                    <constraint firstAttribute="trailing" secondItem="ZHS-Lq-ypp" secondAttribute="trailing" constant="8" id="9rz-et-6bZ"/>
+                    <constraint firstAttribute="trailing" secondItem="iDi-EQ-N1V" secondAttribute="trailing" constant="8" id="CiE-v7-hGS"/>
+                    <constraint firstItem="ZHS-Lq-ypp" firstAttribute="leading" secondItem="dFx-J4-CyY" secondAttribute="trailing" constant="8" id="FSW-FO-Tus"/>
+                    <constraint firstItem="dFx-J4-CyY" firstAttribute="centerY" secondItem="4Na-8M-lWe" secondAttribute="centerY" id="FX1-L6-hFu"/>
+                    <constraint firstItem="f3n-Ph-h3F" firstAttribute="leading" secondItem="dFx-J4-CyY" secondAttribute="trailing" constant="8" id="QvS-LE-OLn"/>
+                    <constraint firstItem="f3n-Ph-h3F" firstAttribute="top" secondItem="4Na-8M-lWe" secondAttribute="top" constant="8" id="aKV-VG-ZES"/>
+                    <constraint firstItem="dFx-J4-CyY" firstAttribute="leading" secondItem="4Na-8M-lWe" secondAttribute="leading" constant="8" id="ePq-S3-Y8G"/>
+                    <constraint firstItem="iDi-EQ-N1V" firstAttribute="top" secondItem="4Na-8M-lWe" secondAttribute="top" constant="8" id="urM-QB-UAh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="iDi-EQ-N1V" id="oRi-zD-K7X"/>
+                <outlet property="victoryQuoteLabel" destination="NpQ-lm-DD0" id="Ngu-82-WXn"/>
+                <outlet property="winnerImageView" destination="dFx-J4-CyY" id="iXk-SD-i08"/>
+                <outlet property="winnerNameLabel" destination="igv-dU-bBk" id="3uc-OE-Rhs"/>
+                <outlet property="winnerScoreLabel" destination="zvb-G3-yjH" id="N6p-s5-1ah"/>
+            </connections>
+            <point key="canvasLocation" x="251.90839694656486" y="65.845070422535215"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="person.3.sequence.fill" catalog="system" width="128" height="63"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

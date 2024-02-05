@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23C64" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23C71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CompletedGame" representedClassName="CompletedGame" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="String"/>
         <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="isATie" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="winnerImageName" optional="YES" attributeType="String"/>
         <attribute name="winnerName" optional="YES" attributeType="String"/>
         <attribute name="winnerScore" optional="YES" attributeType="String"/>

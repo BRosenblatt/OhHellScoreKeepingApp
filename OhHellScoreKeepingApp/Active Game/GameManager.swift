@@ -16,7 +16,6 @@ enum GameOrder {
 
 class GameManager {
     
-    // properties for players, rounds, currentRound, scores
     private(set) var players: [String] = [] // also keeps track of the player order per round
     private(set) var rounds: [Round] = []
     private(set) var scores: [String: Int] = [:]
@@ -157,19 +156,28 @@ class GameManager {
         // revert points
         currentRound.points = [:]
     }
-    
-    // Ending Game determines winner. The winner is the player with the highest score. What happens with a tie?
 
-    func determineWinnerName() -> String {
+    func determineWinnerNames() -> [String] {
         let winnerScore = scores.values.max()
-        let winnerName = scores.first(where: { $0.value == winnerScore})?.key ?? ""
+        let winners = scores.filter { $0.value == winnerScore }
+        let winnerNames: [String] = Array(winners.keys)
         
-        return winnerName
+        return winnerNames
     }
     
     func determineWinnerScore() -> String {
         let score: String = "\(scores.values.max() ?? 0)"
         return score
+    }
+    
+    func determineTie() -> Bool {
+        let winners = determineWinnerNames()
+        
+        if winners.count == 1 {
+            return false
+        } else {
+            return true
+        }
     }
     
     func determineWinnerImageName() -> String {
@@ -178,8 +186,8 @@ class GameManager {
     
     func getGameResult() -> GameResult {
         let gameDate = dateFormatter.string(from: Date())
-        return GameResult(winnerName: determineWinnerName(),
-                          winnerScore: determineWinnerScore(),
+        return GameResult(winnerNames: determineWinnerNames(),
+                          winnerScore: determineWinnerScore(), isATie: determineTie(),
                           winnerImageName: determineWinnerImageName(),
                           gameDate: gameDate,
                           gameIdentifier: currentGameIdentifierString)

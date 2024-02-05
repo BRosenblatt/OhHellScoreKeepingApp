@@ -31,6 +31,7 @@
 		32B1B54D2AD459AF009CE803 /* ActiveGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B1B54C2AD459AF009CE803 /* ActiveGame.storyboard */; };
 		32B1B54F2AD459D1009CE803 /* ActiveGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1B54E2AD459D1009CE803 /* ActiveGameViewController.swift */; };
 		32B312322B44C5A700E49E4D /* GameHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B312312B44C5A700E49E4D /* GameHistoryTableViewCell.xib */; };
+		32B42CD62B64343C004D4608 /* TieGameHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B42CD52B64343C004D4608 /* TieGameHistoryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		32B1B54C2AD459AF009CE803 /* ActiveGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActiveGame.storyboard; sourceTree = "<group>"; };
 		32B1B54E2AD459D1009CE803 /* ActiveGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGameViewController.swift; sourceTree = "<group>"; };
 		32B312312B44C5A700E49E4D /* GameHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		32B42CD52B64343C004D4608 /* TieGameHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TieGameHistoryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				32B312312B44C5A700E49E4D /* GameHistoryTableViewCell.xib */,
 				326D34EA2B45DD40007332D3 /* GameHistoryTableViewCell.swift */,
 				326D34EC2B489816007332D3 /* DefaultTableViewCell.swift */,
+				32B42CD52B64343C004D4608 /* TieGameHistoryTableViewCell.xib */,
 			);
 			path = "Game History";
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				327A71372A522E38000F246A /* NewGame.storyboard in Resources */,
 				3230A5A82A522ABE000B1DAE /* Assets.xcassets in Resources */,
 				3230A5A62A522ABB000B1DAE /* Main.storyboard in Resources */,
+				32B42CD62B64343C004D4608 /* TieGameHistoryTableViewCell.xib in Resources */,
 				329FF10F2AD8626A00A23EB0 /* GameTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

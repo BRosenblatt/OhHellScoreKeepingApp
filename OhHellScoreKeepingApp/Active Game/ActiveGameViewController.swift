@@ -88,7 +88,6 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         alertController.addAction(UIAlertAction(title: "End Game", style: .default, handler: { action in
             self.gameManager.updateScore()
             self.saveWinnerData()
-            self.gameManager.resetGameData()
             self.gameManager.restartRound()
             
             let storyboard = UIStoryboard(name: "Winner", bundle: nil)
@@ -108,10 +107,10 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         let endGame = CompletedGame(context: self.dataController.viewContext)
         endGame.date = gameResult.gameDate
         endGame.winnerImageName = gameResult.winnerImageName
-        endGame.winnerName = gameResult.winnerName
+        endGame.winnerName = gameResult.winnerNames.joined(separator: ", ")
+        endGame.isATie = gameResult.isATie
         endGame.winnerScore = gameResult.winnerScore
         endGame.identifier = gameResult.gameIdentifier
-        // save winnerName, score, image, date
         try? dataController.viewContext.save()
         print("saved game data")
     }

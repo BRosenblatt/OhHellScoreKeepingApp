@@ -8,8 +8,9 @@
 import Foundation
 
 struct GameResult {
-    let winnerName: String
+    let winnerNames: [String]
     let winnerScore: String
+    let isATie: Bool
     let winnerImageName: String
     let gameDate: String
     let gameIdentifier: String

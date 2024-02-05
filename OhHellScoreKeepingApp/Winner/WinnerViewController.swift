@@ -13,6 +13,8 @@ class WinnerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var winnerName: UILabel!
     @IBOutlet weak var victoryQuoteTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var winnerLabel: UILabel!
+    @IBOutlet weak var victoryQuoteStackView: UIStackView!
     
     let gameManager: GameManager = .shared
     var dataController: DataController!
@@ -20,8 +22,18 @@ class WinnerViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         victoryQuoteTextField.delegate = self
-        submitButton.isEnabled = false
-        winnerName.text = gameManager.determineWinnerName()
+        updateUIForTies()
+        winnerName.text = gameManager.determineWinnerNames().joined(separator: ", ")
+    }
+    
+    func updateUIForTies() {
+        if gameManager.determineTie() {
+            winnerLabel.text = "Winners"
+            victoryQuoteStackView.isHidden = true
+            submitButton.isEnabled = true
+        } else {
+            submitButton.isEnabled = false
+        }
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -50,6 +62,7 @@ class WinnerViewController: UIViewController, UITextFieldDelegate {
         let presenter = presentingViewController
         dismiss(animated: true) {
             presenter?.dismiss(animated: true)
+            self.gameManager.resetGameData()
         }
     }
     
