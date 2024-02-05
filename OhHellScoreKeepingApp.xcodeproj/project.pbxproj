@@ -27,11 +27,12 @@
 		329FF1152AD87CB900A23EB0 /* GameTableViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 329FF1132AD87CB900A23EB0 /* GameTableViewHeaderCell.xib */; };
 		329FF1192AD9ACE400A23EB0 /* OhHellScoreKeepingApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 329FF1172AD9ACE400A23EB0 /* OhHellScoreKeepingApp.xcdatamodeld */; };
 		329FF11B2ADDBACC00A23EB0 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329FF11A2ADDBACC00A23EB0 /* Round.swift */; };
+		32AF158D2B7169A200DAB503 /* TiedGameHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF158C2B7169A200DAB503 /* TiedGameHistoryTableViewCell.swift */; };
 		32B1B54B2AD09F4E009CE803 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1B54A2AD09F4E009CE803 /* GameManager.swift */; };
 		32B1B54D2AD459AF009CE803 /* ActiveGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B1B54C2AD459AF009CE803 /* ActiveGame.storyboard */; };
 		32B1B54F2AD459D1009CE803 /* ActiveGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1B54E2AD459D1009CE803 /* ActiveGameViewController.swift */; };
 		32B312322B44C5A700E49E4D /* GameHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B312312B44C5A700E49E4D /* GameHistoryTableViewCell.xib */; };
-		32B42CD62B64343C004D4608 /* TieGameHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B42CD52B64343C004D4608 /* TieGameHistoryTableViewCell.xib */; };
+		32B42CD62B64343C004D4608 /* TiedGameHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B42CD52B64343C004D4608 /* TiedGameHistoryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,11 +58,12 @@
 		329FF1132AD87CB900A23EB0 /* GameTableViewHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewHeaderCell.xib; sourceTree = "<group>"; };
 		329FF1182AD9ACE400A23EB0 /* OhHellScoreKeeping.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OhHellScoreKeeping.xcdatamodel; sourceTree = "<group>"; };
 		329FF11A2ADDBACC00A23EB0 /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
+		32AF158C2B7169A200DAB503 /* TiedGameHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiedGameHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		32B1B54A2AD09F4E009CE803 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		32B1B54C2AD459AF009CE803 /* ActiveGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActiveGame.storyboard; sourceTree = "<group>"; };
 		32B1B54E2AD459D1009CE803 /* ActiveGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGameViewController.swift; sourceTree = "<group>"; };
 		32B312312B44C5A700E49E4D /* GameHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameHistoryTableViewCell.xib; sourceTree = "<group>"; };
-		32B42CD52B64343C004D4608 /* TieGameHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TieGameHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		32B42CD52B64343C004D4608 /* TiedGameHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TiedGameHistoryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +147,8 @@
 				32B312312B44C5A700E49E4D /* GameHistoryTableViewCell.xib */,
 				326D34EA2B45DD40007332D3 /* GameHistoryTableViewCell.swift */,
 				326D34EC2B489816007332D3 /* DefaultTableViewCell.swift */,
-				32B42CD52B64343C004D4608 /* TieGameHistoryTableViewCell.xib */,
+				32B42CD52B64343C004D4608 /* TiedGameHistoryTableViewCell.xib */,
+				32AF158C2B7169A200DAB503 /* TiedGameHistoryTableViewCell.swift */,
 			);
 			path = "Game History";
 			sourceTree = "<group>";
@@ -230,7 +233,7 @@
 				327A71372A522E38000F246A /* NewGame.storyboard in Resources */,
 				3230A5A82A522ABE000B1DAE /* Assets.xcassets in Resources */,
 				3230A5A62A522ABB000B1DAE /* Main.storyboard in Resources */,
-				32B42CD62B64343C004D4608 /* TieGameHistoryTableViewCell.xib in Resources */,
+				32B42CD62B64343C004D4608 /* TiedGameHistoryTableViewCell.xib in Resources */,
 				329FF10F2AD8626A00A23EB0 /* GameTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +252,7 @@
 				326D34ED2B489816007332D3 /* DefaultTableViewCell.swift in Sources */,
 				32083E052B1FB4EA00AC3C17 /* WinnerViewController.swift in Sources */,
 				329FF1192AD9ACE400A23EB0 /* OhHellScoreKeepingApp.xcdatamodeld in Sources */,
+				32AF158D2B7169A200DAB503 /* TiedGameHistoryTableViewCell.swift in Sources */,
 				327A71352A522E0E000F246A /* NewGameViewController.swift in Sources */,
 				324878242B30D57300D72CFF /* GameResult.swift in Sources */,
 				326D34EB2B45DD40007332D3 /* GameHistoryTableViewCell.swift in Sources */,

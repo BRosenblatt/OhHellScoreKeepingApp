@@ -12,9 +12,9 @@ class WinnerViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var winnerName: UILabel!
     @IBOutlet weak var victoryQuoteTextField: UITextField!
-    @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var winnerLabel: UILabel!
     @IBOutlet weak var victoryQuoteStackView: UIStackView!
+    @IBOutlet weak var doneButton: UIButton!
     
     let gameManager: GameManager = .shared
     var dataController: DataController!
@@ -22,22 +22,22 @@ class WinnerViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         victoryQuoteTextField.delegate = self
-        updateUIForTies()
+        updateUI()
         winnerName.text = gameManager.determineWinnerNames().joined(separator: ", ")
     }
     
-    func updateUIForTies() {
+    func updateUI() {
         if gameManager.determineTie() {
             winnerLabel.text = "Winners"
             victoryQuoteStackView.isHidden = true
-            submitButton.isEnabled = true
+            doneButton.isEnabled = true
         } else {
-            submitButton.isEnabled = false
+            doneButton.isEnabled = false
         }
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        submitButton.isEnabled = false
+        doneButton.isEnabled = false
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -48,7 +48,7 @@ class WinnerViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        submitButton.isEnabled = true
+        doneButton.isEnabled = true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

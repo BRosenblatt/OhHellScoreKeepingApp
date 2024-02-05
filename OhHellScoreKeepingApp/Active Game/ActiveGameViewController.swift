@@ -92,8 +92,8 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
             
             let storyboard = UIStoryboard(name: "Winner", bundle: nil)
             let winnerViewController = storyboard.instantiateViewController(withIdentifier: "WinnerViewController") as! WinnerViewController
-            
             winnerViewController.isModalInPresentation = true
+            
             let navigationController = UINavigationController(rootViewController: winnerViewController)
             self.navigationController?.modalPresentationStyle = .fullScreen
             winnerViewController.dataController = self.dataController

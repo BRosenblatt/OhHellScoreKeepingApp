@@ -51,10 +51,10 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRI-fw-gg7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRI-fw-gg7" userLabel="Done Button">
                                 <rect key="frame" x="18" y="752.33333333333337" width="357" height="35.666666666666629"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Submit" cornerStyle="capsule">
+                                <buttonConfiguration key="configuration" style="filled" title="Done" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -85,7 +85,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="submitButton" destination="NRI-fw-gg7" id="HEz-Ue-HH1"/>
+                        <outlet property="doneButton" destination="NRI-fw-gg7" id="Vox-pr-SsL"/>
                         <outlet property="victoryQuoteStackView" destination="n8g-15-xu8" id="NFf-an-g2C"/>
                         <outlet property="victoryQuoteTextField" destination="jkw-Lf-UAI" id="ogI-BU-0TR"/>
                         <outlet property="winnerLabel" destination="404-rP-bgf" id="DnL-e3-bpd"/>

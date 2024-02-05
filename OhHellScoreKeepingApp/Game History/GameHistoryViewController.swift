@@ -28,6 +28,9 @@ class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         
         let cellNib = UINib(nibName: "GameHistoryTableViewCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "GameHistoryTableViewCell")
+        
+        let tiedGameCellNib = UINib(nibName: "TiedGameHistoryTableViewCell", bundle: nil)
+        tableView.register(tiedGameCellNib, forCellReuseIdentifier: "TiedGameHistoryTableViewCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,22 +61,30 @@ extension GameHistoryViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let defaultCell = tableView.dequeueReusableCell(withIdentifier: "DefaultTableViewCell", for: indexPath) as! DefaultTableViewCell
-        let completedGameCell = tableView.dequeueReusableCell(withIdentifier: "GameHistoryTableViewCell", for: indexPath) as! GameHistoryTableViewCell
-        
-        if completedGames.isEmpty == false {
-            let completedGame = completedGames[indexPath.item]
-            completedGameCell.winnerNameLabel.text = completedGame.winnerName
-            completedGameCell.dateLabel.text = completedGame.date
-            completedGameCell.winnerScoreLabel.text = completedGame.winnerScore
-            completedGameCell.victoryQuoteLabel.text = completedGame.winnerVictoryQuote
-            completedGameCell.victoryQuoteLabel.numberOfLines = 0
-            
-            return completedGameCell
-        } else {
+        let singleWinnerGameCell = tableView.dequeueReusableCell(withIdentifier: "GameHistoryTableViewCell", for: indexPath) as! GameHistoryTableViewCell
+        let tiedWinnersGameCell = tableView.dequeueReusableCell(withIdentifier: "TiedGameHistoryTableViewCell", for: indexPath) as! TiedGameHistoryTableViewCell
+                
+        guard !completedGames.isEmpty else {
             defaultCell.defaultLabel.text = #"You have 0 completed games. Tap the "+" button to start your first game!"#
             defaultCell.defaultLabel.numberOfLines = 0
-            
             return defaultCell
+        }
+        
+        let completedGame = completedGames[indexPath.item]
+        if completedGame.isATie {
+            tiedWinnersGameCell.winnerNamesLabel.text = completedGame.winnerName
+            tiedWinnersGameCell.dateLabel.text = completedGame.date
+            tiedWinnersGameCell.tiedScoreLabel.text = completedGame.winnerScore
+            tiedWinnersGameCell.tiedWinnerImageView.image = UIImage(systemName: "person.3.fill")
+            return tiedWinnersGameCell
+        } else {
+            singleWinnerGameCell.winnerNameLabel.text = completedGame.winnerName
+            singleWinnerGameCell.dateLabel.text = completedGame.date
+            singleWinnerGameCell.winnerScoreLabel.text = completedGame.winnerScore
+            singleWinnerGameCell.victoryQuoteLabel.text = completedGame.winnerVictoryQuote
+            singleWinnerGameCell.victoryQuoteLabel.numberOfLines = 0
+            singleWinnerGameCell.winnerImageView.image = UIImage(systemName: "person.fill")
+            return singleWinnerGameCell
         }
     }
     
