@@ -111,6 +111,7 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         endGame.winnerName = gameResult.winnerNames.joined(separator: ", ")
         endGame.isATie = gameResult.isATie
         endGame.winnerScore = gameResult.winnerScore
+        endGame.winnerImageName = gameResult.winnerImageName
         endGame.identifier = gameResult.gameIdentifier
         try? dataController.viewContext.save()
         print("saved game data")
@@ -134,12 +135,20 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
             let playerName = gameManager.currentRound?.orderedPlayerList[indexPath.row] ?? ""
             cell.playerNameLabel.text = playerName
             
+            APIClient.getIdenticonFromAPI(playerName: playerName, completion: { image, error in
+                cell.identiconUIImageView.image = image
+            })
+            
             let score = gameManager.scores[playerName] ?? 0
             let points = gameManager.currentRound?.points[playerName] ?? 0
             cell.scoreLabel.text = "\(score + points)"
             cell.bidSegmentedControl.isEnabled = false
                         
             return cell
+        }
+        
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            53
         }
         
         func enableNextRoundButtonIfNeeded() {

@@ -71,6 +71,8 @@ extension GameHistoryViewController {
         }
         
         let completedGame = completedGames[indexPath.item]
+        let cachedImage = APIClient.cache.object(forKey: completedGame.winnerImageName! as NSString)
+        
         if completedGame.isATie {
             tiedWinnersGameCell.winnerNamesLabel.text = completedGame.winnerName
             tiedWinnersGameCell.dateLabel.text = completedGame.date
@@ -83,7 +85,7 @@ extension GameHistoryViewController {
             singleWinnerGameCell.winnerScoreLabel.text = completedGame.winnerScore
             singleWinnerGameCell.victoryQuoteLabel.text = completedGame.winnerVictoryQuote
             singleWinnerGameCell.victoryQuoteLabel.numberOfLines = 0
-            singleWinnerGameCell.winnerImageView.image = UIImage(systemName: "person.fill")
+            singleWinnerGameCell.winnerImageView.image = cachedImage
             return singleWinnerGameCell
         }
     }

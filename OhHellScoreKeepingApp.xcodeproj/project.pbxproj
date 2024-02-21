@@ -28,6 +28,7 @@
 		329FF1192AD9ACE400A23EB0 /* OhHellScoreKeepingApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 329FF1172AD9ACE400A23EB0 /* OhHellScoreKeepingApp.xcdatamodeld */; };
 		329FF11B2ADDBACC00A23EB0 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329FF11A2ADDBACC00A23EB0 /* Round.swift */; };
 		32AF158D2B7169A200DAB503 /* TiedGameHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF158C2B7169A200DAB503 /* TiedGameHistoryTableViewCell.swift */; };
+		32AF158F2B7AA34F00DAB503 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF158E2B7AA34F00DAB503 /* APIClient.swift */; };
 		32B1B54B2AD09F4E009CE803 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1B54A2AD09F4E009CE803 /* GameManager.swift */; };
 		32B1B54D2AD459AF009CE803 /* ActiveGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B1B54C2AD459AF009CE803 /* ActiveGame.storyboard */; };
 		32B1B54F2AD459D1009CE803 /* ActiveGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B1B54E2AD459D1009CE803 /* ActiveGameViewController.swift */; };
@@ -59,6 +60,7 @@
 		329FF1182AD9ACE400A23EB0 /* OhHellScoreKeeping.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OhHellScoreKeeping.xcdatamodel; sourceTree = "<group>"; };
 		329FF11A2ADDBACC00A23EB0 /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		32AF158C2B7169A200DAB503 /* TiedGameHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiedGameHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		32AF158E2B7AA34F00DAB503 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		32B1B54A2AD09F4E009CE803 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		32B1B54C2AD459AF009CE803 /* ActiveGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActiveGame.storyboard; sourceTree = "<group>"; };
 		32B1B54E2AD459D1009CE803 /* ActiveGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGameViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,8 @@
 		3230A59D2A522ABB000B1DAE /* OhHellScoreKeepingApp */ = {
 			isa = PBXGroup;
 			children = (
+				32AF158E2B7AA34F00DAB503 /* APIClient.swift */,
+				32B1B54A2AD09F4E009CE803 /* GameManager.swift */,
 				329FF1162AD9ACCB00A23EB0 /* Model */,
 				32B1B5482AD09EDE009CE803 /* Game History */,
 				327A71382A522E50000F246A /* New Game */,
@@ -156,7 +160,6 @@
 		32B1B5492AD09F07009CE803 /* Active Game */ = {
 			isa = PBXGroup;
 			children = (
-				32B1B54A2AD09F4E009CE803 /* GameManager.swift */,
 				32B1B54C2AD459AF009CE803 /* ActiveGame.storyboard */,
 				32B1B54E2AD459D1009CE803 /* ActiveGameViewController.swift */,
 				329FF10D2AD8626A00A23EB0 /* GameTableViewCell.xib */,
@@ -246,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				329FF10E2AD8626A00A23EB0 /* GameTableViewCell.swift in Sources */,
+				32AF158F2B7AA34F00DAB503 /* APIClient.swift in Sources */,
 				32083E072B2A559A00AC3C17 /* DataController.swift in Sources */,
 				32B1B54F2AD459D1009CE803 /* ActiveGameViewController.swift in Sources */,
 				3230A5A32A522ABB000B1DAE /* GameHistoryViewController.swift in Sources */,

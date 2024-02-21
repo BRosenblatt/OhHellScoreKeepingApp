@@ -18,7 +18,7 @@ protocol InvalidBidAlertDelegate: UIViewController {
 
 class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
     
-    @IBOutlet weak var avatarUIImageView: UIImageView!
+    @IBOutlet weak var identiconUIImageView: UIImageView!
     @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var bidTextField: UITextField!
     @IBOutlet weak var bidSegmentedControl: UISegmentedControl!
@@ -44,7 +44,6 @@ class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        avatarUIImageView.image = UIImage(systemName: "person.fill")
         playerNameLabel.numberOfLines = .zero
         bidTextField.text = ""
         bidSegmentedControl.selectedSegmentIndex = 0

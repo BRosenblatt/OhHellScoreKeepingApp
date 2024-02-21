@@ -180,15 +180,17 @@ class GameManager {
         }
     }
     
-    func determineWinnerImageName() -> String {
-        return ""
+    func determineSingleWinnerImageName() -> String {
+        let winners = determineWinnerNames()
+        return APIClient.urlString(for: winners.first ?? "")
     }
     
     func getGameResult() -> GameResult {
         let gameDate = dateFormatter.string(from: Date())
         return GameResult(winnerNames: determineWinnerNames(),
-                          winnerScore: determineWinnerScore(), isATie: determineTie(),
-                          winnerImageName: determineWinnerImageName(),
+                          winnerScore: determineWinnerScore(), 
+                          isATie: determineTie(),
+                          winnerImageName: determineSingleWinnerImageName(),
                           gameDate: gameDate,
                           gameIdentifier: currentGameIdentifierString)
     }
