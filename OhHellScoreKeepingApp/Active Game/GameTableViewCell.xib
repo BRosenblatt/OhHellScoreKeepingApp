@@ -12,38 +12,33 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameTableViewCell" rowHeight="53" id="KGk-i7-Jjw" customClass="GameTableViewCell" customModule="OhHellScoreKeepingApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="577" height="55"/>
+            <rect key="frame" x="0.0" y="0.0" width="809" height="55"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="577" height="55"/>
+                <rect key="frame" x="0.0" y="0.0" width="809" height="55"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6Fb-rm-t4G">
-                        <rect key="frame" x="8" y="8" width="561" height="39"/>
+                        <rect key="frame" x="8" y="8" width="284.66666666666669" height="39"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="253" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Fr4-tA-HkP" userLabel="Identicon UI Image View">
                                 <rect key="frame" x="0.0" y="2" width="39" height="35.666666666666671"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Fr4-tA-HkP" secondAttribute="height" multiplier="1:1" id="UMk-nY-LLu"/>
+                                    <constraint firstAttribute="width" constant="39" id="RP6-nj-PEF"/>
+                                    <constraint firstAttribute="height" constant="39" id="fI7-2y-bFO"/>
                                 </constraints>
                                 <imageReference key="image" image="person.fill" catalog="system" symbolScale="medium"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5c-xm-XRq" userLabel="Player Name Label">
-                                <rect key="frame" x="47" y="0.0" width="262" height="39"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1lE-q3-wSe" userLabel="Bid Text Field">
-                                <rect key="frame" x="317" y="0.0" width="40" height="39"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1lE-q3-wSe" userLabel="Bid Text Field">
+                                <rect key="frame" x="47" y="0.0" width="40" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Wa5-FZ-zA6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B5J-I7-ocv" userLabel="Bid Segmented Control">
-                                <rect key="frame" x="365" y="0.0" width="80" height="40"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B5J-I7-ocv" userLabel="Bid Segmented Control">
+                                <rect key="frame" x="95" y="0.0" width="73.666666666666686" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="JsW-fi-2Mv"/>
                                 </constraints>
@@ -56,8 +51,8 @@
                                     <action selector="bidSegmentedControlWasTapped:" destination="KGk-i7-Jjw" eventType="valueChanged" id="D09-5g-DC1"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="do4-kq-IAz" userLabel="Points Label">
-                                <rect key="frame" x="453" y="0.0" width="40" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="do4-kq-IAz" userLabel="Points Label">
+                                <rect key="frame" x="176.66666666666663" y="0.0" width="40" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Cdw-HZ-jnW"/>
                                 </constraints>
@@ -65,8 +60,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxJ-jn-XX7" userLabel="Score Label">
-                                <rect key="frame" x="501" y="0.0" width="60" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxJ-jn-XX7" userLabel="Score Label">
+                                <rect key="frame" x="224.66666666666663" y="0.0" width="60" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="8ie-6K-IH2"/>
                                 </constraints>
@@ -78,10 +73,10 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="6Fb-rm-t4G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="0fQ-wE-8gr"/>
-                    <constraint firstAttribute="trailing" secondItem="6Fb-rm-t4G" secondAttribute="trailing" constant="8" id="OGs-d5-uNE"/>
-                    <constraint firstAttribute="bottom" secondItem="6Fb-rm-t4G" secondAttribute="bottom" constant="8" id="YLG-Fz-dI1"/>
-                    <constraint firstItem="6Fb-rm-t4G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="xQS-Zu-o2y"/>
+                    <constraint firstItem="6Fb-rm-t4G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="3zM-Tc-C84"/>
+                    <constraint firstItem="6Fb-rm-t4G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="C7Y-gc-3Tb"/>
+                    <constraint firstAttribute="bottom" secondItem="6Fb-rm-t4G" secondAttribute="bottom" constant="8" id="EiX-j9-YhF"/>
+                    <constraint firstAttribute="trailing" secondItem="6Fb-rm-t4G" secondAttribute="trailing" constant="8" id="PcK-XA-GPW"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -89,11 +84,10 @@
                 <outlet property="bidSegmentedControl" destination="B5J-I7-ocv" id="qle-hc-FhE"/>
                 <outlet property="bidTextField" destination="1lE-q3-wSe" id="xhL-fp-7dL"/>
                 <outlet property="identiconUIImageView" destination="Fr4-tA-HkP" id="eYz-QK-80F"/>
-                <outlet property="playerNameLabel" destination="G5c-xm-XRq" id="kHY-ve-8Ql"/>
                 <outlet property="pointsLabel" destination="do4-kq-IAz" id="gtX-mb-GcS"/>
                 <outlet property="scoreLabel" destination="YxJ-jn-XX7" id="yxx-Hk-dm5"/>
             </connections>
-            <point key="canvasLocation" x="317" y="45"/>
+            <point key="canvasLocation" x="234.85915492957747" y="43.511450381679388"/>
         </tableViewCell>
     </objects>
     <resources>

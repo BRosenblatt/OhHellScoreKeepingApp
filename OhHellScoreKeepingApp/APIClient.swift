@@ -21,7 +21,6 @@ class APIClient {
     }
     
     // TODO: - Write the getIdenticonMethod to get the identicons via API
-    
     class func getIdenticonFromAPI(playerName: String, completion: @escaping (UIImage?, Error?) -> Void) {
         let identiconEndpoint = APIClient.urlString(for: playerName)
         
@@ -50,11 +49,4 @@ class APIClient {
         })
         task.resume()
     }
-    
-    // TODO: Determine how images will be stored so they arent fetched every time (http cache? core data?)
-    // Cache
-    
-    // TODO: Determine where the images will live in the code. How will the view controllers that need them access them? Dictionary? [playerName: seed] download image as file and store in project?
-    
-    // TODO: Remove spaces in names for images
 }

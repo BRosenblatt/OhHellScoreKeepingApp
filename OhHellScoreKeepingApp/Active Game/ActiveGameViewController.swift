@@ -136,7 +136,7 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
             cell.playerNameLabel.text = playerName
             
             APIClient.getIdenticonFromAPI(playerName: playerName, completion: { image, error in
-                cell.identiconUIImageView.image = image
+                cell.identiconUIImageView.image = image ?? UIImage(systemName: "person.1.fill") // if retrieving data from API fails, show placeholder system image
             })
             
             let score = gameManager.scores[playerName] ?? 0

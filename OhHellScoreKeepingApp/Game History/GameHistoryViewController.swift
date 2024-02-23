@@ -71,7 +71,6 @@ extension GameHistoryViewController {
         }
         
         let completedGame = completedGames[indexPath.item]
-        let cachedImage = APIClient.cache.object(forKey: completedGame.winnerImageName! as NSString)
         
         if completedGame.isATie {
             tiedWinnersGameCell.winnerNamesLabel.text = completedGame.winnerName
@@ -85,7 +84,10 @@ extension GameHistoryViewController {
             singleWinnerGameCell.winnerScoreLabel.text = completedGame.winnerScore
             singleWinnerGameCell.victoryQuoteLabel.text = completedGame.winnerVictoryQuote
             singleWinnerGameCell.victoryQuoteLabel.numberOfLines = 0
-            singleWinnerGameCell.winnerImageView.image = cachedImage
+            
+            APIClient.getIdenticonFromAPI(playerName: completedGame.winnerName ?? "winner") { image, error in
+                singleWinnerGameCell.winnerImageView.image = image ?? UIImage(systemName: "person.1.fill") // if retrieving data from API fails, show placeholder system image
+            }
             return singleWinnerGameCell
         }
     }
