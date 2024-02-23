@@ -82,7 +82,8 @@ extension GameHistoryViewController {
             singleWinnerGameCell.winnerNameLabel.text = completedGame.winnerName
             singleWinnerGameCell.dateLabel.text = completedGame.date
             singleWinnerGameCell.winnerScoreLabel.text = completedGame.winnerScore
-            singleWinnerGameCell.victoryQuoteLabel.text = completedGame.winnerVictoryQuote
+            let victoryQuoteString = completedGame.winnerVictoryQuote ?? ""
+            singleWinnerGameCell.victoryQuoteLabel.text = "\"\(victoryQuoteString)\""
             singleWinnerGameCell.victoryQuoteLabel.numberOfLines = 0
             
             APIClient.getIdenticonFromAPI(playerName: completedGame.winnerName ?? "winner") { image, error in
