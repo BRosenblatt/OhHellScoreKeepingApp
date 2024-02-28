@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
@@ -15,73 +15,104 @@
             <objects>
                 <viewController storyboardIdentifier="WinnerViewController" id="Y6W-OH-hqX" customClass="WinnerViewController" customModule="OhHellScoreKeepingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kGa-EV-50j" userLabel="Winner Stack View">
-                                <rect key="frame" x="96.000000000000014" y="370.66666666666669" width="201.33333333333337" height="110.66666666666669"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kSy-Qh-JeY">
+                                <rect key="frame" x="59" y="0.0" width="734" height="372"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Winner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="404-rP-bgf">
-                                        <rect key="frame" x="0.0" y="0.0" width="201.33333333333334" height="82.333333333333329"/>
-                                        <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="60"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILK-ni-k87">
-                                        <rect key="frame" x="52.666666666666657" y="90.333333333333314" width="96" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="URd-RN-bmj" userLabel="parentStackView">
+                                        <rect key="frame" x="16" y="0.0" width="702" height="593.33333333333337"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wqd-Iu-LFl" userLabel="spacer">
+                                                <rect key="frame" x="231" y="0.0" width="240" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="29u-fu-R9k"/>
+                                                </constraints>
+                                            </view>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="tjN-Cq-EcC">
+                                                <rect key="frame" x="276" y="59.666666666666671" width="150" height="155.33333333333331"/>
+                                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="LCO-fv-cAo"/>
+                                                    <constraint firstAttribute="width" constant="150" id="nFF-SE-6rn"/>
+                                                </constraints>
+                                                <imageReference key="image" image="trophy.circle.fill" catalog="system" symbolScale="large"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kGa-EV-50j" userLabel="Winner Stack View">
+                                                <rect key="frame" x="250.33333333333331" y="244.00000000000003" width="201.33333333333331" height="110.33333333333334"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="1000" text="Winner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="404-rP-bgf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="201.33333333333334" height="82"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="60"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Player Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILK-ni-k87">
+                                                        <rect key="frame" x="52.666666666666686" y="90" width="96" height="20.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="n8g-15-xu8" userLabel="Victory Quote Stack View">
+                                                <rect key="frame" x="251.66666666666669" y="386.33333333333331" width="198.66666666666669" height="83"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Victory Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvz-yN-9tb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="198.66666666666666" height="41"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="30"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your victory quote!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jkw-Lf-UAI">
+                                                        <rect key="frame" x="15.333333333333314" y="49" width="168" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" verticalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="omx-mg-tEK" userLabel="spacer">
+                                                <rect key="frame" x="231" y="501.33333333333331" width="240" height="0.0"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRI-fw-gg7" userLabel="Done Button">
+                                                <rect key="frame" x="0.0" y="533.33333333333337" width="702" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="nUC-0G-sW8"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Done" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="submitButtonWasTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ccT-h1-TFK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="n8g-15-xu8" userLabel="Victory Quote Stack View">
-                                <rect key="frame" x="96.333333333333329" y="513.33333333333337" width="198.66666666666669" height="83"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Victory Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvz-yN-9tb">
-                                        <rect key="frame" x="0.0" y="0.0" width="198.66666666666666" height="41"/>
-                                        <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your victory quote!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jkw-Lf-UAI">
-                                        <rect key="frame" x="15.333333333333343" y="49" width="168" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRI-fw-gg7" userLabel="Done Button">
-                                <rect key="frame" x="18" y="752.33333333333337" width="357" height="35.666666666666629"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Done" cornerStyle="capsule">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="submitButtonWasTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ccT-h1-TFK"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tjN-Cq-EcC">
-                                <rect key="frame" x="98" y="132.66666666666666" width="197" height="208.99999999999997"/>
-                                <color key="tintColor" systemColor="systemOrangeColor"/>
-                                <imageReference key="image" image="trophy.circle.fill" catalog="system" symbolScale="large"/>
-                            </imageView>
+                                <constraints>
+                                    <constraint firstItem="URd-RN-bmj" firstAttribute="width" secondItem="7JZ-8b-vQh" secondAttribute="width" constant="-32" id="2Pt-D7-XGc"/>
+                                    <constraint firstItem="URd-RN-bmj" firstAttribute="leading" secondItem="pG8-48-rPB" secondAttribute="leading" constant="16" id="8NU-u8-ae0"/>
+                                    <constraint firstItem="URd-RN-bmj" firstAttribute="bottom" secondItem="pG8-48-rPB" secondAttribute="bottom" id="iGS-AS-q31"/>
+                                    <constraint firstItem="URd-RN-bmj" firstAttribute="top" secondItem="pG8-48-rPB" secondAttribute="top" id="vAF-g5-Cr1"/>
+                                    <constraint firstItem="URd-RN-bmj" firstAttribute="trailing" secondItem="pG8-48-rPB" secondAttribute="trailing" constant="16" id="xXK-2d-lgr"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="pG8-48-rPB"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="7JZ-8b-vQh"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="NRI-fw-gg7" secondAttribute="bottom" constant="30" id="Crg-SX-vh7"/>
-                            <constraint firstItem="kGa-EV-50j" firstAttribute="top" secondItem="tjN-Cq-EcC" secondAttribute="bottom" constant="32" id="Ior-3o-wHS"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="NRI-fw-gg7" secondAttribute="trailing" constant="18" id="PEG-xm-lGj"/>
-                            <constraint firstItem="NRI-fw-gg7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="18" id="Pmu-mM-AJk"/>
-                            <constraint firstItem="n8g-15-xu8" firstAttribute="top" secondItem="kGa-EV-50j" secondAttribute="bottom" constant="32" id="W6k-yQ-38T"/>
-                            <constraint firstItem="tjN-Cq-EcC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="98" id="X24-P2-Tf2"/>
-                            <constraint firstItem="tjN-Cq-EcC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="76" id="due-2E-nGL"/>
-                            <constraint firstItem="tjN-Cq-EcC" firstAttribute="centerX" secondItem="kGa-EV-50j" secondAttribute="centerX" id="e9E-Ik-e2T"/>
-                            <constraint firstItem="kGa-EV-50j" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="k4C-8m-6cd"/>
-                            <constraint firstItem="n8g-15-xu8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="96.333333333333371" id="v2Y-OD-58b"/>
-                            <constraint firstItem="n8g-15-xu8" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="513.33333333333337" id="xS1-o5-PUu"/>
-                            <constraint firstItem="kGa-EV-50j" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="yzv-nj-wAe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kSy-Qh-JeY" secondAttribute="trailing" id="80p-lE-zrY"/>
+                            <constraint firstItem="NRI-fw-gg7" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" constant="-32" id="B52-3h-Mtn"/>
+                            <constraint firstItem="URd-RN-bmj" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" priority="999" id="PZM-qf-ks8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kSy-Qh-JeY" secondAttribute="bottom" id="RPz-zk-bEa"/>
+                            <constraint firstItem="kSy-Qh-JeY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="cEG-EO-K7x"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="leading" secondItem="kSy-Qh-JeY" secondAttribute="leading" id="jR4-RX-gnJ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -103,7 +134,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

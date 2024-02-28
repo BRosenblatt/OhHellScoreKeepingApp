@@ -87,7 +87,7 @@ extension GameHistoryViewController {
             singleWinnerGameCell.victoryQuoteLabel.numberOfLines = 0
             
             APIClient.getIdenticonFromAPI(playerName: completedGame.winnerName ?? "winner") { image, error in
-                singleWinnerGameCell.winnerImageView.image = image ?? UIImage(systemName: "person.1.fill") // if retrieving data from API fails, show placeholder system image
+                singleWinnerGameCell.winnerImageView.image = image ?? UIImage(systemName: "person.crop.circle.badge.exclamationmark.fill") // if retrieving data from API fails, show placeholder system image
             }
             return singleWinnerGameCell
         }

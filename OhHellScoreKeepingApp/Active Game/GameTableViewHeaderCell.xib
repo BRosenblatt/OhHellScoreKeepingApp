@@ -19,19 +19,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Bdh-s3-YJw">
-                        <rect key="frame" x="8" y="8" width="306.33333333333331" height="30"/>
+                        <rect key="frame" x="8" y="8" width="297" height="30"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gs-hL-kRq" userLabel="Name Label">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gs-hL-kRq" userLabel="Name Label">
+                                <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="ytx-Bi-sz0"/>
+                                    <constraint firstAttribute="width" constant="100" id="WqD-tc-Q4l"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Bid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WI-g6-0Xd">
-                                <rect key="frame" x="108" y="0.0" width="40" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WI-g6-0Xd">
+                                <rect key="frame" x="53" y="0.0" width="40" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="bdQ-xk-aWa"/>
                                 </constraints>
@@ -40,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Won" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iB1-4Q-1sr">
-                                <rect key="frame" x="156" y="0.0" width="34.333333333333343" height="30"/>
+                                <rect key="frame" x="101" y="0.0" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="YX8-gS-D2j"/>
                                 </constraints>
@@ -49,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofI-qx-Jze" userLabel="Points Earned Label">
-                                <rect key="frame" x="198.33333333333334" y="0.0" width="40" height="30"/>
+                                <rect key="frame" x="189" y="0.0" width="40" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="tI8-JH-LWx"/>
                                 </constraints>
@@ -58,7 +58,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1e-Qg-WmS">
-                                <rect key="frame" x="246.33333333333337" y="0.0" width="60" height="30"/>
+                                <rect key="frame" x="237" y="0.0" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Yv2-7j-EK4"/>
                                 </constraints>

@@ -8,20 +8,16 @@
 import Foundation
 import UIKit
 
-enum APIClientError: Error {
-    case noData
-}
-
 class APIClient {
     static let baseURL = "https://api.dicebear.com/7.x/identicon/png"
     static let cache = NSCache<NSString, UIImage>()
     
-     class func urlString(for playerName: String, size: Int = 48) -> String {
+     static func urlString(for playerName: String, size: Int = 48) -> String {
         baseURL + "?seed=\(playerName)&size=\(size)"
     }
     
     // TODO: - Write the getIdenticonMethod to get the identicons via API
-    class func getIdenticonFromAPI(playerName: String, completion: @escaping (UIImage?, Error?) -> Void) {
+    static func getIdenticonFromAPI(playerName: String, completion: @escaping (UIImage?, Error?) -> Void) {
         let identiconEndpoint = APIClient.urlString(for: playerName)
         
         // if identicon is cached, then retrieve from storage
@@ -37,7 +33,7 @@ class APIClient {
         let task = URLSession.shared.dataTask(with: urlRequest, completionHandler: { data, response, error in
             guard let data = data else {
                 DispatchQueue.main.async {
-                    completion(nil, error ?? APIClientError.noData)
+                    completion(nil, error)
                 }
                 return
             }
