@@ -21,7 +21,6 @@ class APIClient {
         
         if let image = cache.object(forKey: identiconEndpoint as NSString) {
             completion(image, nil)
-            print("using cached image for: \(playerName)")
             return
         }
         

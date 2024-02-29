@@ -67,7 +67,7 @@ class WinnerViewController: UIViewController, UITextFieldDelegate {
     
     func saveVictoryQuote() {
         guard victoryQuoteTextField.text != nil else {
-            return print("User did not enter a victory quote")
+            return
         }
 
         let currentGameResult = gameManager.getGameResult()

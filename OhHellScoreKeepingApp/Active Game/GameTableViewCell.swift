@@ -67,7 +67,6 @@ class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let bid = Int(bidText) else {
-            print("something went wrong")
             return
         }
      
