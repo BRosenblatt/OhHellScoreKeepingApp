@@ -8,6 +8,7 @@
 import UIKit
 
 class TiedGameHistoryTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var tiedWinnerImageView: UIImageView!
     @IBOutlet weak var winnerNamesLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!

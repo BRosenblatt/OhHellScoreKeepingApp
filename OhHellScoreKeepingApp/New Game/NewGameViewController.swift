@@ -43,12 +43,10 @@ class NewGameViewController: UIViewController, UITextFieldDelegate {
         updateUI()
     }
     
-    // Disable start game button if user is editing textfield
     func textFieldDidBeginEditing(_ textField: UITextField) {
         startGameButton.isEnabled = false
     }
     
-    // enable start game button when all textfields contain text
     func textFieldDidEndEditing(_ textField: UITextField) {
         for textField in allTextfields {
             guard textField.hasText else {
@@ -95,7 +93,6 @@ class NewGameViewController: UIViewController, UITextFieldDelegate {
         numberOfCardsLabel.text = "\(cardCount)"
     }
     
-    // Programmatically add text field when add button is tapped
     func addNewTextField() {
         let newTextField = UITextField()
         newTextField.delegate = self
@@ -105,7 +102,6 @@ class NewGameViewController: UIViewController, UITextFieldDelegate {
         textFieldStackView.addArrangedSubview(newTextField)
     }
     
-    // Programmatically remove text field when remove button is tapped
     func removeTextField() {
         guard let lastTextField = textFieldStackView.arrangedSubviews.last else {
             return
@@ -113,7 +109,6 @@ class NewGameViewController: UIViewController, UITextFieldDelegate {
         textFieldStackView.removeArrangedSubview(lastTextField)
         lastTextField.removeFromSuperview()
     }
-    
     
     @IBAction func increaseCardCountButtonWasTapped(_ sender: Any) {
         cardCount += 1
@@ -151,7 +146,6 @@ class NewGameViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // Dismiss new game view when cancel button is tapped
     @IBAction func cancellButtonWasTapped(_ sender: Any) {
         self.dismiss(animated: true)
     }

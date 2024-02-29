@@ -33,17 +33,14 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.register(headerNib, forCellReuseIdentifier: "GameTableViewHeaderCell")
     }
     
-    
     // MARK: More Options Menu
     func setUpButtonMenu() {
         let restartRoundAction = UIAction(title: "Restart Round") { action in
-            // Restart Round clears bids, segmented control, and resets score
             self.gameManager.restartRound()
             self.tableView.reloadData()
         }
         
         let endGameAction = UIAction(title: "End Game") { action in
-            // End Game ends the entire game. Shows winner! Adds to game history. Cannot restart or edit game.
             self.showEndGameAlert()
         }
         
@@ -116,76 +113,74 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         try? dataController.viewContext.save()
     }
 }
-    
+
 // MARK: - Table view
+
+extension ActiveGameViewController {
     
-    extension ActiveGameViewController {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        gameManager.players.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewCell", for: indexPath) as! GameTableViewCell
+        cell.invalidBidAlertDelegate = self
+        cell.enableNextRoundButtonDelegate = self
         
-        // MARK: - Set up table view
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            gameManager.players.count
-        }
+        let playerName = gameManager.currentRound?.orderedPlayerList[indexPath.row] ?? ""
+        cell.playerNameLabel.text = playerName
         
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewCell", for: indexPath) as! GameTableViewCell
-            cell.invalidBidAlertDelegate = self
-            cell.enableNextRoundButtonDelegate = self
-            
-            let playerName = gameManager.currentRound?.orderedPlayerList[indexPath.row] ?? ""
-            cell.playerNameLabel.text = playerName
-            
-            APIClient.getIdenticonFromAPI(playerName: playerName, completion: { image, error in
-                if let image = image {
-                    cell.identiconUIImageView.image = image
-                } else { // if retrieving data from API fails, show placeholder system image
-                    cell.identiconUIImageView.image = UIImage(systemName: "person.crop.circle.badge.exclamationmark.fill")
-                }
-            })
-            
-            let score = gameManager.scores[playerName] ?? 0
-            let points = gameManager.currentRound?.points[playerName] ?? 0
-            cell.scoreLabel.text = "\(score + points)"
-            cell.bidSegmentedControl.isEnabled = false
-                        
-            return cell
-        }
-        
-        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            53
-        }
-        
-        func enableNextRoundButtonIfNeeded() {
-            let playersCount = gameManager.players.count
-            // If all bids are entered, enable the button
-            if gameManager.currentRound?.playerBids.count == playersCount {
-                nextRoundButton.isEnabled = true
-            } else {
-                nextRoundButton.isEnabled = false
+        APIClient.getIdenticonFromAPI(playerName: playerName, completion: { image, error in
+            if let image = image {
+                cell.identiconUIImageView.image = image
+            } else { // if retrieving data from API fails, show placeholder system image
+                cell.identiconUIImageView.image = UIImage(systemName: "person.crop.circle.badge.exclamationmark.fill")
             }
-        }
+        })
         
-        func disableNextRoundButton() {
+        let score = gameManager.scores[playerName] ?? 0
+        let points = gameManager.currentRound?.points[playerName] ?? 0
+        cell.scoreLabel.text = "\(score + points)"
+        cell.bidSegmentedControl.isEnabled = false
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        53
+    }
+    
+    func enableNextRoundButtonIfNeeded() {
+        let playersCount = gameManager.players.count
+        if gameManager.currentRound?.playerBids.count == playersCount {
+            nextRoundButton.isEnabled = true
+        } else {
             nextRoundButton.isEnabled = false
         }
-        
-        func showInvalidBidAlert() {
-            let alertController = UIAlertController(title: nil,
-                                                    message: "The total bid entries cannot equal the number of cards in the hand. Please adjust the last bid to be over or under the card count.",
-                                                    preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .default))
-            
-            present(alertController, animated: true)
-        }
-        
-// MARK: - Set up table header
-        
-        func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-            let tableHeaderCell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewHeaderCell") as! GameTableViewHeaderCell
-            
-            return tableHeaderCell
-        }
-        
-        func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return 46
-        }
     }
+    
+    func disableNextRoundButton() {
+        nextRoundButton.isEnabled = false
+    }
+    
+    func showInvalidBidAlert() {
+        let alertController = UIAlertController(title: nil,
+                                                message: "The total bid entries cannot equal the number of cards in the hand. Please adjust the last bid to be over or under the card count.",
+                                                preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        present(alertController, animated: true)
+    }
+    
+    // MARK: - Set up table header
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let tableHeaderCell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewHeaderCell") as! GameTableViewHeaderCell
+        
+        return tableHeaderCell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 46
+    }
+}

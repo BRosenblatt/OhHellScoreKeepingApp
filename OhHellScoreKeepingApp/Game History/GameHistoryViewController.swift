@@ -11,7 +11,6 @@ class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var tableView: UITableView!
     
-    let gameManager: GameManager = .shared
     var dataController: DataController!
     var completedGames: [CompletedGame] = []
 
@@ -49,7 +48,6 @@ class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableV
 }
 
 extension GameHistoryViewController {
-    // Configure tableview: Show date of game, winnerName, winner image, winner score, and victory quote.
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if completedGames.isEmpty == false {
@@ -111,4 +109,3 @@ extension GameHistoryViewController {
         }
     }
 }
-

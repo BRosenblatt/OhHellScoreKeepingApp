@@ -14,8 +14,4 @@ class GameHistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var winnerScoreLabel: UILabel!
     @IBOutlet weak var victoryQuoteLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 }

@@ -30,7 +30,6 @@ class GameManager {
     
     static let shared: GameManager = GameManager()
 
-    // start a game with these players
     func createGame(playerNames: [String], gameOrder: GameOrder, maxHandSize: Int) {
         currentGameIdentifierString = UUID().uuidString
         
@@ -49,7 +48,6 @@ class GameManager {
         })
     }
     
-    // start new round; players can play as many rounds as they want
     func startNewRound() {
         var handSize: Int = startingHandSize
         
@@ -68,10 +66,8 @@ class GameManager {
             return players
         }
         
-        // get the previous round
         var nextRoundOrderedPlayers = previousRound
         
-        // make the last player the new dealer
         let newDealer = nextRoundOrderedPlayers.remove(at: 0)
         nextRoundOrderedPlayers.append(newDealer)
         
@@ -94,7 +90,6 @@ class GameManager {
         return newHandSize
     }
     
-    // enter bids
     func addBidForPlayer(bid: Int, playerName: String) {
         currentRound?.playerBids[playerName] = bid
     }
@@ -142,11 +137,9 @@ class GameManager {
         guard let currentRound else {
             return
         }
-        // revert bid entries
+        
         currentRound.playerBids = [:]
-        // revert didWinBid
         currentRound.didWinBid = [:]
-        // revert points
         currentRound.points = [:]
     }
 

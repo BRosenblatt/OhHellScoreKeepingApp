@@ -57,7 +57,6 @@ class WinnerViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func submitButtonWasTapped(_ sender: Any) {
-        // save victory quote
         saveVictoryQuote()
         let presenter = presentingViewController
         dismiss(animated: true) {
@@ -72,8 +71,6 @@ class WinnerViewController: UIViewController, UITextFieldDelegate {
         }
 
         let currentGameResult = gameManager.getGameResult()
-        
-        // fetch the completed game that you want (i.e. whose identifier matches currentGameResult)
         let fetchRequest = CompletedGame.fetchRequest()
         let predicate = NSPredicate(format: "identifier == %@", currentGameResult.gameIdentifier)
         fetchRequest.predicate = predicate
