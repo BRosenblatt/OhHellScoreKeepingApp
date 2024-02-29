@@ -114,7 +114,6 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         endGame.winnerImageName = gameResult.winnerImageName
         endGame.identifier = gameResult.gameIdentifier
         try? dataController.viewContext.save()
-        print("saved game data")
     }
 }
     
@@ -136,7 +135,11 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
             cell.playerNameLabel.text = playerName
             
             APIClient.getIdenticonFromAPI(playerName: playerName, completion: { image, error in
-                cell.identiconUIImageView.image = image ?? UIImage(systemName: "person.crop.circle.badge.exclamationmark.fill") // if retrieving data from API fails, show placeholder system image
+                if let image = image {
+                    cell.identiconUIImageView.image = image
+                } else { // if retrieving data from API fails, show placeholder system image
+                    cell.identiconUIImageView.image = UIImage(systemName: "person.crop.circle.badge.exclamationmark.fill")
+                }
             })
             
             let score = gameManager.scores[playerName] ?? 0

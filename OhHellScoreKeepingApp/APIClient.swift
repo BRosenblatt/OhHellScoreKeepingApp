@@ -12,7 +12,7 @@ class APIClient {
     static let baseURL = "https://api.dicebear.com/7.x/identicon/png"
     static let cache = NSCache<NSString, UIImage>()
     
-     static func urlString(for playerName: String, size: Int = 48) -> String {
+    static func urlString(for playerName: String, size: Int = 48) -> String {
         baseURL + "?seed=\(playerName)&size=\(size)"
     }
     
@@ -31,6 +31,8 @@ class APIClient {
         let url = URL(string: identiconEndpoint)
         let urlRequest = URLRequest(url: url!)
         let task = URLSession.shared.dataTask(with: urlRequest, completionHandler: { data, response, error in
+            
+            
             guard let data = data else {
                 DispatchQueue.main.async {
                     completion(nil, error)
