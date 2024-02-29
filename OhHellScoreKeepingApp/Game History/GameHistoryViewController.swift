@@ -74,13 +74,13 @@ extension GameHistoryViewController {
         
         if completedGame.isATie {
             tiedWinnersGameCell.winnerNamesLabel.text = completedGame.winnerName
-            tiedWinnersGameCell.dateLabel.text = completedGame.date
+            tiedWinnersGameCell.dateLabel.text = DateFormatter.localizedString(from: completedGame.date ?? .now, dateStyle: .short, timeStyle: .none)
             tiedWinnersGameCell.tiedScoreLabel.text = completedGame.winnerScore
             tiedWinnersGameCell.tiedWinnerImageView.image = UIImage(systemName: "person.3.fill")
             return tiedWinnersGameCell
         } else {
             singleWinnerGameCell.winnerNameLabel.text = completedGame.winnerName
-            singleWinnerGameCell.dateLabel.text = completedGame.date
+            singleWinnerGameCell.dateLabel.text = DateFormatter.localizedString(from: completedGame.date ?? .now, dateStyle: .short, timeStyle: .none)
             singleWinnerGameCell.winnerScoreLabel.text = completedGame.winnerScore
             let victoryQuoteString = completedGame.winnerVictoryQuote ?? ""
             singleWinnerGameCell.victoryQuoteLabel.text = "\"\(victoryQuoteString)\""

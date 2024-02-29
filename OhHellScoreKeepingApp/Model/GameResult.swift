@@ -12,6 +12,6 @@ struct GameResult {
     let winnerScore: String
     let isATie: Bool
     let winnerImageName: String
-    let gameDate: String
+    let gameDate: Date
     let gameIdentifier: String
 }

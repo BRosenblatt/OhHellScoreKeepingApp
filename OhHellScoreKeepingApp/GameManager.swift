@@ -23,19 +23,12 @@ class GameManager {
     private(set) var maxHandSize = 0
     private(set) var gameOrder: GameOrder = .descending
     private(set) var currentGameIdentifierString: String = ""
-
-    let dateFormatter: DateFormatter
     
     var currentRound: Round? {
         rounds.last
     }
     
     static let shared: GameManager = GameManager()
-    
-    private init() {
-        self.dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-    }
 
     // start a game with these players
     func createGame(playerNames: [String], gameOrder: GameOrder, maxHandSize: Int) {
@@ -186,12 +179,11 @@ class GameManager {
     }
     
     func getGameResult() -> GameResult {
-        let gameDate = dateFormatter.string(from: Date())
         return GameResult(winnerNames: determineWinnerNames(),
                           winnerScore: determineWinnerScore(), 
                           isATie: determineTie(),
                           winnerImageName: determineSingleWinnerImageName(),
-                          gameDate: gameDate,
+                          gameDate: Date(),
                           gameIdentifier: currentGameIdentifierString)
     }
     
