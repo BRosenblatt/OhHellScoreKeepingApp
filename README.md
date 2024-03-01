@@ -66,7 +66,7 @@ The "+" column shows the number of points each player received. This logic depen
 Likewise, the "Score" column will update accordingly with the total points per player, carried over from each round. 
 
 ### iv. <ins>Play the next round</ins>
-To play the next round, tap the "Next Round" button.
+To play the next round, tap the **Next Round** button.
 
 ### v. <ins>Restart a round</ins>
 Sometimes you play a round and realize someone made a mistake (misdealt the cards, etc.). If you want to restart the round, tap the **ellipsis** icon in the top right of the screen, then select **Restart Round**. The round data will reset. 
