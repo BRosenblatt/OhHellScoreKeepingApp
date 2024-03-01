@@ -2,7 +2,7 @@
 
 ## Table of contents
 1. [Overview](#Overview)
-2. [Download and run](#Download-and-run)
+2. [Download and run](#2.-Download-and-run)
 3. [Start a new game](#Start-a-new-game)
    1. [Enter the number of players](#Enter-the-number-of-players)
    2. [Enter the player names](#Enter-the-player-names)
