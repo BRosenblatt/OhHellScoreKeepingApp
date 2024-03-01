@@ -2,7 +2,7 @@
 
 ## Table of contents
 1. [Overview](#Overview)
-2. [Download and run[(#Download)
+2. [Download and run](#Download)
 3. Start a new game
 4. Enter the number of players
 5. Enter the player names
