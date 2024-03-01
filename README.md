@@ -18,10 +18,10 @@
    6. [End game](#End-game)
 17. [View your game history](#View-your-game-history)
 
-## <ins>Overview</ins>
+## 1. <ins>Overview</ins>
 I created this app as my final project to fulfill the Udacity iOS Nanodegree program. It's a companion app to the card game [Oh Hell](https://en.wikipedia.org/wiki/Oh_hell).
 
-## <ins>Download and run</ins>
+## 2. <ins>Download and run</ins>
 * To just play around with this app, all you have to do is download, run, and follow the instructions below. 
 * To use it as a companion app while you play Oh Hell, first gather your players and a deck of cards, then download, run, and follow the instructions below.
 
