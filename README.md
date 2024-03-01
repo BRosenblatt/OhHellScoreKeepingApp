@@ -9,7 +9,7 @@
    3. [Enter the maximum number of cards](#Enter-the-maximum-number-of-cards)
    4. [Select the game order](#Select-the-game-order)
    5. [Start your new game](#Start-your-new-game)
-4. [Play (...or just poke around the app...)](#Play-(...or-just-poke-around-the-app...))
+4. [Play- or just poke around the app](#Play--or-just-poke-around-the-app)
    1. [Enter player bids](#Enter-player-bids)
    2. [View player points](#View-player-points)
    3. [View player scores](#View-player-scores)
@@ -49,7 +49,7 @@ Then select whether you want to play in descending or ascending order. Note: Thi
 ### <ins>Start your new game</ins>
 Click the **Start Game** button when you're done.
 
-## <ins>Play (...or just poke around the app...)</ins>
+## <ins>Play- or just poke around the app</ins>
 The "Game" screen will appear. The round number, dealer name, and hand size will appear at the top of the screen to help you keep track.
 
 Each player is assigned an avatar generated from the [DiceBear API](https://www.dicebear.com/styles/identicon/). The player names themselves are used to retrieve the images. See the APIClient file for more detail.
