@@ -3,8 +3,8 @@
 ## Table of contents
 1. [Overview](#Overview)
 2. [Download and run](#Download-and-run)
-3. Start a new game
-4. Enter the number of players
+3. [Start a new game](#Start-a-new-game)
+   1. [Enter the number of players](#Enter-the-number-of-players)
 5. Enter the player names
 6. Enter the maximum number of cards
 8. Select the game order
