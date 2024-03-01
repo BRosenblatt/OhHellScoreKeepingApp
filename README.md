@@ -21,7 +21,7 @@
 ## <ins>Overview</ins>
 I created this app as my final project to fulfill the Udacity iOS Nanodegree program. It's a companion app to the card game [Oh Hell](https://en.wikipedia.org/wiki/Oh_hell).
 
-## Download and run<a name="Download"</a>
+## Download and run<a name="Download"></a>
 * To just play around with this app, all you have to do is download, run, and follow the instructions below. 
 * To use it as a companion app while you play Oh Hell, first gather your players and a deck of cards, then download, run, and follow the instructions below.
 
