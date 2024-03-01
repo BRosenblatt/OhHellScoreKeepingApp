@@ -1,7 +1,8 @@
 # OhHellScoreKeepingApp
 
+## Table of contents
 1. [Overview](#Overview)
-2. How to use
+2. [How to use](#How_to_use)
 3. Download and run
 4. Start a new game
 5. Enter the number of players
