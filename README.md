@@ -22,7 +22,7 @@
 ## <ins>Overview</ins>
 I created this app as my final project to fulfill the Udacity iOS Nanodegree program. It's a companion app to the card game [Oh Hell](https://en.wikipedia.org/wiki/Oh_hell).
 
-## <ins>How to use</ins><a name="Howto"</a>
+## How to use<a name="Howto"</a>
 
 ### <ins>Download and run</ins>
 * To just play around with this app, all you have to do is download, run, and follow the instructions below. 
