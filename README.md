@@ -42,8 +42,8 @@ Use the segmented control to enter the maximum number of cards you intend to pla
 ### iv. <ins>Select the game order</ins>
 Then select whether you want to play in descending or ascending order. Note: This app allows you to play as few or as many rounds as you want. You can end the game at any time and save the winner data to your game history. Once a game is ended, it's done: You can't select it and pick up playing that same game again. You have to start a new game from scratch.
 
-* Descending order - Your first round will start with the maximum hand size, then descend incrementally down to two cards (first round: 17 cards; second round: 16 cards; third round: 15 cards, etc.), then work its way back up to the maximum hand size.
-* Ascending order -  Your first round will start with two cards and ascend incrementally until you reach the maximum hand size, then descend incrementally to two cards.
+* <ins>Descending order</ins> - Your first round will start with the maximum hand size, then descend incrementally down to two cards (first round: 17 cards; second round: 16 cards; third round: 15 cards, etc.), then work its way back up to the maximum hand size.
+* <ins>Ascending order</ins> -  Your first round will start with two cards and ascend incrementally until you reach the maximum hand size, then descend incrementally to two cards.
 
 
 ### v. <ins>Start your new game</ins>
@@ -68,10 +68,10 @@ Likewise, the "Score" column will update accordingly with the total points per p
 ### iv. <ins>Play the next round</ins>
 To play the next round, tap the "Next Round" button.
 
-## v. <ins>Restart a round</ins>
+### v. <ins>Restart a round</ins>
 Sometimes you play a round and realize someone made a mistake (misdealt the cards, etc.). If you want to restart the round, tap the **ellipsis** icon in the top right of the screen, then select **Restart Round**. The round data will reset. 
 
-## vi. <ins>End game</ins>
+### vi. <ins>End game</ins>
 As noted above, this app is designed to allow you to play as few or as many rounds as you want. When you're ready to end the game, tap the **ellipsis** icon in the top right of the screen, then select **End Game**. An alert will appear asking you to confirm whether you want to end the game. Tap **End Game**.
 
 The "Winner" screen will appear.
