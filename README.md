@@ -1,6 +1,6 @@
 # OhHellScoreKeepingApp
 
-## _Overview_
+## <ins>Overview</ins>
 I created this app as my final project to fulfill the Udacity iOS Nanodegree program. It's a companion app to the card game [Oh Hell](https://en.wikipedia.org/wiki/Oh_hell).
 
 ## How to use
