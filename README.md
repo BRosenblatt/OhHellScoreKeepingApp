@@ -1,5 +1,23 @@
 # OhHellScoreKeepingApp
 
+1. [Overview](#Overview)
+2. How to use
+3. Download and run
+4. Start a new game
+5. Enter the number of players
+6. Enter the player names
+7. Enter the maximum number of cards
+8. Select the game order
+9. Start your new game
+10. Play (...or just poke around the app...)
+11. Enter player bids
+12. View player points
+13. View player scores
+14. Play the next round
+15. Restart a Round
+16. End Game
+17. View Your Game History
+
 ## <ins>Overview</ins>
 I created this app as my final project to fulfill the Udacity iOS Nanodegree program. It's a companion app to the card game [Oh Hell](https://en.wikipedia.org/wiki/Oh_hell).
 
@@ -64,7 +82,7 @@ If you have a tied game, the winner names will be displayed. Tap the **Done** bu
 
 If you have a single winner, the winner name will be displayed along with a textfield where the winner can provide a "victory quote". You must enter a victory quote in order to proceed. Then tap the **Done** button.
 
-### View Your Game History</ins>
+### <ins>View Your Game History</ins>
 The "Game History" screen will appear. Your game will appear at the top of the table. Each game displays the following data:
 
 * Winner avatar (note for ties: a 3-person image displays for all tied games)
