@@ -5,18 +5,18 @@
 2. [Download and run](#Download-and-run)
 3. [Start a new game](#Start-a-new-game)
    1. [Enter the number of players](#Enter-the-number-of-players)
-5. Enter the player names
-6. Enter the maximum number of cards
-8. Select the game order
-9. Start your new game
-10. Play (...or just poke around the app...)
-11. Enter player bids
-12. View player points
-13. View player scores
-14. Play the next round
-15. Restart a Round
-16. End Game
-17. View Your Game History
+   2. [Enter the player names](#Enter-the-player-names)
+   3. [Enter the maximum number of cards](#Enter-the-maximum-number-of-cards)
+   4. [Select the game order](#Select-the-game-order)
+   5. [Start your new game](#Start-your-new-game)
+4. [Play (...or just poke around the app...)](#Play-(...or-just-poke-around-the-app...))
+   1. [Enter player bids](#Enter-player-bids)
+   2. [View player points](#View-player-points)
+   3. [View player scores](#View-player-scores)
+   4. [Play the next round](#Play-the-next-round)
+   5. [Restart a Round](#Restart-a-Round)
+   6. [End game](#End-game)
+17. [View your game history](#View-your-game-history)
 
 ## <ins>Overview</ins>
 I created this app as my final project to fulfill the Udacity iOS Nanodegree program. It's a companion app to the card game [Oh Hell](https://en.wikipedia.org/wiki/Oh_hell).
@@ -68,10 +68,10 @@ Likewise, the "Score" column will update accordingly with the total points per p
 ### <ins>Play the next round</ins>
 To play the next round, tap the "Next Round" button.
 
-## <ins>Restart a Round</ins>
+## <ins>Restart a round</ins>
 Sometimes you play a round and realize someone made a mistake (misdealt the cards, etc.). If you want to restart the round, tap the **ellipsis** icon in the top right of the screen, then select **Restart Round**. The round data will reset. 
 
-## <ins>End Game</ins>
+## <ins>End game</ins>
 As noted above, this app is designed to allow you to play as few or as many rounds as you want. When you're ready to end the game, tap the **ellipsis** icon in the top right of the screen, then select **End Game**. An alert will appear asking you to confirm whether you want to end the game. Tap **End Game**.
 
 The "Winner" screen will appear.
@@ -80,7 +80,7 @@ If you have a tied game, the winner names will be displayed. Tap the **Done** bu
 
 If you have a single winner, the winner name will be displayed along with a textfield where the winner can provide a "victory quote". You must enter a victory quote in order to proceed. Then tap the **Done** button.
 
-## <ins>View Your Game History</ins>
+## <ins>View your game history</ins>
 The "Game History" screen will appear. Your game will appear at the top of the table. Each game displays the following data:
 
 * Winner avatar (note for ties: a 3-person image displays for all tied games)
