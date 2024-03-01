@@ -2,7 +2,7 @@
 
 ## Table of contents
 1. [Overview](#Overview)
-2. [Download and run](#Download)
+2. [Download and run](#Download-and-run)
 3. Start a new game
 4. Enter the number of players
 5. Enter the player names
@@ -21,7 +21,7 @@
 ## <ins>Overview</ins>
 I created this app as my final project to fulfill the Udacity iOS Nanodegree program. It's a companion app to the card game [Oh Hell](https://en.wikipedia.org/wiki/Oh_hell).
 
-## Download and run <a name="Download"></a>
+## <ins>Download and run</ins>
 * To just play around with this app, all you have to do is download, run, and follow the instructions below. 
 * To use it as a companion app while you play Oh Hell, first gather your players and a deck of cards, then download, run, and follow the instructions below.
 
