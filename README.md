@@ -26,7 +26,7 @@ I created this app as my final project to fulfill the Udacity iOS Nanodegree pro
 * To use it as a companion app while you play Oh Hell, first gather your players and a deck of cards, then download, run, and follow the instructions below.
 
 ## 3. <ins>Start a new game</ins>
-There's no need to create an account and log in. The first screen will have helper text to get you started. Tap the **+** icon in the top right corner.
+The first screen will appear with helper text to get you started. Tap the **+** icon in the top right corner to start a game.
 
 The "New Game" screen will appear. 
 
