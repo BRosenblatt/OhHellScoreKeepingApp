@@ -11,11 +11,12 @@
    5. [Start your new game](#Start-your-new-game)
 4. [Play- or just poke around the app](#Play--or-just-poke-around-the-app)
    1. [Enter player bids](#Enter-player-bids)
-   2. [View player points](#View-player-points)
-   3. [View player scores](#View-player-scores)
-   4. [Play the next round](#Play-the-next-round)
-   5. [Restart a Round](#Restart-a-Round)
-   6. [End game](#End-game)
+   2. [Select who won their bids](Select-who-won-their-bids)
+   3. [View player points](#View-player-points)
+   4. [View player scores](#View-player-scores)
+   5. [Play the next round](#Play-the-next-round)
+   6. [Restart a Round](#Restart-a-Round)
+   7. [End game](#End-game)
 5. [View your game history](#View-your-game-history)
 
 ## 1. <ins>Overview</ins>
