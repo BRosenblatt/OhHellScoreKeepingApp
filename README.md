@@ -69,7 +69,7 @@ Enter the bid for each player. Only integers are accepted, with a maximum of 2 d
 After you finish playing a round, select the **checkmark** on the segmented controls for each player who won their bid.
 
 ### *View player points*
-The "+" column calculates the number points each player received after a round is played. This logic is based on whether a player won their bid. 
+The "+" column calculates the number points each player received based on whether they won their bid. 
 
 ### *View player scores*
 The "Score" column tracks the total points per player as each round is played. 
