@@ -23,8 +23,8 @@
 I created this app as my final project to fulfill the [Udacity iOS Nanodegree program](https://www.udacity.com/course/ios-developer-nanodegree--nd003). It's a scorekeeping app for the card game [Oh Hell](https://en.wikipedia.org/wiki/Oh_hell).
 
 ## 2. <ins>Download and run</ins>
-* To just play around with this app, all you have to do is download, run, and follow the instructions below. 
-* To use it as a companion app while you play Oh Hell, first gather your players and a deck of cards, then download, run, and follow the instructions below. Enter test data for all inputs.
+* To just play around with this app, all you have to do is download, run, and follow the instructions below. Enter test data for all inputs.
+* To use it as a companion app while you play Oh Hell, first gather your players and a deck of cards, then download, run, and follow the instructions below.
 
 ## 3. <ins>Start a new game</ins>
 The first screen will appear with helper text to get you started. Tap the **+** icon in the top right corner to start a game.
