@@ -39,7 +39,7 @@ Next, enter your player names into the text fields. 3 textfields will show by de
 ### *Enter the maximum number of cards*
 Use the segmented control to choose the maximum number of cards you want to play at a time.
 
-2 cards is the lowest you can select. The maximum number of cards will update according to the number of players. For example, if you're playing with 3 players, the maximum number of cards will be capped out at 17; if you're playing with 5 players, the maximum number of cards will be capped out at 10, etc. The segmented control will become disabled accordingly. 
+2 cards is the lowest you can select. The maximum number of cards will update based on the number of players. For example, if you're playing with 3 players, the maximum number of cards will be capped out at 17; if you're playing with 5 players, the maximum number of cards will be capped out at 10, etc. The segmented control will become disabled accordingly. 
 
 ### *Select the game order*
 Then select whether you want to play in descending or ascending order. **Note**: *This app allows you to play as few or as many rounds as you want*.
