@@ -62,7 +62,7 @@ Each player is assigned an avatar generated from the [DiceBear API](https://www.
 ### *Enter player bids*
 Enter the bid for each player. Only integers are accepted, with a maximum of 2 digits. 
 
-**Note**: *The total number of bids entered cannot equal the hand size. For example, if the hand size is 5, the sum of the bids cannot equal 5. In this scenario, an alert will appear to instruct you to enter a different bid in the last player/bid field. You cannot proceed until the bid has been updated*
+**Note**: *The total number of bids entered cannot equal the hand size. For example, if the hand size is 5, the sum of the bids cannot equal 5. In this scenario, an alert will appear to instruct you to enter a different bid in the last player/bid field. You cannot proceed until the bid has been updated.*
 
 ### *Select who won their bids*
 
