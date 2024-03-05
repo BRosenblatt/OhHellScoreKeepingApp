@@ -34,13 +34,17 @@ The "New Game" screen will appear.
 Use the segmented control to choose the number of players. You must have a minumum of 3 players and no more than 8 players. The control will become disabled accordingly.
 
 ### *Enter the player names*
-Next, enter your player names in the text fields. 3 textfields will show by default. If you add more than 3 players per instructions above, then a new textfield will appear for each additional player. If you reduce the number of players, the number of textfields will update accordingly.
+Next, enter your player names in the text fields. 3 textfields will show by default. If you add more than 3 players per instructions above, a new textfield will appear for each additional player. If you reduce the number of players, the number of textfields will update accordingly.
 
 ### *Enter the maximum number of cards*
-Use the segmented control to choose the maximum number of cards you want to play at a time. 2 cards is the lowest you can select. The maximum number of cards will update according to the number of players. E.g., if you're playing with 3 players, the maximum number of cards will be capped out at 17; if you're playing with 5 players, the maximum number of cards will be capped out at 10, etc. The segmented control will become disabled accordingly. 
+Use the segmented control to choose the maximum number of cards you want to play at a time.
+
+2 cards is the lowest you can select. The maximum number of cards will update according to the number of players. For example, if you're playing with 3 players, the maximum number of cards will be capped out at 17; if you're playing with 5 players, the maximum number of cards will be capped out at 10, etc. The segmented control will become disabled accordingly. 
 
 ### *Select the game order*
-Then select whether you want to play in descending or ascending order. **Note**: *This app allows you to play as few or as many rounds as you want*. You can end the game at any time and save the game results to your game history. Once a game is ended, it's done: You can't select it and pick up playing that same game again. You have to start a new game from scratch.
+Then select whether you want to play in descending or ascending order. **Note**: *This app allows you to play as few or as many rounds as you want*.
+
+You can end the game at any time and save the game results to your game history. Once a game is ended, it's done: You can't select it and pick up playing that same game again. You have to start a new game from scratch.
 
 * <ins>Descending order</ins> - Your first round will start with the maximum hand size, then descend incrementally down to 1 card (first round: 17 cards; second round: 16 cards; third round: 15 cards, etc.), then work its way back up to the maximum hand size.
 * <ins>Ascending order</ins> -  Your first round will start with 1 card and ascend incrementally until you reach the maximum hand size, then descend incrementally again.
