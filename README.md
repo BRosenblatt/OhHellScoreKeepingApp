@@ -52,7 +52,7 @@ Then select whether you want to play in descending or ascending order.
 ### *Start your new game*
 Click the **Start Game** button when you're ready.
 
-**Note**: *This app allows you to play as few or as many rounds as you want. You can end the game at any time and save the game results to your game history. Once a game is ended, it's done: You can't select it and pick up playing that same game again. You have to start a new game from scratch.*
+**Note**: *This app allows you to play as few or as many rounds as you want. You can end the game at any time and save the game results to your game history. Once a game is ended, you can't continue playing that same game again. You have to start a new game from scratch.*
 
 ## 4. <ins>Play- or just poke around the app</ins>
 The "Game" screen will appear. The round number, dealer name, and hand size will appear at the top of the screen to help you keep track of each round.
