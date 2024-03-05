@@ -20,7 +20,7 @@
 5. [View your game history](#View-your-game-history)
 
 ## 1. <ins>Overview</ins>
-I created this app as my final project to fulfill the Udacity iOS Nanodegree program. It's a scorekeeping app for the card game [Oh Hell](https://en.wikipedia.org/wiki/Oh_hell).
+I created this app as my final project to fulfill the [Udacity iOS Nanodegree program](https://www.udacity.com/course/ios-developer-nanodegree--nd003). It's a scorekeeping app for the card game [Oh Hell](https://en.wikipedia.org/wiki/Oh_hell).
 
 ## 2. <ins>Download and run</ins>
 * To just play around with this app, all you have to do is download, run, and follow the instructions below. 
