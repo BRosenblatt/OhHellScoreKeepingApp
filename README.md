@@ -59,9 +59,9 @@ The "Game" screen will appear. The round number, dealer name, and hand size will
 Each player is assigned an avatar generated from the [DiceBear API](https://www.dicebear.com/styles/identicon/). The player names themselves are used to generate and retrieve the images.
 
 ### *Enter player bids*
-Enter the bid for each player. Only integers are accepted, with a max of 2 digits. 
+Enter the bid for each player. Only integers are accepted, with a maximum of 2 digits. 
 
-The total number of bids entered cannot equal the hand size. For example, if the hand size is 5, the sum of the bids cannot equal 5. In this scenario, an alert will appear and will instruct you to enter a different bid in the last bid field.
+**Note**: *The total number of bids entered cannot equal the hand size. For example, if the hand size is 5, the sum of the bids cannot equal 5. In this scenario, an alert will appear to instruct you to enter a different bid in the last player/bid field. You cannot proceed until the bid has been updated*
 
 After you finish playing a round, use the segmented control to indicate who won their bid.
 
