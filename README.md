@@ -42,9 +42,7 @@ Use the segmented control to choose the maximum number of cards you want to play
 2 cards is the lowest you can select. The maximum number of cards will update based on the number of players. For example, if you're playing with 3 players, the maximum number of cards will be capped out at 17; if you're playing with 5 players, the maximum number of cards will be capped out at 10, etc. The segmented control will become disabled accordingly. 
 
 ### *Select the game order*
-Then select whether you want to play in descending or ascending order. **Note**: *This app allows you to play as few or as many rounds as you want*.
-
-You can end the game at any time and save the game results to your game history. Once a game is ended, it's done: You can't select it and pick up playing that same game again. You have to start a new game from scratch.
+Then select whether you want to play in descending or ascending order.
 
 * <ins>Descending order</ins> - Your first round will start with the maximum hand size, then descend incrementally down to 1 card (first round: 17 cards; second round: 16 cards; third round: 15 cards, etc.), then work its way back up to the maximum hand size.
 * <ins>Ascending order</ins> -  Your first round will start with 1 card and ascend incrementally until you reach the maximum hand size, then descend incrementally again.
@@ -52,6 +50,8 @@ You can end the game at any time and save the game results to your game history.
 
 ### *Start your new game*
 Click the **Start Game** button when you're ready.
+
+**Note**: *This app allows you to play as few or as many rounds as you want. You can end the game at any time and save the game results to your game history. Once a game is ended, it's done: You can't select it and pick up playing that same game again. You have to start a new game from scratch.*
 
 ## 4. <ins>Play- or just poke around the app</ins>
 The "Game" screen will appear. The round number, dealer name, and hand size will appear at the top of the screen to help you keep track of each round.
