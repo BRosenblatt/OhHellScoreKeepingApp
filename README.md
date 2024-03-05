@@ -21,11 +21,11 @@
 ## 1. <ins>Overview</ins>
 I created this app as my final project to fulfill the Udacity iOS Nanodegree program. It's a companion app to the card game [Oh Hell](https://en.wikipedia.org/wiki/Oh_hell).
 
-## <ins>Download and run</ins>
+## 2. <ins>Download and run</ins>
 * To just play around with this app, all you have to do is download, run, and follow the instructions below. 
 * To use it as a companion app while you play Oh Hell, first gather your players and a deck of cards, then download, run, and follow the instructions below.
 
-## <ins>Start a new game</ins>
+## 3. <ins>Start a new game</ins>
 There's no need to create an account and log in. The first screen will have helper text to get you started. Tap the **+** icon in the top right corner.
 
 The "New Game" screen will appear. 
@@ -49,7 +49,7 @@ Then select whether you want to play in descending or ascending order. Note: Thi
 ### <ins>Start your new game</ins>
 Click the **Start Game** button when you're done.
 
-## <ins>Play- or just poke around the app</ins>
+## 4. <ins>Play- or just poke around the app</ins>
 The "Game" screen will appear. The round number, dealer name, and hand size will appear at the top of the screen to help you keep track.
 
 Each player is assigned an avatar generated from the [DiceBear API](https://www.dicebear.com/styles/identicon/). The player names themselves are used to retrieve the images. See the APIClient file for more detail.
@@ -80,7 +80,7 @@ If you have a tied game, the winner names will be displayed. Tap the **Done** bu
 
 If you have a single winner, the winner name will be displayed along with a textfield where the winner can provide a "victory quote". You must enter a victory quote in order to proceed. Then tap the **Done** button.
 
-## <ins>View your game history</ins>
+## 5. <ins>View your game history</ins>
 The "Game History" screen will appear. Your game will appear at the top of the table. Each game displays the following data:
 
 * Winner avatar (note for ties: a 3-person image displays for all tied games)
