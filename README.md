@@ -34,7 +34,7 @@ The "New Game" screen will appear.
 Use the segmented control to choose the number of players. You must have a minumum of 3 players and no more than 8 players. The control will become disabled accordingly.
 
 ### *Enter the player names*
-Next, enter your player names in the text fields. 3 textfields will show by default. If you add more than 3 players per instructions above, a new textfield will appear for each additional player. If you reduce the number of players, the number of textfields will update accordingly.
+Next, enter your player names into the text fields. 3 textfields will show by default. If you add more than 3 players per instructions above, a new textfield will appear for each additional player. If you reduce the number of players, the number of textfields will update accordingly.
 
 ### *Enter the maximum number of cards*
 Use the segmented control to choose the maximum number of cards you want to play at a time.
