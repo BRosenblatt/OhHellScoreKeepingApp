@@ -66,7 +66,7 @@ Enter the bid for each player. Only integers are accepted, with a maximum of 2 d
 
 ### *Select who won their bids*
 
-After you finish playing a round, select the "checkmark" on the segmented controls for each player who won their bid.
+After you finish playing a round, select the **checkmark** on the segmented controls for each player who won their bid.
 
 ### *View player points*
 The "+" column calculates the number points each player received after a round is played. This logic depends on whether a player won their bid. 
