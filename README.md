@@ -45,8 +45,8 @@ Use the **+** and **-** buttons to choose the maximum number of cards.
 ### *Select the game order*
 Then select whether you want to play in descending or ascending order.
 
-* <ins>Descending order</ins> - Your first round will start with the maximum hand size, then descend incrementally to 1 card (first round: 17 cards; second round: 16 cards; third round: 15 cards, etc.), then ascend incrementally to the maximum hand size.
-* <ins>Ascending order</ins> -  Your first round will start with 1 card, then ascend incrementally to the maximum hand size, then descend incrementally to 1 card.
+* <ins>Descending order</ins> - Your first round will start with the maximum hand size. Then each subsequent round will descend incrementally to 1 card (first round: 17 cards; second round: 16 cards; third round: 15 cards, etc.), then ascend incrementally to the maximum hand size.
+* <ins>Ascending order</ins> -  Your first round will start with 1 card. Then each subsequent round will ascend incrementally to the maximum hand size, then descend incrementally to 1 card.
 
 
 ### *Start your new game*
