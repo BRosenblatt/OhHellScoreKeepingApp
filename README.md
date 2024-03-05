@@ -30,10 +30,10 @@ There's no need to create an account and log in. The first screen will have help
 
 The "New Game" screen will appear. 
 
-### <ins>Enter the number of players</ins>
+### *Enter the number of players*
 Use the segmented control to enter the number of players. You must have a minumum of 3 players and no more than 8 players. The control will become disabled accordingly.
 
-### <ins>Enter the player names</ins>
+### *Enter the player names*
 Next, enter your player names in to the text fields. 3 textfields will show by default. If you add more than 3 players per instructions above, then a new textfield will appear for the corresponding player. If you decide to play with fewer players than you originally entered, the number of textfields will update to reflect the new number of players.
 
 ### <ins>Enter the maximum number of cards</ins>
