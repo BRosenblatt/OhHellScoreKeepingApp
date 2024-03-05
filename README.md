@@ -32,13 +32,13 @@ The first screen will appear with helper text to get you started. Tap the **+** 
 The "New Game" screen will appear. 
 
 ### *Enter the number of players*
-Use the segmented control to choose the number of players. You must have a minumum of 3 players and no more than 8 players. The control will become disabled accordingly.
+Use the **+** and **-** buttons to enter the number of players. You must have a minumum of 3 players and no more than 8 players.
 
 ### *Enter the player names*
 Next, enter your player names into the text fields. 3 textfields will show by default. If you add more than 3 players per instructions above, a new textfield will appear for each additional player. If you reduce the number of players, the number of textfields will update accordingly.
 
 ### *Enter the maximum number of cards*
-Use the segmented control to choose the maximum number of cards you want to play at a time.
+Use the **+** and **-** buttons to choose the maximum number of cards.
 
 2 cards is the lowest you can select. The maximum number of cards will update based on the number of players. For example, if you're playing with 3 players, the maximum number of cards will be capped out at 17; if you're playing with 5 players, the maximum number of cards will be capped out at 10, etc. The segmented control will become disabled accordingly. 
 
