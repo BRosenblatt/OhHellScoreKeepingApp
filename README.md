@@ -63,7 +63,7 @@ Enter the bid for each player. Only integers are accepted, with a maximum of 2 d
 
 **Note**: *The total number of bids entered cannot equal the hand size. For example, if the hand size is 5, the sum of the bids cannot equal 5. In this scenario, an alert will appear to instruct you to enter a different bid in the last player/bid field. You cannot proceed until the bid has been updated*
 
-After you finish playing a round, use the segmented control to indicate who won their bid.
+After you finish playing a round, use the segmented controls to indicate who won their bids.
 
 ### *View player points*
 The "+" column calculates the number points each player received after a round is played. This logic depends on whether a player won their bid. 
