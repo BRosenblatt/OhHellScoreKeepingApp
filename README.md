@@ -40,7 +40,7 @@ Next, enter your player names into the text fields. 3 textfields will show by de
 ### *Enter the maximum number of cards*
 Use the **+** and **-** buttons to choose the maximum number of cards.
 
-2 cards is the lowest you can select. The maximum number of cards will update based on the number of players. For example, if you're playing with 3 players, the maximum number of cards will be capped out at 17; if you're playing with 5 players, the maximum number of cards will be capped out at 10, etc. The segmented control will become disabled accordingly. 
+2 cards is the lowest you can select. The maximum number of cards will update based on the number of players. For example, if you're playing with 3 players, the maximum number of cards will be capped out at 17; if you're playing with 5 players, the maximum number of cards will be capped out at 10, etc. 
 
 ### *Select the game order*
 Then select whether you want to play in descending or ascending order.
