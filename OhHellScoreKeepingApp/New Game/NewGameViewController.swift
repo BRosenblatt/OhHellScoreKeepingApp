@@ -147,6 +147,6 @@ class NewGameViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func cancellButtonWasTapped(_ sender: Any) {
-        self.dismiss(animated: true)
+        dismiss(animated: true)
     }
 }

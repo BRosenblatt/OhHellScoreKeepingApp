@@ -9,6 +9,8 @@ import UIKit
 
 class GameHistoryTableViewCell: UITableViewCell {
     
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var winnerImageView: UIImageView!
     @IBOutlet weak var winnerNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!

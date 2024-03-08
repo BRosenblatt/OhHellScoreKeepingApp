@@ -135,7 +135,8 @@ extension ActiveGameViewController {
                 cell.identiconUIImageView.image = image
             } else { // if retrieving data from API fails, show placeholder system image
                 cell.identiconUIImageView.image = UIImage(systemName: "person.crop.circle.badge.exclamationmark.fill")
-            }
+            } 
+            cell.activityIndicator.stopAnimating()
         })
         
         let score = gameManager.scores[playerName] ?? 0

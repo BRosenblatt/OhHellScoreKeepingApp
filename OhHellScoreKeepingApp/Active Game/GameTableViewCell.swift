@@ -18,6 +18,7 @@ protocol InvalidBidAlertDelegate: UIViewController {
 
 class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var identiconUIImageView: UIImageView!
     @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var bidTextField: UITextField!

@@ -90,6 +90,7 @@ extension GameHistoryViewController {
                 } else { // if retrieving data from API fails, show placeholder system image
                     singleWinnerGameCell.winnerImageView.image = UIImage(systemName: "person.crop.circle.badge.exclamationmark.fill")
                 }
+                singleWinnerGameCell.activityIndicator.stopAnimating()
             }
             return singleWinnerGameCell
         }
