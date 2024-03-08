@@ -82,7 +82,10 @@ class ActiveGameViewController: UIViewController, UITableViewDelegate, UITableVi
         
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
-        alertController.addAction(UIAlertAction(title: "End Game", style: .default, handler: { action in
+        alertController.addAction(UIAlertAction(title: "End Game", style: .default, handler: { [weak self] action in
+            guard let self else {
+                return
+            }
             self.gameManager.updateScore()
             self.saveWinnerData()
             self.gameManager.restartRound()
