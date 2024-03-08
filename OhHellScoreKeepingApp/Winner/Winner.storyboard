@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kSy-Qh-JeY">
-                                <rect key="frame" x="0.0" y="59" width="393" height="751"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="URd-RN-bmj" userLabel="parentStackView">
                                         <rect key="frame" x="16" y="0.0" width="361" height="759"/>
@@ -41,7 +41,7 @@
                                                 <imageReference key="image" image="trophy.circle.fill" catalog="system" symbolScale="large"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kGa-EV-50j" userLabel="Winner Stack View">
-                                                <rect key="frame" x="80.000000000000014" y="244.00000000000003" width="201.33333333333337" height="110.33333333333334"/>
+                                                <rect key="frame" x="80" y="244.00000000000003" width="201.33333333333337" height="110.33333333333334"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="1000" text="Winner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="404-rP-bgf">
                                                         <rect key="frame" x="0.0" y="0.0" width="201.33333333333334" height="82"/>
@@ -58,7 +58,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="n8g-15-xu8" userLabel="Victory Quote Stack View">
-                                                <rect key="frame" x="81.333333333333329" y="386.33333333333331" width="198.66666666666669" height="83"/>
+                                                <rect key="frame" x="81.333333333333314" y="386.33333333333331" width="198.66666666666669" height="83"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Victory Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvz-yN-9tb">
                                                         <rect key="frame" x="0.0" y="0.0" width="198.66666666666666" height="41"/>
@@ -105,15 +105,14 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <keyboardLayoutGuide key="keyboard" followsUndockedKeyboard="YES" id="3Hk-bv-Ig5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kSy-Qh-JeY" secondAttribute="trailing" id="80p-lE-zrY"/>
                             <constraint firstItem="NRI-fw-gg7" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" constant="-32" id="B52-3h-Mtn"/>
                             <constraint firstItem="URd-RN-bmj" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" priority="999" id="PZM-qf-ks8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kSy-Qh-JeY" secondAttribute="bottom" id="RPz-zk-bEa"/>
                             <constraint firstItem="kSy-Qh-JeY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="cEG-EO-K7x"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="leading" secondItem="kSy-Qh-JeY" secondAttribute="leading" id="jR4-RX-gnJ"/>
-                            <constraint firstItem="3Hk-bv-Ig5" firstAttribute="top" secondItem="kSy-Qh-JeY" secondAttribute="bottom" constant="8" id="n6J-81-Mh0"/>
                         </constraints>
                     </view>
                     <connections>
