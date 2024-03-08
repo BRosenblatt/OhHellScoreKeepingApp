@@ -34,9 +34,10 @@ class APIClient {
                 return
             }
             DispatchQueue.main.async {
-                let identicon = UIImage(data: data)
-                cache.setObject(identicon!, forKey: identiconEndpoint as NSString)
-                completion(identicon, nil)
+                if let identicon = UIImage(data: data) {
+                    cache.setObject(identicon, forKey: identiconEndpoint as NSString)
+                    completion(identicon, nil)
+                }
             }
         })
         task.resume()
