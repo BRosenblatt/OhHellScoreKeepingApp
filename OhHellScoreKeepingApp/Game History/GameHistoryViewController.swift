@@ -50,11 +50,7 @@ class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableV
 extension GameHistoryViewController {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if completedGames.isEmpty == false {
-            return completedGames.count
-        } else {
-            return 1
-        }
+        completedGames.isEmpty ? 1 : completedGames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
