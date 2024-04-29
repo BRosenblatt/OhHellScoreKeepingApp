@@ -22,17 +22,17 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="URd-RN-bmj" userLabel="parentStackView">
-                                        <rect key="frame" x="16" y="0.0" width="361" height="759"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wqd-Iu-LFl" userLabel="spacer">
-                                                <rect key="frame" x="60.666666666666686" y="0.0" width="240" height="30"/>
+                                                <rect key="frame" x="76.666666666666686" y="0.0" width="240" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="29u-fu-R9k"/>
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="tjN-Cq-EcC">
-                                                <rect key="frame" x="105.66666666666669" y="59.666666666666671" width="150" height="155.33333333333331"/>
+                                                <rect key="frame" x="121.66666666666669" y="59.666666666666671" width="150" height="155.33333333333331"/>
                                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="LCO-fv-cAo"/>
@@ -41,7 +41,7 @@
                                                 <imageReference key="image" image="trophy.circle.fill" catalog="system" symbolScale="large"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kGa-EV-50j" userLabel="Winner Stack View">
-                                                <rect key="frame" x="80.000000000000014" y="244.00000000000003" width="201.33333333333337" height="110.33333333333334"/>
+                                                <rect key="frame" x="96.000000000000014" y="244.00000000000003" width="201.33333333333337" height="110.33333333333334"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="1000" text="Winner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="404-rP-bgf">
                                                         <rect key="frame" x="0.0" y="0.0" width="201.33333333333334" height="82"/>
@@ -58,7 +58,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="n8g-15-xu8" userLabel="Victory Quote Stack View">
-                                                <rect key="frame" x="81.333333333333329" y="386.33333333333331" width="198.66666666666669" height="83"/>
+                                                <rect key="frame" x="97.333333333333329" y="386.33333333333331" width="198.66666666666669" height="83"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Victory Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvz-yN-9tb">
                                                         <rect key="frame" x="0.0" y="0.0" width="198.66666666666666" height="41"/>
@@ -74,11 +74,11 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" verticalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="omx-mg-tEK" userLabel="spacer">
-                                                <rect key="frame" x="60.666666666666686" y="501.33333333333343" width="240" height="165.66666666666669"/>
+                                                <rect key="frame" x="76.666666666666686" y="501.33333333333343" width="240" height="149.66666666666669"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRI-fw-gg7" userLabel="Done Button">
-                                                <rect key="frame" x="0.0" y="699" width="361" height="60"/>
+                                                <rect key="frame" x="16" y="683" width="361" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="nUC-0G-sW8"/>
                                                 </constraints>
@@ -91,14 +91,15 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="16" right="8"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="URd-RN-bmj" firstAttribute="width" secondItem="7JZ-8b-vQh" secondAttribute="width" constant="-32" id="2Pt-D7-XGc"/>
-                                    <constraint firstItem="URd-RN-bmj" firstAttribute="leading" secondItem="pG8-48-rPB" secondAttribute="leading" constant="16" id="8NU-u8-ae0"/>
+                                    <constraint firstItem="URd-RN-bmj" firstAttribute="width" secondItem="7JZ-8b-vQh" secondAttribute="width" id="2Pt-D7-XGc"/>
+                                    <constraint firstItem="URd-RN-bmj" firstAttribute="leading" secondItem="pG8-48-rPB" secondAttribute="leading" id="8NU-u8-ae0"/>
                                     <constraint firstItem="URd-RN-bmj" firstAttribute="bottom" secondItem="pG8-48-rPB" secondAttribute="bottom" id="iGS-AS-q31"/>
                                     <constraint firstItem="URd-RN-bmj" firstAttribute="top" secondItem="pG8-48-rPB" secondAttribute="top" id="vAF-g5-Cr1"/>
-                                    <constraint firstItem="URd-RN-bmj" firstAttribute="trailing" secondItem="pG8-48-rPB" secondAttribute="trailing" constant="16" id="xXK-2d-lgr"/>
+                                    <constraint firstItem="URd-RN-bmj" firstAttribute="trailing" secondItem="pG8-48-rPB" secondAttribute="trailing" id="xXK-2d-lgr"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="pG8-48-rPB"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="7JZ-8b-vQh"/>

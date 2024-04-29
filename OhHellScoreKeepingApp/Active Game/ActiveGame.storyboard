@@ -40,11 +40,11 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uA5-IO-hqS">
-                                <rect key="frame" x="0.0" y="121.66666666666669" width="393" height="608.33333333333326"/>
+                                <rect key="frame" x="0.0" y="121.66666666666669" width="393" height="604.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bod-BI-aCE" userLabel="Next Round Button">
-                                <rect key="frame" x="8" y="750" width="377" height="60"/>
+                                <rect key="frame" x="16" y="742" width="361" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="QGS-XU-bd9"/>
                                 </constraints>
@@ -65,14 +65,14 @@
                             <constraint firstItem="JB9-kN-kKn" firstAttribute="leading" secondItem="egH-fI-0Tw" secondAttribute="leading" constant="20" id="CrS-Nq-8JX"/>
                             <constraint firstItem="JB9-kN-kKn" firstAttribute="top" secondItem="egH-fI-0Tw" secondAttribute="top" constant="8" id="F5k-4R-feB"/>
                             <constraint firstItem="egH-fI-0Tw" firstAttribute="trailing" secondItem="Vw5-f0-eYw" secondAttribute="trailing" constant="20" id="L70-fs-pHF"/>
-                            <constraint firstItem="egH-fI-0Tw" firstAttribute="bottom" secondItem="bod-BI-aCE" secondAttribute="bottom" constant="8" id="N19-05-GTl"/>
-                            <constraint firstItem="bod-BI-aCE" firstAttribute="leading" secondItem="egH-fI-0Tw" secondAttribute="leading" constant="8" id="XzS-fP-4cK"/>
-                            <constraint firstItem="egH-fI-0Tw" firstAttribute="trailing" secondItem="bod-BI-aCE" secondAttribute="trailing" constant="8" id="ZA3-ES-kyH"/>
+                            <constraint firstItem="egH-fI-0Tw" firstAttribute="bottom" secondItem="bod-BI-aCE" secondAttribute="bottom" constant="16" id="N19-05-GTl"/>
+                            <constraint firstItem="bod-BI-aCE" firstAttribute="leading" secondItem="egH-fI-0Tw" secondAttribute="leading" constant="16" id="XzS-fP-4cK"/>
+                            <constraint firstItem="egH-fI-0Tw" firstAttribute="trailing" secondItem="bod-BI-aCE" secondAttribute="trailing" constant="16" id="ZA3-ES-kyH"/>
                             <constraint firstItem="uA5-IO-hqS" firstAttribute="top" secondItem="JB9-kN-kKn" secondAttribute="bottom" constant="8.0000000000000284" id="fIQ-94-FOi"/>
                             <constraint firstItem="Vw5-f0-eYw" firstAttribute="top" secondItem="egH-fI-0Tw" secondAttribute="top" id="fcS-9n-MDF"/>
                             <constraint firstItem="egH-fI-0Tw" firstAttribute="trailing" secondItem="uA5-IO-hqS" secondAttribute="trailing" id="hQo-8s-vjy"/>
                             <constraint firstItem="uA5-IO-hqS" firstAttribute="leading" secondItem="egH-fI-0Tw" secondAttribute="leading" id="l57-xz-2m6"/>
-                            <constraint firstItem="bod-BI-aCE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uA5-IO-hqS" secondAttribute="bottom" constant="20" id="o4P-GK-owe"/>
+                            <constraint firstItem="bod-BI-aCE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uA5-IO-hqS" secondAttribute="bottom" constant="16" id="o4P-GK-owe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hai-3b-57Q"/>
