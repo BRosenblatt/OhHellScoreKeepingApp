@@ -47,7 +47,6 @@ class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
         super.prepareForReuse()
         playerNameLabel.numberOfLines = .zero
         bidTextField.text = ""
-        bidSegmentedControl.selectedSegmentIndex = 0
         pointsLabel.text = "0"
         scoreLabel.text = ""
     }
@@ -68,6 +67,9 @@ class GameTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let bid = Int(bidText) else {
+            bidTextField.text = ""
+            bidSegmentedControl.selectedSegmentIndex = 0
+            gameManager.addBidForPlayer(bid: nil, playerName: playerName)
             return
         }
      

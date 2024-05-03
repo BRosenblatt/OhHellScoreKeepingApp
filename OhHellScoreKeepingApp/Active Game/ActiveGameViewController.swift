@@ -129,7 +129,7 @@ extension ActiveGameViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewCell", for: indexPath) as! GameTableViewCell
         cell.invalidBidAlertDelegate = self
         cell.enableNextRoundButtonDelegate = self
-        
+
         let playerName = gameManager.currentRound?.orderedPlayerList[indexPath.row] ?? ""
         cell.playerNameLabel.text = playerName
         
@@ -142,11 +142,28 @@ extension ActiveGameViewController {
             cell.activityIndicator.stopAnimating()
         })
         
+        if gameManager.currentRound?.playerBids[playerName] == nil {
+            cell.bidTextField.text = ""
+            cell.bidSegmentedControl.selectedSegmentIndex = 0
+            cell.bidSegmentedControl.isEnabled = false
+            print("\(playerName) no bid entered")
+        } else if let existingBid = gameManager.currentRound?.playerBids[playerName], gameManager.currentRound?.didWinBid[playerName] == nil {
+            cell.bidTextField.text = "\(existingBid)"
+            cell.bidSegmentedControl.selectedSegmentIndex = 0
+            cell.bidSegmentedControl.isEnabled = true
+            print("\(playerName) bit entered")
+        } else if let existingBid = gameManager.currentRound?.playerBids[playerName], let didWinBid = gameManager.currentRound?.didWinBid[playerName] {
+            cell.bidTextField.text = "\(existingBid)"
+            cell.bidSegmentedControl.selectedSegmentIndex = didWinBid ? 1 : 0
+            cell.bidSegmentedControl.isEnabled = true
+            print("\(playerName) bid and didWinBid entered")
+        } else {
+            print("this should never happen")
+        }
+        
         let score = gameManager.scores[playerName] ?? 0
         let points = gameManager.currentRound?.points[playerName] ?? 0
         cell.scoreLabel.text = "\(score + points)"
-        cell.bidSegmentedControl.isEnabled = false
-        
         return cell
     }
     

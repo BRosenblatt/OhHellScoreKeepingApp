@@ -90,7 +90,7 @@ class GameManager {
         return newHandSize
     }
     
-    func addBidForPlayer(bid: Int, playerName: String) {
+    func addBidForPlayer(bid: Int?, playerName: String) {
         currentRound?.playerBids[playerName] = bid
     }
     
