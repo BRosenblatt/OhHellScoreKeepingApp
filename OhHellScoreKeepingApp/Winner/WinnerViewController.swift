@@ -48,6 +48,9 @@ class WinnerViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        guard textField.hasText else {
+            return
+        }
         doneButton.isEnabled = true
     }
     
