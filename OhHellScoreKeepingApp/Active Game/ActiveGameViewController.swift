@@ -185,7 +185,7 @@ extension ActiveGameViewController {
     }
     
     func showInvalidBidAlert() {
-        let alertController = UIAlertController(title: nil,
+        let alertController = UIAlertController(title: "Oh Hell!",
                                                 message: "The total bid entries cannot equal the number of cards in the hand. Please adjust the last bid to be over or under the card count.",
                                                 preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
